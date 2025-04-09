@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -29,3 +30,4 @@ public class Main extends Application {
         launch(args);  // Llamada para iniciar la aplicación JavaFX
     }
 }
+
