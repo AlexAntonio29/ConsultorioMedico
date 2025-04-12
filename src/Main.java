@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -9,7 +9,7 @@ public class Main extends Application {
 
 
     public void start(Stage primaryStage) {
-/*
+
        FormularioPaciente formulario = new FormularioPaciente();
 
        Scene contenidoVentana = new Scene(formulario.getRoot(),800,800);
@@ -21,7 +21,7 @@ public class Main extends Application {
         primaryStage.show();
 
 
- */
+
     }
 
 
