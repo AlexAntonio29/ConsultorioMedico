@@ -9,6 +9,6 @@
       <Button layoutX="142.0" layoutY="38.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="263.0" layoutY="38.0" mnemonicParsing="false" text="Button" />
        <Button layoutX="270.0" layoutY="50.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="372.0" layoutY="51.0" mnemonicParsing="false" text="Button" />
+
    </children>
 </AnchorPane>
