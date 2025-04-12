@@ -46,5 +46,6 @@ bin/
 /javafx/
 
 # Si compartes los jars por ruta local, ignora esa carpeta y agreguen los jars manualmente
-
+# Ignorar SDK de JavaFX
+javafx-sdk-24/
 
