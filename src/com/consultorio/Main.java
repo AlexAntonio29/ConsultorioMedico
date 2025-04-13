@@ -6,32 +6,34 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
+
 public class Main extends Application  {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Crear una instancia de FormularioPaciente si necesitas usarlo
-        // FormularioPaciente formulario = new FormularioPaciente();
-
-        // Crear una escena y asignar un tamaño básico
-       // Scene scene = new Scene(new VBox(), 1920, 1080); // Ajusta el tamaño de la ventana
-
-        // Configurar el título de la ventana
-        //primaryStage.setTitle("Sistema de com.consultorio.modelo.Consultorio");
-
-        // Establecer la escena en el escenario (ventana)
-       // primaryStage.setScene(scene);
-
-        // Mostrar el escenario
-       // primaryStage.show();
 
 
+        //obtener la dimension de la pantalla cualquiera
+        Screen screen = Screen.getPrimary();
+        Rectangle2D dimensionPantalla = screen.getVisualBounds();
+
+        //Nos conectamos a un archivo llamado FXML llamado panel_control.fxml
         FXMLLoader loader = new FXMLLoader(getClass().getResource("util/panel_control.fxml"));
-        Parent root = loader.load();
+        Parent root = loader.load();//cargamos
+        //primaryStage.sizeToScene();
+        primaryStage.setTitle("Panel Control");//definir titulo
+        primaryStage.setScene(new Scene(root));//creacion de escena
+        primaryStage.setWidth(dimensionPantalla.getWidth());
+        primaryStage.setHeight(dimensionPantalla.getHeight());
+        primaryStage.setMinWidth(dimensionPantalla.getWidth());
+        primaryStage.setMinHeight(dimensionPantalla.getHeight());
+        primaryStage.setMaxWidth(dimensionPantalla.getWidth());
+        primaryStage.setMaxHeight(dimensionPantalla.getHeight());
 
-        primaryStage.setTitle("com.consultorio.modelo.Consultorio Médico");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+
+        primaryStage.show();//mostrar
 
     }
 
