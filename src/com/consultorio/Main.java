@@ -26,7 +26,7 @@ public class Main extends Application  {
        // primaryStage.show();
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("panel_control.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("util/panel_control.fxml"));
         Parent root = loader.load();
 
         primaryStage.setTitle("com.consultorio.modelo.Consultorio Médico");
