@@ -1,12 +1,13 @@
+package com.consultorio.modelo;
+
 import java.util.Date;
 
-public class Doctor {
+public class Paciente {
     String id;
     String nombre;
-    String aPaterno;
+    String aPterno;
     String aMaterno;
     Date fnacimiento;
-    String especialidad;
     String direccion;
     String telefono;
 
@@ -18,8 +19,8 @@ public class Doctor {
         return nombre;
     }
 
-    public String getaPaterno() {
-        return aPaterno;
+    public String getaPterno() {
+        return aPterno;
     }
 
     public String getaMaterno() {
@@ -28,10 +29,6 @@ public class Doctor {
 
     public Date getFnacimiento() {
         return fnacimiento;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
     }
 
     public String getDireccion() {
@@ -50,8 +47,8 @@ public class Doctor {
         this.nombre = nombre;
     }
 
-    public void setaPaterno(String aPaterno) {
-        this.aPaterno = aPaterno;
+    public void setaPterno(String aPterno) {
+        this.aPterno = aPterno;
     }
 
     public void setaMaterno(String aMaterno) {
@@ -60,10 +57,6 @@ public class Doctor {
 
     public void setFnacimiento(Date fnacimiento) {
         this.fnacimiento = fnacimiento;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
     }
 
     public void setDireccion(String direccion) {
@@ -76,4 +69,3 @@ public class Doctor {
 
 
 }
-

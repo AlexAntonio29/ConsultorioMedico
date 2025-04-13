@@ -1,3 +1,5 @@
+package com.consultorio.modelo;
+
 import java.time.LocalTime;
 import java.util.Date;
 

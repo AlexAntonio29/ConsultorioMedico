@@ -1,3 +1,5 @@
+package com.consultorio.modelo;
+
 public class Consultorio {
 
     String nConsultorio;
