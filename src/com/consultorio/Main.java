@@ -21,7 +21,7 @@ public class Main extends Application  {
         Rectangle2D dimensionPantalla = screen.getVisualBounds();
 
         //Nos conectamos a un archivo llamado FXML llamado panel_control.fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("util/panel_control.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("vista/panel_control.fxml"));
         Parent root = loader.load();//cargamos
 
         //hacer que no tenga el boton de cerra, minimizar ni maximizar

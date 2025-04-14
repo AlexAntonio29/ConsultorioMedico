@@ -4,6 +4,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,7 +18,7 @@
       <HBox fx:id="hbestructuraPanel" prefHeight="624.0" prefWidth="903.0">
          <children>
 
-      <VBox fx:id="vbMenuIzquierdo" prefHeight="525.0" prefWidth="270.0">
+      <VBox fx:id="vbMenuIzquierdo">
          <children>
             <ImageView fx:id="ivImageMenu" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
 
@@ -83,7 +84,7 @@
          </padding>
       </VBox>
 
-            <AnchorPane prefHeight="624.0" prefWidth="927.0" fx:id="apPanelDinamico">
+            <AnchorPane fx:id="apPanelDinamico" prefHeight="624.0" prefWidth="927.0">
                <children>
                   <Button fx:id="bInicio1" mnemonicParsing="false" prefHeight="25.0" prefWidth="255.0" text="Inicio/DashBoard">
                      <HBox.margin>
@@ -94,8 +95,21 @@
 
          </children>
       </HBox>
+      <VBox fx:id="vbSubMenu" minHeight="0.0">
+         <children>
+            <Label text="Label" />
+         </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets bottom="50.0" left="20.0" top="150.0" />
+         </padding>
+      </VBox>
 
-
+      
 
         </children>
+
+
         </StackPane>

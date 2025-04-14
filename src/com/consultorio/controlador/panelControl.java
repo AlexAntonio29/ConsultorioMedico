@@ -41,39 +41,29 @@ public class panelControl {
 
     @FXML
     private AnchorPane apPanelDinamico;
+
+    @FXML
+    private VBox vbSubMenu;
     public panelControl(){
 
 
     }
 
 
+
+
     @FXML
     public void initialize() {
 
-        //agregar tamaño altura a menu
 
+        ajustesDinamicos();
 
-        //aqui van todos los eventos al iniciar
-        /*
-        bInicio.setOnAction(actionEvent ->  {
-
-        });*/
-        //estrucurando dimensiones ESTO NO TOCAR
-        spPanel.setPrefHeight(dimensionPantalla.getHeight());
-        spPanel.setPrefWidth(dimensionPantalla.getWidth());
-
-        hbestructuraPanel.setPrefHeight(dimensionPantalla.getHeight());
-        hbestructuraPanel.setPrefWidth(dimensionPantalla.getWidth());
-
-        vbMenuIzquierdo.setPrefHeight(dimensionPantalla.getHeight());
-
-        apPanelDinamico.setPrefHeight(dimensionPantalla.getHeight());
-        apPanelDinamico.setPrefWidth(dimensionPantalla.getWidth()-250);
 
         // Aqui agregare un diseño rapido para identificar limites de objetos, no sera lo ultimo
 
       vbMenuIzquierdo.setStyle("-fx-background-color: #000b4b;");
       apPanelDinamico.setStyle("-fx-background-color: #4bcac4; -fx-border-color: #ff0000;");
+       vbSubMenu.setStyle("-fx-background-color: #8c4040;");
 
         Image image = new Image("file:/C:/Users/Alexis/Pictures/foto.jpg");
         ivImageMenu.setImage(image);
@@ -89,4 +79,54 @@ public class panelControl {
         bInicio.setStyle("-fx-background-color: #ff0000; -fx-text-fill: #ffffff;"); // Rojo con texto blanco
 
     }
+
+    public void ajustesMenus(){
+        //estrucurando dimensiones ESTO NO TOCAR
+        //Dimension del Stack Pane
+        spPanel.setPrefHeight(dimensionPantalla.getHeight());
+        spPanel.setPrefWidth(dimensionPantalla.getWidth());
+
+        //Dimension del Horizontal Pane
+        hbestructuraPanel.setPrefHeight(dimensionPantalla.getHeight());
+        hbestructuraPanel.setPrefWidth(dimensionPantalla.getWidth());
+
+        //Dimension del Vertical Pane
+        vbMenuIzquierdo.setPrefHeight(dimensionPantalla.getHeight());
+        //Dimension del anchor Pane
+        apPanelDinamico.setPrefHeight(dimensionPantalla.getHeight());
+        apPanelDinamico.setPrefWidth(dimensionPantalla.getWidth());
+        //Dimension del menuIzquierdo
+        double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;
+        vbMenuIzquierdo.setMaxWidth(dimensionMenuIzquierdo);
+        vbMenuIzquierdo.setMaxHeight(dimensionPantalla.getHeight());
+        vbMenuIzquierdo.setPrefWidth(dimensionMenuIzquierdo);
+        vbMenuIzquierdo.setPrefHeight(dimensionPantalla.getHeight());
+        vbMenuIzquierdo.setMinWidth(dimensionMenuIzquierdo);
+        vbMenuIzquierdo.setMinHeight(dimensionPantalla.getHeight());
+        //Dimension de SubMenu
+
+        double dimensionSubMenuIzquierdo= dimensionPantalla.getWidth()/4;
+        vbSubMenu.setMaxWidth(dimensionSubMenuIzquierdo);
+        vbSubMenu.setMaxHeight(dimensionPantalla.getHeight());
+        vbSubMenu.setPrefWidth(dimensionSubMenuIzquierdo);
+        vbSubMenu.setPrefHeight(dimensionPantalla.getHeight());
+        vbSubMenu.setMinWidth(dimensionSubMenuIzquierdo);
+        vbSubMenu.setMinHeight(dimensionPantalla.getHeight());
+
+
+
+        //posicionar subMenu
+        double puntoInicialSubMenu=-((dimensionPantalla.getWidth()/2)-(dimensionSubMenuIzquierdo/2));
+        double posicionSubMenu= puntoInicialSubMenu+dimensionMenuIzquierdo;
+        vbSubMenu.setTranslateX(posicionSubMenu);
+
+    }
+
+    
+public void ajustesDinamicos(){
+        ajustesMenus();
+
+}
+
+
 }
