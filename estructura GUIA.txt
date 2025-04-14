@@ -1,0 +1,72 @@
+Panel de Control - Consultorio Médico
+1. Inicio / Dashboard
+
+	Vista general del día (citas próximas, notificaciones, estadísticas rápidas)
+
+2.Pacientes
+
+	Registrar nuevo paciente
+
+	Buscar / editar pacientes
+
+	Historial clínico
+
+	Adjuntar archivos (estudios, recetas, etc.)
+
+3. Citas
+
+	Agendar nueva cita
+	
+	Ver calendario / agenda del día
+
+	Citas pendientes
+
+	Citas pasadas
+
+4. Consultas Médicas
+
+	Iniciar consulta
+
+	Registrar síntomas, diagnóstico, tratamiento
+
+	Prescripción electrónica
+
+5.Inventario / Farmacia (si se maneja)
+
+	Medicamentos disponibles
+
+	Registro de insumos
+
+	Control de stock
+
+6. Pagos y Facturación
+
+	Registrar pagos
+
+	Historial de pagos por paciente
+
+	Facturación
+
+7. Reportes
+
+	Reportes de atención médica
+
+	Reportes financieros
+
+	Exportar datos
+
+8. Usuarios / Personal
+
+	Médicos y asistentes
+
+	Roles y permisos
+
+9. Configuración
+
+	Datos del consultorio
+
+	Preferencias del sistema
+
+	Notificaciones / alertas
+
+10. Cerrar sesión / Salir

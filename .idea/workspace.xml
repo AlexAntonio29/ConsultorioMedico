@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/designAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <updated>1744497836690</updated>
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
-      <workItem from="1744566279681" duration="24289000" />
+      <workItem from="1744566279681" duration="35092000" />
     </task>
     <servers />
   </component>
@@ -104,8 +104,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>121</line>
+          <line>107</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
