@@ -67,16 +67,34 @@ public class designAll {
 
     }
 
-    public void getDesignLabel(Label label){
+    public void getDesignLabel(Label label, int select){
         switch(categoria){
 
             case 0:
                 //diseño clasico de boton
-                label.setStyle("-fx-text-fill: #ffffff;");
+                if(select == 1){
+                    label.setStyle("-fx-text-fill: #ffffff;" +       /* Color del texto */
+                            "-fx-padding: 10;" +             /* Margin interno */
+                            "-fx-border-radius: 10;" +       /* Bordes redondeados */
+                            "-fx-underline: true;" +
+                            "-fx-font-size: 12px;"  );
 
+                }
+                else if(select == 0){
+                    label.setStyle("-fx-text-fill: #e1e1e1;" +       /* Color del texto */
+                            "-fx-padding: 8;" +             /* Margin interno */
+                            "-fx-border-radius: 10;" +       /* Bordes redondeados */
+                            "-fx-underline: false;" +
+                            "-fx-font-size: 12px;"  );
+                }
+
+
+                break;
 
             case 1:
                 //diseño white de boton
+
+                break;
 
             case 2:
                 //diseño dark de boton
@@ -86,6 +104,7 @@ public class designAll {
                                 "-fx-border-radius: 10;" +       /* Bordes redondeados */
                                 "-fx-font-size: 12px;"         /* Negrita */
                 );
+                break;
 
 
 

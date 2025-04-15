@@ -240,10 +240,20 @@ public class panelControl {
         for(int i=0;i<cadenaSubMenu.length;i++) {
 
             javafx.scene.control.Label label =  new javafx.scene.control.Label(cadenaSubMenu[i]);
-            design.getDesignLabel(label);
+            design.getDesignLabel(label,0);
+
             label.setOnMouseClicked(event ->{
                 cargarFXML(label.getText());
+                design.getDesignLabel(label,1);
             });
+
+           label.setOnMouseEntered(event ->{
+               design.getDesignLabel(label,1);
+           });
+           label.setOnMouseExited(event->{
+               design.getDesignLabel(label,0);
+           });
+
             vbSubMenu.getChildren().add(label);
 
 
@@ -268,6 +278,7 @@ public class panelControl {
     public void mostrarSubmenu(){
         vbSubMenu.setVisible(true);
     }
+
 
 
 

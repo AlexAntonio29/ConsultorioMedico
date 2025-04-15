@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/designAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/designAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
       <updated>1744497836690</updated>
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
-      <workItem from="1744566279681" duration="40256000" />
+      <workItem from="1744566279681" duration="42378000" />
     </task>
     <servers />
   </component>
@@ -109,26 +108,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>275</line>
+          <line>297</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>330</line>
+          <line>352</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>280</line>
-          <properties class="com.consultorio.controlador.panelControl" method="actionPacientes">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>328</line>
+          <line>350</line>
           <properties class="com.consultorio.controlador.panelControl" method="actionReporte">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
