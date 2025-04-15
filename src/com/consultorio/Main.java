@@ -24,6 +24,7 @@ public class Main extends Application  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("vista/panel_control.fxml"));
         Parent root = loader.load();//cargamos
 
+
         //hacer que no tenga el boton de cerra, minimizar ni maximizar
         primaryStage.initStyle(StageStyle.UNDECORATED);
         //primaryStage.sizeToScene();

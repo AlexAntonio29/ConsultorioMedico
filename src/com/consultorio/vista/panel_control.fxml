@@ -27,7 +27,7 @@
 
 
                         </ImageView>
-             <Button fx:id="bInicio" mnemonicParsing="false" onAction="#actionInicio" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inicio/DashBoard" onMouseEntered="#actionInicio">
+             <Button fx:id="bInicio" mnemonicParsing="false" onAction="#actionPushInicio" onMouseEntered="#actionInicio" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inicio/DashBoard">
                <VBox.margin>
                   <Insets top="50.0" />
                </VBox.margin>

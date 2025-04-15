@@ -2,6 +2,9 @@ package com.consultorio.controlador;
 
 import com.consultorio.util.designAll;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -11,6 +14,8 @@ import javafx.event.ActionEvent;
 //import java.awt.event.ActionEvent;
 import java.awt.*;
 import java.beans.EventHandler;
+import java.util.Objects;
+
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
@@ -29,6 +34,9 @@ public class panelControl {
 
     //cadenas de arreglos de subMenu
     public String[] cadenaSubMenu;
+
+    //Items de AnchorPanelDinamico
+    private Parent contenidoAnchorPanelDinamico;
 
     @FXML
     private VBox vbMenuIzquierdo;
@@ -94,9 +102,14 @@ public class panelControl {
         // Aqui agregare un diseño rapido para identificar limites de objetos, no sera lo ultimo
 
       vbMenuIzquierdo.setStyle("-fx-background-color: #000b4b;");
-      apPanelDinamico.setStyle("-fx-background-color: #919df1; -fx-border-color: #101c8a;");
+      apPanelDinamico.setStyle("-fx-background-color: #ffffff; -fx-border-color: #101c8a;");
        vbSubMenu.setStyle("-fx-background-color: rgba(16,28,138,0.5);");
 
+       //limpiar AnchorPanel Dinamico Y cargar FXML
+
+        //direccion de inicio por defecto
+        String rutaDefectoInicio="/com/consultorio/vista/inicio.fxml";
+        updateContenidoAnchorPane(rutaDefectoInicio);
 
        //agregar diseño a los botones
 
@@ -127,6 +140,10 @@ public class panelControl {
     public void cargarFXML(String cadena){//cargar el fxml
         //usare un switch para distribuir
         switch (cadena) {
+            case "Inicio/DashBoard":
+                System.out.println("Acción: Ir a inicio");
+                updateContenidoAnchorPane("/com/consultorio/vista/inicio.fxml");
+                break;
             // Pacientes
             case "Registrar Nuevo Paciente":
                 System.out.println("Acción: Registrar nuevo paciente");
@@ -243,6 +260,7 @@ public class panelControl {
             design.getDesignLabel(label,0);
 
             label.setOnMouseClicked(event ->{
+                vbSubMenu.setVisible(false);
                 cargarFXML(label.getText());
                 design.getDesignLabel(label,1);
             });
@@ -279,6 +297,24 @@ public class panelControl {
         vbSubMenu.setVisible(true);
     }
 
+    public void updateContenidoAnchorPane(String ruta){
+        try {
+
+            apPanelDinamico.getChildren().clear();
+            contenidoAnchorPanelDinamico= FXMLLoader.load((getClass().getResource(ruta)));
+            apPanelDinamico.getChildren().add(contenidoAnchorPanelDinamico);
+
+            // Ajustar para que se adapte al tamaño del AnchorPane
+            AnchorPane.setTopAnchor(contenidoAnchorPanelDinamico, 0.0);
+            AnchorPane.setBottomAnchor(contenidoAnchorPanelDinamico, 0.0);
+            AnchorPane.setLeftAnchor(contenidoAnchorPanelDinamico, 0.0);
+            AnchorPane.setRightAnchor(contenidoAnchorPanelDinamico, 0.0);
+        }catch (Exception e){
+            System.out.println("ERROR AL CARGAR FXML "+e.getMessage()+"  ERROR: "+ e);
+        }
+
+    }
+
 
 
 
@@ -295,7 +331,15 @@ public class panelControl {
     @FXML
     public void actionInicio() {
         design.getDesignButton(bInicio,1);
+
+
         // bInicio.setStyle("-fx-background-color: #ff0000; -fx-text-fill: #ffffff;"); // Rojo con texto blanco
+
+    }
+    @FXML
+    public void actionPushInicio() {
+        design.getDesignButton(bInicio,1);
+        cargarFXML(bInicio.getText());
 
     }
 

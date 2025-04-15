@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/inicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/designAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/designAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -33,26 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ConsultorioMedico.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;alexis&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ConsultorioMedico.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "alexis",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="U:\Documents\GitHub\Cuentas\AlexAntonio29\ConsultorioMedico\ConsultorioMedico\src\com\consultorio\util" />
@@ -91,7 +95,7 @@
       <updated>1744497836690</updated>
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
-      <workItem from="1744566279681" duration="42378000" />
+      <workItem from="1744566279681" duration="53507000" />
     </task>
     <servers />
   </component>
@@ -103,27 +107,69 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>123</line>
+          <line>136</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>297</line>
+          <line>335</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>352</line>
+          <line>396</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>350</line>
+          <line>394</line>
           <properties class="com.consultorio.controlador.panelControl" method="actionReporte">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
+          <line>299</line>
+          <properties class="com.consultorio.controlador.panelControl" method="updateContenidoAnchorPane">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
+          <line>295</line>
+          <properties class="com.consultorio.controlador.panelControl" method="mostrarSubmenu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
+          <line>252</line>
+          <properties class="com.consultorio.controlador.panelControl" method="imprimirSubMenu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
