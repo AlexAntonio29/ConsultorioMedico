@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/inicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "alexis",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "U:/Documents/GitHub/Cuentas/AlexAntonio29/ConsultorioMedico/ConsultorioMedico/src/com/consultorio/util",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +54,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="U:\Documents\GitHub\Cuentas\AlexAntonio29\ConsultorioMedico\ConsultorioMedico\src\com\consultorio\util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="U:\Documents\GitHub\Cuentas\AlexAntonio29\ConsultorioMedico\ConsultorioMedico\src\com\consultorio\util" />
       <recent name="U:\Documents\GitHub\Cuentas\AlexAntonio29\ConsultorioMedico\ConsultorioMedico\src\com\consultorio" />
@@ -95,7 +94,7 @@
       <updated>1744497836690</updated>
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
-      <workItem from="1744566279681" duration="53507000" />
+      <workItem from="1744566279681" duration="54422000" />
     </task>
     <servers />
   </component>
