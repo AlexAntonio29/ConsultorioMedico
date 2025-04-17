@@ -147,12 +147,15 @@ public class panelControl {
             // Pacientes
             case "Registrar Nuevo Paciente":
                 System.out.println("Acción: Registrar nuevo paciente");
+                updateContenidoAnchorPane("/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml");
                 break;
             case "Buscar / editar pacientes":
                 System.out.println("Acción: Buscar / editar pacientes");
+                updateContenidoAnchorPane("/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml");
                 break;
             case "Historial clínico":
                 System.out.println("Acción: Ver historial clínico");
+                updateContenidoAnchorPane("/com/consultorio/vista/pacientes/historial_clinico.fxml");
                 break;
             case "Adjuntar archivos (estudios, recetas, etc.)":
                 System.out.println("Acción: Adjuntar archivos");
