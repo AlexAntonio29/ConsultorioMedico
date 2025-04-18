@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.configuracion.perfil"
+            prefHeight="1080.0" prefWidth="1920.0"
+            style="-fx-background-color: #F8F9F9;">
+
+    <children>
+        <VBox spacing="30.0" alignment="TOP_CENTER"
+              AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="100.0"
+              AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="50.0">
+            <children>
+
+                <Label text="Mi Perfil"
+                       style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+
+                <GridPane hgap="15" vgap="20">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="200"/>
+                        <ColumnConstraints prefWidth="400"/>
+                    </columnConstraints>
+
+                    <children>
+                        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Correo Electrónico:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtCorreo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Contraseña Actual:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="txtPassActual" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Nueva Contraseña:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="txtNuevaPass" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Confirmar Contraseña:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="txtConfirmarPass" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </children>
+                </GridPane>
+
+                <HBox spacing="20" alignment="CENTER">
+                    <Button text="Guardar Cambios"
+                            fx:id="btnGuardarPerfil"
+                            style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-size: 14px;" />
+                    <Button text="Cancelar"
+                            fx:id="btnCancelar"
+                            style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px;" />
+                </HBox>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

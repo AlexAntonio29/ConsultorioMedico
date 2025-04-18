@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.usuarioPersonal.medicosAsistentes"
+            prefHeight="1080.0" prefWidth="1920.0"
+            style="-fx-background-color: #ECF0F1;">
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0"
+              AnchorPane.topAnchor="40.0" AnchorPane.leftAnchor="60.0"
+              AnchorPane.rightAnchor="60.0" AnchorPane.bottomAnchor="40.0">
+            <children>
+
+                <Label text="Gestión de Médicos y Asistentes"
+                       style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+
+                <Button text="Registrar Nuevo Personal"
+                        fx:id="btnRegistrarPersonal"
+                        style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-size: 16px;" />
+
+                <TableView fx:id="tablaPersonal" prefHeight="700.0">
+                    <columns>
+                        <TableColumn fx:id="colNombre" text="Nombre" prefWidth="300"/>
+                        <TableColumn fx:id="colRol" text="Rol" prefWidth="200"/>
+                        <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="200"/>
+                    </columns>
+                </TableView>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,6 +1,9 @@
 package com.consultorio.controlador;
 
+
 import com.consultorio.util.designAll;
+import com.consultorio.util.alertaConfirmacion;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,6 +31,10 @@ import javafx.stage.Screen;
 public class panelControl {
     Screen screen = Screen.getPrimary();
     Rectangle2D dimensionPantalla = screen.getVisualBounds();
+
+    //Crear una confirmacion Alerta
+
+    alertaConfirmacion alerta = new alertaConfirmacion();
 
     //dimension menu izquierda para cualquier cosa que necesite la dimension
     double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;
@@ -164,83 +171,119 @@ public class panelControl {
             // Citas
             case "Agendar nueva cita":
                 System.out.println("Acción: Agendar nueva cita");
+                updateContenidoAnchorPane("/com/consultorio/vista/citas/agendar_nueva_cita.fxml");
+
                 break;
             case "Ver calendario / agenda del día":
                 System.out.println("Acción: Ver calendario / agenda del día");
+                updateContenidoAnchorPane("/com/consultorio/vista/citas/agenda_dia.fxml");
                 break;
             case "Citas pendientes":
                 System.out.println("Acción: Ver citas pendientes");
+                updateContenidoAnchorPane("/com/consultorio/vista/citas/citas_pendientes.fxml");
                 break;
             case "Citas pasadas":
                 System.out.println("Acción: Ver citas pasadas");
+                updateContenidoAnchorPane("/com/consultorio/vista/citas/citas_pasadas.fxml");
                 break;
 
             // Consultas Médicas
             case "Iniciar consulta":
                 System.out.println("Acción: Iniciar consulta médica");
+                updateContenidoAnchorPane("/com/consultorio/vista/consultasMedicas/iniciar_consulta.fxml");
+
                 break;
             case "Registrar síntomas, diagnóstico, tratamiento":
+
                 System.out.println("Acción: Registrar detalles de consulta médica");
+                updateContenidoAnchorPane("/com/consultorio/vista/consultasMedicas/registrar_diagnostico_tratamiento_sintomas.fxml");
+
                 break;
             case "Prescripción electrónica":
                 System.out.println("Acción: Emitir prescripción electrónica");
+                updateContenidoAnchorPane("/com/consultorio/vista/consultasMedicas/prescripcion_electronica.fxml");
+
                 break;
 
             // Inventario / Farmacia
             case "Medicamentos disponibles":
                 System.out.println("Acción: Consultar medicamentos disponibles");
+                updateContenidoAnchorPane("/com/consultorio/vista/inventario/medicamentos_disponibles.fxml");
+
+
                 break;
             case "Registro de insumos":
                 System.out.println("Acción: Registrar insumos");
+                updateContenidoAnchorPane("/com/consultorio/vista/inventario/registro_insumos.fxml");
+
                 break;
             case "Control de stock":
                 System.out.println("Acción: Control de stock");
+                updateContenidoAnchorPane("/com/consultorio/vista/inventario/control_stock.fxml");
+
                 break;
 
             // Pagos y Facturación
             case "Registrar pagos":
                 System.out.println("Acción: Registrar pagos de pacientes");
+                updateContenidoAnchorPane("/com/consultorio/vista/pagoYfacturacion/registrar_pagos.fxml");
                 break;
             case "Historial de pagos por paciente":
                 System.out.println("Acción: Ver historial de pagos por paciente");
+                updateContenidoAnchorPane("/com/consultorio/vista/pagoYfacturacion/historial_pagos_pacientes.fxml");
                 break;
             case "Facturación":
                 System.out.println("Acción: Realizar facturación");
+                updateContenidoAnchorPane("/com/consultorio/vista/pagoYfacturacion/facturacion.fxml");
                 break;
 
             // Reportes
             case "Reportes de atención médica":
                 System.out.println("Acción: Generar reportes de atención médica");
+                updateContenidoAnchorPane("/com/consultorio/vista/reportes/reportes_atencion_medica.fxml");
                 break;
             case "Reportes financieros":
                 System.out.println("Acción: Generar reportes financieros");
+                updateContenidoAnchorPane("/com/consultorio/vista/reportes/reportes_financieros.fxml");
                 break;
             case "Exportar datos":
                 System.out.println("Acción: Exportar datos del sistema");
+                updateContenidoAnchorPane("/com/consultorio/vista/reportes/exportar_datos.fxml");
                 break;
 
             // Usuarios / Personal
             case "Médicos y asistentes":
                 System.out.println("Acción: Administrar médicos y asistentes");
+                updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml");
                 break;
             case "Roles y permisos":
                 System.out.println("Acción: Configurar roles y permisos");
+                updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml");
                 break;
 
             // Configuración
             case "Datos del consultorio":
                 System.out.println("Acción: Configurar datos del consultorio");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracion/datos_consultorio.fxml");
                 break;
             case "Preferencias del sistema":
                 System.out.println("Acción: Configurar preferencias del sistema");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracion/preferencias_sistema.fxml");
                 break;
             case "Notificaciones / alertas":
                 System.out.println("Acción: Configurar notificaciones y alertas");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracion/notificaciones_alerta.fxml");
+                break;
+            case "Perfil":
+                System.out.println("Acción: Configurar notificaciones y alertas");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracion/perfil.fxml");
                 break;
 
             // Cerrar sesión / Salir
             case "Salir del sistema":
                 System.out.println("Acción: Cerrar sesión y salir");
+                if (alerta.mostrarConfirmacion("¿Deseas Salir del sistema?")) Platform.exit();
+
                 break;
 
             default:
@@ -413,7 +456,7 @@ public class panelControl {
     @FXML
     public void actionConfiguracion() {
         design.getDesignButton(bConfiguracion,1);
-        cadenaSubMenu = new String[]{"Datos del consultorio", "Preferencias del sistema", "Notificaciones / alertas"};
+        cadenaSubMenu = new String[]{"Perfil","Datos del consultorio", "Preferencias del sistema", "Notificaciones / alertas"};
         vbSubMenu.getChildren().clear();
         imprimirSubMenu(cadenaSubMenu);
     }
