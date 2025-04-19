@@ -1,4 +1,4 @@
-package com.consultorio.controlador.pacientes;
+package com.consultorio.util.conection.controllerDataBase.pacientes;
 
-public class registrarNuevoPaciente {
+public class DBregistrarNuevoPaciente {
 }

@@ -1,4 +1,4 @@
-package com.consultorio.controlador.citas;
+package com.consultorio.util.conection.controllerDataBase.citas;
 
-public class agendaDia {
+public class DBagendaDia {
 }

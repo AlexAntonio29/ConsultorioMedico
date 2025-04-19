@@ -1,8 +1,8 @@
-package com.consultorio.modelo;
+package com.consultorio.modelo.personal;
 
 import java.util.Date;
 
-public class Usuario {
+public class Empleado {
     String id;
     String nombre;
     String aPaterno;
@@ -14,6 +14,11 @@ public class Usuario {
     String telefono;
     String email;
     String foto;
+
+    public Empleado(){
+
+    }
+
 
     public String getId() {
         return id;
@@ -60,7 +65,7 @@ public class Usuario {
         return foto;
     }
 
-    public void setId(String id) {
+    public void  setId(String id) {
         this.id = id;
     }
 

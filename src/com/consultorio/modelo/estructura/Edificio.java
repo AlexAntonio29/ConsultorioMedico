@@ -1,4 +1,4 @@
-package com.consultorio.modelo;
+package com.consultorio.modelo.estructura;
 
 public class Edificio {
 

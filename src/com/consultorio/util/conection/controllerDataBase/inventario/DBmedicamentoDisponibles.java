@@ -1,8 +1,8 @@
-package com.consultorio.controlador.inventario;
+package com.consultorio.util.conection.controllerDataBase.inventario;
 
-public class medicamentoDisponibles {
+public class DBmedicamentoDisponibles {
 
-    public medicamentoDisponibles() {}
+    public DBmedicamentoDisponibles() {}
 
 
 

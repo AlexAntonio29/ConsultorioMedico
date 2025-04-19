@@ -1,4 +1,4 @@
-package com.consultorio.controlador.reportes;
+package com.consultorio.util.conection.controllerDataBase.reportes;
 
-public class reportesAtencionMedica {
+public class DBreportesAtencionMedica {
 }

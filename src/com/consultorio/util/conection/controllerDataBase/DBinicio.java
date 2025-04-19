@@ -1,4 +1,4 @@
-package com.consultorio.controlador;
+package com.consultorio.util.conection.controllerDataBase;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 
 
-public class Inicio {
+public class DBinicio {
 
     Screen screen = Screen.getPrimary();
     Rectangle2D dimensionPantalla = screen.getVisualBounds();
@@ -16,7 +16,7 @@ public class Inicio {
     private GridPane grid;
     @FXML
     private AnchorPane anchorPane;
-    public Inicio(){
+    public DBinicio(){
 
     }
 

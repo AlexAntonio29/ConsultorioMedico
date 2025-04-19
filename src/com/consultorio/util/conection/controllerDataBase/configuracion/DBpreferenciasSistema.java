@@ -1,4 +1,4 @@
-package com.consultorio.controlador.configuracion;
+package com.consultorio.util.conection.controllerDataBase.configuracion;
 
-public class preferenciasSistema {
+public class DBpreferenciasSistema {
 }

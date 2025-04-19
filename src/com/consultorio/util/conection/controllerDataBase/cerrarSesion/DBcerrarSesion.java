@@ -1,4 +1,4 @@
-package com.consultorio.controlador.cerrarSesion;
+package com.consultorio.util.conection.controllerDataBase.cerrarSesion;
 
-public class cerrarSesion {
+public class DBcerrarSesion {
 }

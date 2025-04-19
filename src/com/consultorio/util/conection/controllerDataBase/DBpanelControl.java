@@ -1,31 +1,29 @@
-package com.consultorio.controlador;
+package com.consultorio.util.conection.controllerDataBase;
 
 
-import com.consultorio.util.designAll;
 import com.consultorio.util.alertaConfirmacion;
+import com.consultorio.util.designAll;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-//import java.awt.event.ActionEvent;
-import java.util.Objects;
-
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-
-import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 
+import java.util.Objects;
 
 
 
-public class panelControl {
+
+public class DBpanelControl {
 
     //archivos
     String dirImage="";
@@ -99,7 +97,7 @@ public class panelControl {
 
 
 
-    public panelControl(){
+    public DBpanelControl(){
     this.categoria=categoria;
     //aqui sera llamado desde la dataBase
 
@@ -343,7 +341,7 @@ public class panelControl {
 
         for(int i=0;i<cadenaSubMenu.length;i++) {
 
-            javafx.scene.control.Label label =  new javafx.scene.control.Label(cadenaSubMenu[i]);
+            Label label =  new Label(cadenaSubMenu[i]);
             design.getDesignLabel(label,0);
 
             label.setOnMouseClicked(event ->{

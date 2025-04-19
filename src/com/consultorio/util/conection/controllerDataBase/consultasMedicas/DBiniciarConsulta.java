@@ -1,4 +1,4 @@
-package com.consultorio.controlador.consultasMedicas;
+package com.consultorio.util.conection.controllerDataBase.consultasMedicas;
 
-public class iniciarConsulta {
+public class DBiniciarConsulta {
 }

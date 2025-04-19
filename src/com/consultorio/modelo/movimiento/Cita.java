@@ -1,17 +1,21 @@
-package com.consultorio.modelo;
+package com.consultorio.modelo.movimiento;
+
+import com.consultorio.modelo.estructura.Consultorio;
+import com.consultorio.modelo.personal.Empleado;
+import com.consultorio.modelo.clientes.Paciente;
 
 import java.time.LocalTime;
 import java.util.Date;
 
 public class Cita {
 
-    Usuario idUsuario;
+    Empleado idUsuario;
     Paciente idPaciente;
     Date fecha;
     LocalTime hora;
     Consultorio nConsultorio;
 
-    public Usuario getIdDoctor() {
+    public Empleado getIdUsuario() {
         return idUsuario;
     }
 
@@ -31,7 +35,7 @@ public class Cita {
         return nConsultorio;
     }
 
-    public void setIdDoctor(Usuario idUsuario) {
+    public void setIdUsuario(Empleado idUsuario) {
         this.idUsuario = idUsuario;
     }
 

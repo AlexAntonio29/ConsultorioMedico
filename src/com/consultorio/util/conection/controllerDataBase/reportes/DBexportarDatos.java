@@ -1,4 +1,4 @@
-package com.consultorio.controlador.reportes;
+package com.consultorio.util.conection.controllerDataBase.reportes;
 
-public class exportarDatos {
+public class DBexportarDatos {
 }

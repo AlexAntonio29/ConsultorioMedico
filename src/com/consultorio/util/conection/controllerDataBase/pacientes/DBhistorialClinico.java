@@ -1,8 +1,8 @@
-package com.consultorio.controlador.pacientes;
+package com.consultorio.util.conection.controllerDataBase.pacientes;
 
 import javafx.fxml.FXML;
 
-public class historialClinico {
+public class DBhistorialClinico {
 
     @FXML
      public void initialize() {

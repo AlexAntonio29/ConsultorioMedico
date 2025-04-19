@@ -1,4 +1,4 @@
-package com.consultorio.controlador.inventario;
+package com.consultorio.util.conection.controllerDataBase.inventario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,7 +7,7 @@ import javafx.scene.control.ChoiceBox;
 
 import java.util.ArrayList;
 
-public class controlStock {
+public class DBcontrolStock {
 
     //checkBox
     @FXML

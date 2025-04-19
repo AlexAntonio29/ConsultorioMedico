@@ -7,16 +7,13 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.event.ActionEvent;
 //import java.awt.event.ActionEvent;
-import java.awt.*;
-import java.beans.EventHandler;
 import java.util.Objects;
 
 import javafx.scene.control.Button;
@@ -29,6 +26,12 @@ import javafx.stage.Screen;
 
 
 public class panelControl {
+
+    //archivos
+    String dirImage="";
+
+
+
     Screen screen = Screen.getPrimary();
     Rectangle2D dimensionPantalla = screen.getVisualBounds();
 
@@ -85,8 +88,16 @@ public class panelControl {
     @FXML
     private VBox vbSubMenu;
 
+    //label Usuario
+
+    @FXML
+            private Label lbNameUser;
+
     int categoria=0;
     designAll design;
+
+
+
 
     public panelControl(){
     this.categoria=categoria;
@@ -101,9 +112,9 @@ public class panelControl {
     @FXML
     public void initialize() {
 
-
+        cargarRecursos();
         ajustesDinamicos();
-        vbSubMenu.setVisible(false);
+        ajustesDiseno();
 
 
         // Aqui agregare un diseño rapido para identificar limites de objetos, no sera lo ultimo
@@ -114,26 +125,7 @@ public class panelControl {
 
        //limpiar AnchorPanel Dinamico Y cargar FXML
 
-        //direccion de inicio por defecto
-        String rutaDefectoInicio="/com/consultorio/vista/inicio.fxml";
-        updateContenidoAnchorPane(rutaDefectoInicio);
 
-       //agregar diseño a los botones
-
-           design.getDesignButton(bInicio,0);
-           design.getDesignButton(bPacientes,0);
-           design.getDesignButton(bCitas,0);
-           design.getDesignButton(bReportes,0);
-           design.getDesignButton(bUsuarioPersonal,0);
-           design.getDesignButton(bConsultasMedicas,0);
-           design.getDesignButton(bInventario,0);
-           design.getDesignButton(bPagoFacturacion,0);
-          design.getDesignButton(bConfiguracion,0);
-          design.getDesignButton(bCerraSesion,0);
-
-
-        Image image = new Image("file:/C:/Users/Alexis/Pictures/foto.jpg");
-        ivImageMenu.setImage(image);
 
 
 
@@ -141,10 +133,55 @@ public class panelControl {
 
     }
 
+    //CARGAR RECURSOS
+    public void cargarRecursos(){
+
+
+        loadImage();
+
+        vbSubMenu.setVisible(false);
+        //direccion de inicio por defecto
+        String rutaDefectoInicio="/com/consultorio/vista/inicio.fxml";
+        updateContenidoAnchorPane(rutaDefectoInicio);
+
+        //agregar diseño a los botones
+
+        design.getDesignButton(bInicio,0);
+        design.getDesignButton(bPacientes,0);
+        design.getDesignButton(bCitas,0);
+        design.getDesignButton(bReportes,0);
+        design.getDesignButton(bUsuarioPersonal,0);
+        design.getDesignButton(bConsultasMedicas,0);
+        design.getDesignButton(bInventario,0);
+        design.getDesignButton(bPagoFacturacion,0);
+        design.getDesignButton(bConfiguracion,0);
+        design.getDesignButton(bCerraSesion,0);
+
+
+
+    }
+//LLAMADO DE DATABASE
+
+
+    //LLAMADO IMAGEN
+    public void loadImage(){
+        //llamar metodo DataBase
+        dirImage=getDataBase(dirImage);
+
+
+        if (Objects.equals(dirImage, "")) dirImage="/resource/img/user_unknown.jpg";
+
+
+        ivImageMenu.setImage(new Image(getClass().getResource(dirImage).toExternalForm()));
+
+
+    }
+
 
 //LLAMADO A FXML
 
-    public void cargarFXML(String cadena){//cargar el fxml
+    public void cargarFXML(String cadena){
+        //cargar el fxml
         //usare un switch para distribuir
         switch (cadena) {
             case "Inicio/DashBoard":
@@ -252,6 +289,10 @@ public class panelControl {
                 break;
 
             // Usuarios / Personal
+            case "Personal general":
+                System.out.println("Acción: Personal general");
+                //updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml");
+                break;
             case "Médicos y asistentes":
                 System.out.println("Acción: Administrar médicos y asistentes");
                 updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml");
@@ -448,7 +489,7 @@ public class panelControl {
     @FXML
     public void actionUsuarioPersonal() {
         design.getDesignButton(bUsuarioPersonal,1);
-        cadenaSubMenu = new String[]{"Médicos y asistentes", "Roles y permisos"};
+        cadenaSubMenu = new String[]{"Personal general","Médicos y asistentes", "Roles y permisos"};
         vbSubMenu.getChildren().clear();
         imprimirSubMenu(cadenaSubMenu);
     }
@@ -475,6 +516,50 @@ public class panelControl {
 
 
 
+
+    //ajustes dinamicos menuIzquierda
+
+    public void ajustedMenuIzquierdaItems(){
+        //estructura boton
+
+
+
+
+    }
+
+    //ajustes dinamicos subMenu
+    public void ajustesSubMenu(){
+
+    }
+
+
+    //AJUSTES DISENO
+    public void ajustesDiseno(){
+
+        imageDesign();
+        labelDesign();
+
+    }
+
+    //Diseño image
+    public void imageDesign(){
+
+    }
+    //Diseño labe
+    public void labelDesign(){
+        design.getDesignLabel(lbNameUser,0);
+    }
+
+
+
+
+
+
+    public void ajustesDinamicos(){
+        ajustesMenus();
+
+
+}
     //MENU GENERAL
     //-----------------------------------------------------------
     public void ajustesMenus(){
@@ -510,6 +595,12 @@ public class panelControl {
         vbSubMenu.setMinWidth(dimensionSubMenuIzquierdo);
         vbSubMenu.setMinHeight(dimensionPantalla.getHeight());
 
+        //Ajuste Dinamico Imagen
+        double anchoMenuCentrado= vbMenuIzquierdo.getPrefWidth()/2;
+        double anchoImagenCentrado=ivImageMenu.getFitWidth()/2;
+        double centralizadoImagen= anchoMenuCentrado-anchoImagenCentrado;
+        ivImageMenu.setTranslateX(centralizadoImagen);
+
 
 
         //posicionar subMenu
@@ -517,32 +608,28 @@ public class panelControl {
         double posicionSubMenu= puntoInicialSubMenu+dimensionMenuIzquierdo;
         vbSubMenu.setTranslateX(posicionSubMenu);
 
-    }
-    //ajustes dinamicos menuIzquierda
+        //ajustes dinamicos label User
 
-    public void ajustedMenuIzquierdaItems(){
-        //estructura boton
-
-
-
+       // double anchoLabelUserCentralizado=lbNameUser.getPrefWidth()/2;
+       // double centralizadoLabel= anchoMenuCentrado-anchoLabelUserCentralizado;
+        lbNameUser.setTranslateX(centralizadoImagen);
 
     }
-
-    //ajustes dinamicos subMenu
-    public void ajustesSubMenu(){
-
-    }
-
-
-
-public void ajustesDinamicos(){
-        ajustesMenus();
-
-}
 //----------------------------------------------------------------------
 
+//Cargar imagen
 
 
 
+    //LLAMAR DATABASE
+    public String getDataBase(String typeData){
+
+        //llamar a la Base de datos para proporcionar direccion
+        String getData="";
+
+        return  getData;
+    }
+
+    public void setDataBase(String dirImage){}
 
 }

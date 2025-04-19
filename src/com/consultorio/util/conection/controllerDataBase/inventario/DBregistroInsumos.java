@@ -1,4 +1,4 @@
-package com.consultorio.controlador.inventario;
+package com.consultorio.util.conection.controllerDataBase.inventario;
 
-public class registroInsumos {
+public class DBregistroInsumos {
 }

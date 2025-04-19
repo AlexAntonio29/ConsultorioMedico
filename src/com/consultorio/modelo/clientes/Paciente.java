@@ -1,4 +1,4 @@
-package com.consultorio.modelo;
+package com.consultorio.modelo.clientes;
 
 import java.util.Date;
 
@@ -10,6 +10,7 @@ public class Paciente {
     Date fnacimiento;
     String direccion;
     String telefono;
+
 
     public String getId() {
         return id;

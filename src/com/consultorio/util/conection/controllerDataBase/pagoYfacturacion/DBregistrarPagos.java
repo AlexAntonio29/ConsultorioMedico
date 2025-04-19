@@ -1,4 +1,4 @@
-package com.consultorio.controlador.pagoYfacturacion;
+package com.consultorio.util.conection.controllerDataBase.pagoYfacturacion;
 
-public class registrarPagos {
+public class DBregistrarPagos {
 }

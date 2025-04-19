@@ -1,4 +1,4 @@
-package com.consultorio.controlador.usuarioPersonal;
+package com.consultorio.util.conection.controllerDataBase.usuarioPersonal;
 
-public class medicosAsistentes {
+public class DBmedicosAsistentes {
 }

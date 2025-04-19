@@ -1,14 +1,13 @@
-package com.consultorio.controlador.configuracion;
+package com.consultorio.util.conection.controllerDataBase.configuracion;
 
 import javafx.fxml.FXML;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Objects;
 
 
-public class perfil {
+public class DBperfil {
 
     String dirImage="";
 

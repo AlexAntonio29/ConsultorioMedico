@@ -1,12 +1,13 @@
-package com.consultorio.modelo;
+package com.consultorio.modelo.estructura;
 
 public class Consultorio {
 
     String nConsultorio;
     String especialidad;
     boolean disponibilidad;
-    String piso;
     String edificio;
+    String piso;
+
 
 
     public String getnConsultorio() {
