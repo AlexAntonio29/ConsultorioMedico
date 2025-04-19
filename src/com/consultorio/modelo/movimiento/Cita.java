@@ -3,16 +3,16 @@ package com.consultorio.modelo;
 import java.time.LocalTime;
 import java.util.Date;
 
-public class Citas {
+public class Cita {
 
-    Doctor idDoctor;
+    Usuario idUsuario;
     Paciente idPaciente;
     Date fecha;
     LocalTime hora;
     Consultorio nConsultorio;
 
-    public Doctor getIdDoctor() {
-        return idDoctor;
+    public Usuario getIdDoctor() {
+        return idUsuario;
     }
 
     public Paciente getIdPaciente() {
@@ -31,8 +31,8 @@ public class Citas {
         return nConsultorio;
     }
 
-    public void setIdDoctor(Doctor idDoctor) {
-        this.idDoctor = idDoctor;
+    public void setIdDoctor(Usuario idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public void setIdPaciente(Paciente idPaciente) {
