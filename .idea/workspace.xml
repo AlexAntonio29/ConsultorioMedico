@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/stock/Stock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Inventario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/insumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/insumo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/atencion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Consulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/Consulta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/PrescripcionElectronica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/PrescripcionElectronica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/conectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsultorioMedico.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ConsultorioMedico.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="C:\Program Files\apache-maven-3.9.9" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -58,10 +58,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -108,7 +108,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="40558000" />
+      <workItem from="1744921076130" duration="47527000" />
     </task>
     <servers />
   </component>
@@ -161,5 +161,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.reportes.exportarDatos"
+            prefHeight="1080.0" prefWidth="1920.0"
+            style="-fx-background-color: #F0F3F4;">
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0"
+              AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="50.0"
+              AnchorPane.rightAnchor="50.0" AnchorPane.bottomAnchor="30.0">
+            <children>
+
+                <Label text="Exportar Datos del Sistema"
+                       style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #34495E;" />
+
+                <Label text="Selecciona el tipo de datos a exportar:" />
+                <ComboBox fx:id="comboTipoDatos">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Pacientes" />
+                            <String fx:value="Consultas" />
+                            <String fx:value="Pagos" />
+                            <String fx:value="Prescripciones" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Button text="Exportar a Excel"
+                        fx:id="btnExportar"
+                        style="-fx-background-color: #9B59B6; -fx-text-fill: white; -fx-font-size: 16px;" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

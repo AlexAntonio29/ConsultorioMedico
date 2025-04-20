@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.configuracion.notificacionAlerta"
+            prefWidth="1920.0" prefHeight="1080.0"
+            style="-fx-background-color: #FBFCFC;">
+
+    <children>
+        <VBox spacing="25" alignment="TOP_CENTER"
+              AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="100.0"
+              AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="50.0">
+            <children>
+
+                <Label text="Configuración de Notificaciones y Alertas"
+                       style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #34495E;" />
+
+                <HBox spacing="10">
+                    <Label text="Frecuencia de alertas:"/>
+                    <ComboBox fx:id="comboFrecuencia" prefWidth="250"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label text="Tipo de notificación:"/>
+                    <ComboBox fx:id="comboTipoNotificacion" prefWidth="250"/>
+                </HBox>
+
+                <CheckBox text="Activar alertas por correo"
+                          fx:id="chkCorreoActivo"/>
+
+                <CheckBox text="Activar alertas visuales"
+                          fx:id="chkVisualActivo"/>
+
+                <Button text="Guardar Configuración"
+                        fx:id="btnGuardarNotificacion"
+                        style="-fx-background-color: #E67E22; -fx-text-fill: white;" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

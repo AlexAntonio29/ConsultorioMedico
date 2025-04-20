@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.configuracion.preferenciasSistema"
+            prefWidth="1920.0" prefHeight="1080.0"
+            style="-fx-background-color: #FAFAFA;">
+
+    <children>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="100.0"
+              AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="50.0">
+            <children>
+
+                <Label text="Preferencias del Sistema"
+                       style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+
+                <CheckBox text="Mostrar notificaciones al iniciar"
+                          fx:id="chkNotificacionesInicio"/>
+
+                <CheckBox text="Activar modo oscuro"
+                          fx:id="chkModoOscuro"/>
+
+                <HBox spacing="10">
+                    <Label text="Zona horaria predeterminada:"/>
+                    <ComboBox fx:id="comboZonaHoraria" prefWidth="300"/>
+                </HBox>
+
+                <Button text="Aplicar Cambios"
+                        fx:id="btnAplicarPreferencias"
+                        style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
