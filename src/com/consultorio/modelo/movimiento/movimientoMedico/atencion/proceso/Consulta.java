@@ -1,8 +1,4 @@
-package com.consultorio.modelo.movimiento.atencion.proceso;
-
-import com.consultorio.modelo.clientes.Paciente;
-
-import java.util.Date;
+package com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso;
 
 public class Consulta {
 

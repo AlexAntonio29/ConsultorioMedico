@@ -3,7 +3,7 @@ package com.consultorio.modelo.clientes;
 import java.util.Date;
 
 public class Paciente {
-    String id;
+
     String nombre;
     String aPterno;
     String aMaterno;
@@ -12,9 +12,6 @@ public class Paciente {
     String telefono;
 
 
-    public String getId() {
-        return id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -40,9 +37,7 @@ public class Paciente {
         return telefono;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

@@ -5,55 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/atencion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Consulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/PrescripcionElectronica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Registro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/stock/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/perfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Consultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Consultorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Inventario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Medicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/Medicamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/insumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/inventario/insumo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/Consulta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/atencion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Consulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/Consulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/PrescripcionElectronica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/PrescripcionElectronica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/atencion/proceso/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/proceso/Registro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/DBinicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/DBinicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/DBpanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/DBpanelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/cerrarSesion/DBcerrarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/cerrarSesion/DBcerrarSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/cerrarSesion/DBsalirSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/cerrarSesion/DBsalirSistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBagendaDia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBagendaDia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBagendarNuevaCita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBagendarNuevaCita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBcitasPasadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBcitasPasadas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBcitasPendientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/citas/DBcitasPendientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBdatosConsultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBdatosConsultorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBnotificacionAlerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBnotificacionAlerta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBperfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBperfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBpreferenciasSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/configuracion/DBpreferenciasSistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBiniciarConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBiniciarConsulta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBprescripcionElectronica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBprescripcionElectronica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBregistrarSintomasDiagnosticoTratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/consultasMedicas/DBregistrarSintomasDiagnosticoTratamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBcontrolStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBcontrolStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBmedicamentoDisponibles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBmedicamentoDisponibles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBregistroInsumos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/inventario/DBregistroInsumos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBbuscarEditarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBbuscarEditarPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBhistorialClinico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBhistorialClinico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBfacturacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBfacturacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBhistorialPagosPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBhistorialPagosPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBregistrarPagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pagoYfacturacion/DBregistrarPagos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBexportarDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBexportarDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBreportesAtencionMedica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBreportesAtencionMedica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBreportesFinancieros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/reportes/DBreportesFinancieros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/usuarioPersonal/DBmedicosAsistentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/usuarioPersonal/DBmedicosAsistentes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/usuarioPersonal/DBrolesPermisos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/usuarioPersonal/DBrolesPermisos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/perfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/perfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/conectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,14 +52,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "alexis",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "U:/Documents/GitHub/Cuentas/AlexAntonio29/ConsultorioMedico/ConsultorioMedico/src/com/consultorio/util/conection/controllerDataBase",
+    "last_opened_file_path": "U:/Documents/GitHub/Cuentas/AlexAntonio29/ConsultorioMedico/conector/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
@@ -144,7 +108,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="33949000" />
+      <workItem from="1744921076130" duration="40558000" />
     </task>
     <servers />
   </component>

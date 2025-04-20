@@ -1,19 +1,22 @@
-package com.consultorio.modelo.movimiento.atencion;
+package com.consultorio.modelo.movimiento.movimientoMedico.atencion;
 
 import com.consultorio.modelo.clientes.Paciente;
-import com.consultorio.modelo.movimiento.atencion.proceso.Consulta;
-import com.consultorio.modelo.movimiento.atencion.proceso.PrescripcionElectronica;
-import com.consultorio.modelo.movimiento.atencion.proceso.Registro;
+import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.Consulta;
+import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.PrescripcionElectronica;
+import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.Registro;
+import com.consultorio.modelo.personal.Empleado;
+import com.consultorio.modelo.personal.Usuario;
 
 import java.util.Date;
 
 public class atencion {
     public int id;
+    public Usuario medico;//quien es usuario
     public Paciente paciente;
-    Consulta consulta;
+    public Consulta consulta;
     public Registro registro;
     public PrescripcionElectronica prescripcion;
-    Date fIngreso;
+    public Date fIngreso;
 
     public atencion(){}
 

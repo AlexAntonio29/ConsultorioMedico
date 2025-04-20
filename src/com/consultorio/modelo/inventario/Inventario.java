@@ -2,19 +2,17 @@ package com.consultorio.modelo.inventario;
 
 public class Inventario {
 
-    String id;
+    String codigoBarra;
     String nombre;
     String descripcion;
     String estado;
     String cantidad;
-    String codigoBarra;
+
     String presentacion;
 
     public Inventario(){}
 
-    public String getId() {
-        return id;
-    }
+
 
     public String getNombre() {
         return nombre;

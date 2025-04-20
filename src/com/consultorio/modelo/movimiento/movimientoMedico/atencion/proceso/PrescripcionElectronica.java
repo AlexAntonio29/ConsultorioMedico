@@ -1,4 +1,4 @@
-package com.consultorio.modelo.movimiento.atencion.proceso;
+package com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso;
 
 import com.consultorio.modelo.inventario.Medicamento;
 

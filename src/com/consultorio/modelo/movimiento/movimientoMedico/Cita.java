@@ -1,4 +1,4 @@
-package com.consultorio.modelo.movimiento;
+package com.consultorio.modelo.movimiento.movimientoMedico;
 
 import com.consultorio.modelo.estructura.Consultorio;
 import com.consultorio.modelo.personal.Empleado;

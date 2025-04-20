@@ -2,7 +2,7 @@ package com.consultorio.modelo.personal;
 
 import java.util.Date;
 
-public class Empleado {
+public class Empleado{
     String id;
     String nombre;
     String aPaterno;

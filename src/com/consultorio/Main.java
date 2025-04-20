@@ -1,5 +1,6 @@
 package com.consultorio;
 
+import com.consultorio.util.conection.ConectionDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +11,16 @@ import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 import javafx.stage.StageStyle;
 
+
 public class Main extends Application  {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage)
+
+
+            throws Exception {
+
+        ConectionDB conectionDB = new ConectionDB();
 
 
         //obtener la dimension de la pantalla cualquiera
