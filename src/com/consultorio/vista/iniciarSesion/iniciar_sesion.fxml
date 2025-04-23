@@ -4,19 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.iniciarSesion.iniciarSesion">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.iniciarSesion.IniciarSesion">
 
-    <VBox alignment="TOP_CENTER" style="-fx-background-color: #000b4b; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+    <VBox alignment="TOP_CENTER" style="-fx-background-color: #000b4b; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Iniciar Sesion" />
-        <TextField promptText="Ingrese Usuario" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
+        <TextField focusTraversable="false" promptText="Ingrese Usuario" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
          <VBox.margin>
             <Insets top="80.0" />
          </VBox.margin></TextField>
-        <TextField promptText="Ingrese Password" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
+        <TextField focusTraversable="false" promptText="Ingrese Password" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
             <VBox.margin>
                 <Insets top="20.0" />
             </VBox.margin></TextField>
-        <Button  fx:id="btnIngresar" text="Ingresar"  style="-fx-background-color:#ffff ; -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #404040; -fx-background-radius: 8; ">
+        <Button  fx:id="btnIngresar" onAction="#actionIniciarSesion" text="Ingresar"  style="-fx-background-color:#ffff ; -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #404040; -fx-background-radius: 8; ">
             <VBox.margin>
                 <Insets top="20.0" />
             </VBox.margin></Button>

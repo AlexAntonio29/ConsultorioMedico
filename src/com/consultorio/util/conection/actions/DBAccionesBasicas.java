@@ -1,5 +1,6 @@
 package com.consultorio.util.conection.actions;
 
+import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.errores.VentanaErrores;
 
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class DBAccionesBasicas {
     public boolean verificarTablaVacia(String nombreTabla){
 
 
-
+      //  String sql= "SELECT * FROM "+nombreTabla;
         String sql= "SELECT COUNT(*) FROM " +nombreTabla;
 
         try {
@@ -38,9 +39,14 @@ public class DBAccionesBasicas {
             // throw new RuntimeException(e);
            // ventanaErrores.ventanaErrorClasico("Error en SQL "+ e.getMessage());
             e.printStackTrace();
-            return false;//si da erro no esta vacia
+            return false;//si da error no esta vacia
         }
 
     }
+
+
+
+
+
 
 }

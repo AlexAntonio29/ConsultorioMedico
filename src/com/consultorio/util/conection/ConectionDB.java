@@ -11,21 +11,14 @@ public class ConectionDB {
 
     public ConectionDB(){
         //conexion
-
-
         crearBD();
-
-
-
-
-
     }
 
     public static Connection getConn() {
 
         if (conn == null) {
             try {
-                conn = DriverManager.getConnection("jdbc:sqlite:mi_base.db");
+                conn = DriverManager.getConnection("jdbc:sqlite:centro_medico.db");
                 System.out.println("Conexion establecida");
             } catch (Exception e) {
                 e.printStackTrace();
