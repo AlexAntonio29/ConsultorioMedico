@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/clientes/DBPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/Consultorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/Edificio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/inventario/Inventario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/inventario/Medicamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/inventario/insumo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/modelo/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/Cita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/atencion/atencion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/atencion/proceso/Consulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/atencion/proceso/PrescripcionElectronica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/atencion/proceso/Registro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/stock/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/Empleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/iniciarSesion/iniciarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/iniciarSesion/IniciarSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/actions/DBAccionesBasicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/actions/DBAccionesBasicas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/iniciarSesion/iniciarSesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/iniciarSesion/iniciarSesion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +105,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="100770000" />
+      <workItem from="1744921076130" duration="101478000" />
     </task>
     <servers />
   </component>

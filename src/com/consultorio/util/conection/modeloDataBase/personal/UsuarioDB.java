@@ -50,7 +50,7 @@ public class UsuarioDB {
             stmt.setString(1, nombreUsuario);
             ResultSet rs = stmt.executeQuery();//ejecutar consulta
             if (rs.next()) {
-                
+
 
 
             }

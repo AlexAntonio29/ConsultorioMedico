@@ -4,15 +4,15 @@ public class Usuario {
     String id;
     String usuario;
     String password;
-    String idEmpleado;//llave forananeo
+    Empleado empleado;//llave forananeo
 
     public Usuario() {}
 
-    public Usuario(String id, String usuario, String password, String idEmpleado) {
+    public Usuario(String id, String usuario, String password, Empleado empleado) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
-        this.idEmpleado = idEmpleado;
+        this.empleado = empleado;
     }
 
     public String getId() {
@@ -25,8 +25,8 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
-    public String getIdEmpleado() {
-        return idEmpleado;
+    public Empleado getIdEmpleado() {
+        return empleado;
     }
 
     public void setId(String id) {
@@ -39,7 +39,7 @@ public class Usuario {
         this.password = password;
     }
 
-    public void setIdEmpleado(String idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setIdEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }
