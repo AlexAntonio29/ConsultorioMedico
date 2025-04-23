@@ -7,6 +7,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 
+import java.sql.Connection;
+
 
 public class Inicio {
 
@@ -16,9 +18,18 @@ public class Inicio {
     private GridPane grid;
     @FXML
     private AnchorPane anchorPane;
+    private Connection connection;
+
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
+
     public Inicio(){
 
     }
+
+
 
     //ajustarPosicion
 

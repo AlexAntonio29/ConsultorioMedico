@@ -5,9 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
-public class controlStock {
+public class ControlStock {
 
     //checkBox
     @FXML
@@ -22,6 +23,17 @@ public class controlStock {
             private Button btnAgregarStock;
     @FXML
             private Button btnRetirarStock;
+
+
+    //Conector para base de datos
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
+
 
 
     ArrayList<String> lista = new ArrayList<>();

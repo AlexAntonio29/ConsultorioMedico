@@ -1,4 +1,13 @@
 package com.consultorio.controlador.citas;
 
-public class citasPasadas {
+import java.sql.Connection;
+
+public class CitasPasadas {
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
 }

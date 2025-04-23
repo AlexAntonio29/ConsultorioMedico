@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane
+            style="-fx-background-color: #919df1;
+            -fx-border-radius: 10; -fx-background-radius:
+            8;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.consultorio.controlador.registrar.RegistrarCentroMedico">
+
+    <children>
+        <ScrollPane  fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <HBox alignment="CENTER">
+                    <VBox alignment="TOP_CENTER" maxWidth="900" prefWidth="700" spacing="15" style="-fx-background-color: #000b4b; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8;">
+                        <padding>
+                            <Insets bottom="40" left="80" right="80" top="40" />
+                        </padding>
+
+                        <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Registrar Centro Médico" />
+
+                        <TextField fx:id="txtNombre" promptText="Nombre del centro médico" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                        <TextField fx:id="txtDireccion" promptText="Dirección" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                        <TextField fx:id="txtTelefono" promptText="Teléfono" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+
+                        <DatePicker fx:id="dpFechaRegistro" promptText="Fecha de Registro" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Propietario:" />
+                            <ChoiceBox fx:id="cbPropietario" prefWidth="200" style="-fx-font-size: 15px;" />
+                        </HBox>
+
+                        <HBox alignment="CENTER">
+                            <Button fx:id="btnRegresar" maxWidth="200" style="-fx-background-color: #c50000; -fx-border-color: #ffffff; -fx-font-size: 15px; -fx-font-weight: bold; -fx-border-radius: 8; -fx-text-fill: white;" text="Regresar">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin></Button>
+
+                            <Button fx:id="btnRegistrarCentroMedico" onAction="#actionBtnRegistrarCentroMedico" maxWidth="200" style="-fx-background-color: #101c8a; -fx-border-color: #ffffff; -fx-font-size: 15px; -fx-font-weight: bold; -fx-border-radius: 8; -fx-text-fill: white;" text="Registrar" />
+
+                        </HBox>
+
+
+                    </VBox>
+                </HBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

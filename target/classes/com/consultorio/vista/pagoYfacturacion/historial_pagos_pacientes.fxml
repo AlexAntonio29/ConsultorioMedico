@@ -5,7 +5,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.consultorio.controlador.pagoYfacturacion.historialPagosPaciente"
+            fx:controller="com.consultorio.controlador.pagoYfacturacion.HistorialPagosPaciente"
             prefHeight="1080.0" prefWidth="1920.0"
             style="-fx-background-color: #F8F9FA;">
 

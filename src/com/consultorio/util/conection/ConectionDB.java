@@ -7,8 +7,11 @@ import java.sql.Statement;
 //aqui se conectaria la BASE DE DATOS PARA VER SI CONECTA CON EL SOFTWARE
 public class ConectionDB {
 
+    private static Connection conn;
+
     public ConectionDB(){
         //conexion
+
 
         crearBD();
 
@@ -18,7 +21,18 @@ public class ConectionDB {
 
     }
 
+    public static Connection getConn() {
 
+        if (conn == null) {
+            try {
+                conn = DriverManager.getConnection("jdbc:sqlite:mi_base.db");
+                System.out.println("Conexion establecida");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return conn;
+    }
 
     public void crearBD(){
         String nombreBD = "centro_medico.db";
@@ -40,6 +54,7 @@ public class ConectionDB {
                     System.out.println("La base de datos no existía. Se ha creado automáticamente.");
                 }
 
+
                 // Crear tablas si no existen
                 String sql = "CREATE TABLE IF NOT EXISTS edificio ( "
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -48,6 +63,15 @@ public class ConectionDB {
                         + "direccion TEXT, "
                         + "numeroPisos TEXT "
                         + "); "
+                        + "CREATE TABLE IF NOT EXISTS centro_medico ("
+                        + "id INTEGER PRIMARY KEY CHECK (id = 1),"
+                        + "nombre TEXT NOT NULL,"
+                        + "direccion TEXT NOT NULL,"
+                        + "telefono TEXT UNIQUE NOT NULL,"
+                        + "fecha_registro DATE DEFAULT CURRENT_DATE,"
+                        + " id_propietario INT,"
+                        + "FOREIGN KEY (id_propietario) REFERENCES usuario(id) ON DELETE CASCADE ON UPDATE CASCADE"
+                        + ");"
                         + "CREATE TABLE IF NOT EXISTS empleado ( "
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "nombre TEXT, "
@@ -61,6 +85,8 @@ public class ConectionDB {
                         + "email TEXT NOT NULL UNIQUE, "
                         + "fecha_ingreso DATE, "
                         + "foto TEXT "
+                        + "sexo TEXT, "
+                        + "edad INTEGER "
                         + "); "
                         + "CREATE TABLE IF NOT EXISTS usuario ( "
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -77,6 +103,9 @@ public class ConectionDB {
                         + "fecha_nacimiento DATE, "
                         + "direccion TEXT, "
                         + "telefono TEXT "
+                        + "sexo TEXT, "
+                        + "edad INTEGER, "
+                        + "email TEXT "
                         + "); "
                         + "CREATE TABLE IF NOT EXISTS inventario_insumos ( "
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -137,7 +166,24 @@ public class ConectionDB {
                         + "FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE ON UPDATE CASCADE, "
                         + "FOREIGN KEY (id_paciente) REFERENCES pacientes(id) ON DELETE CASCADE ON UPDATE CASCADE, "
                         + "FOREIGN KEY (id_medicamento) REFERENCES inventario_medicamento(id) ON DELETE CASCADE ON UPDATE CASCADE "
+                        + "); "
+                        + "CREATE TABLE IF NOT EXISTS registro_paciente ( "
+                        + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "id_usuario INTEGER, "
+                        + "id_paciente INTEGER, "
+                        + "fecha_registro DATE, "
+                        + "FOREIGN KEY (id_paciente) REFERENCES pacientes(id) ON DELETE CASCADE ON UPDATE CASCADE, "
+                        + "FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE ON UPDATE CASCADE "
+                        + "); "
+                        + "CREATE TABLE IF NOT EXISTS registro_empleado ( "
+                        + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "id_usuario INTEGER, "
+                        + "id_empleado INTEGER, "
+                        + "fecha_registro DATE, "
+                        + "FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE ON UPDATE CASCADE, "
+                        + "FOREIGN KEY (id_empleado) REFERENCES empleado(id) ON DELETE CASCADE ON UPDATE CASCADE "
                         + "); ";
+
 
 
                 stmt.executeUpdate(sql);

@@ -1,45 +1,29 @@
 package com.consultorio.modelo.personal;
 
+import com.consultorio.modelo.modelo.Persona;
+
 import java.util.Date;
 
-public class Empleado{
-    String id;
-    String nombre;
-    String aPaterno;
-    String aMaterno;
-    Date fnacimiento;
+public class Empleado extends Persona{
+
     String ocupacion;
     String especialidad;
-    String direccion;
-    String telefono;
-    String email;
-    String foto;
+    Date fecha_ingreso;
+
 
     public Empleado(){
 
     }
 
-
-    public String getId() {
-        return id;
+    public Empleado(String id,String curp, String nombre, String aPaterno
+            , String aMaterno, Date fnacimiento, String direccion , String telefono , String email
+            , String foto,String ocupacion, String especialidad){
+        super(id, curp, nombre, aPaterno, aMaterno, fnacimiento, direccion, telefono, email, foto);
+        this.ocupacion=ocupacion;
+        this.especialidad=especialidad;
     }
 
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getaPaterno() {
-        return aPaterno;
-    }
-
-    public String getaMaterno() {
-        return aMaterno;
-    }
-
-    public Date getFnacimiento() {
-        return fnacimiento;
-    }
 
     public String getOcupacion() {
         return ocupacion;
@@ -48,41 +32,8 @@ public class Empleado{
     public String getEspecialidad() {
         return especialidad;
     }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void  setId(String id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setaPaterno(String aPaterno) {
-        this.aPaterno = aPaterno;
-    }
-
-    public void setaMaterno(String aMaterno) {
-        this.aMaterno = aMaterno;
-    }
-
-    public void setFnacimiento(Date fnacimiento) {
-        this.fnacimiento = fnacimiento;
+    public Date getFecha_ingreso() {
+        return fecha_ingreso;
     }
 
     public void setOcupacion(String especialidad) {
@@ -93,20 +44,9 @@ public class Empleado{
         this.especialidad = especialidad;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void  setFecha_ingreso(Date fecha_ingreso) {
+        this.fecha_ingreso = fecha_ingreso;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
 }
 

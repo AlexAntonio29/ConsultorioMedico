@@ -5,15 +5,26 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.sql.Connection;
 import java.util.Objects;
 
 
-public class perfil {
+public class Perfil {
 
     String dirImage="";
 
     @FXML
     ImageView ivFoto;
+
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
+
+
 
     @FXML
     public void initialize() {

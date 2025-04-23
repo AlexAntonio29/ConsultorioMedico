@@ -1,4 +1,14 @@
 package com.consultorio.controlador.consultasMedicas;
 
-public class iniciarConsulta {
+import java.sql.Connection;
+
+public class IniciarConsulta {
+
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
 }

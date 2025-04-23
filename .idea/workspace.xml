@@ -5,11 +5,142 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/iniciarSesion/iniciarSesion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/modelo/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/actions/DBAccionesBasicas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/iniciarSesion/DBIniciarSesion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/registrar/DBRegistrarAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/registrar/DBRegistrarCentroMedico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_admin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_centro_medico.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultorioMedico.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ConsultorioMedico.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/cerrarSesion/CerrarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/cerrarSesion/CerrarSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/cerrarSesion/SalirSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/cerrarSesion/SalirSistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendaDia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendaDia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/CitasPasadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/CitasPasadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/CitasPendientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/CitasPendientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/DatosConsultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/DatosConsultorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/NotificacionAlerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/NotificacionAlerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/Perfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/PreferenciasSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracion/PreferenciasSistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/IniciarConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/IniciarConsulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/PrescripcionElectronica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/PrescripcionElectronica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/RegistrarSintomasDiagnosticoTratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/consultasMedicas/RegistrarSintomasDiagnosticoTratamiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/ControlStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/ControlStock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/MedicamentoDisponibles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/MedicamentoDisponibles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/RegistroInsumos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/inventario/RegistroInsumos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/HistorialClinico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/HistorialClinico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/Facturacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/Facturacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/HistorialPagosPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/HistorialPagosPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/RegistrarPagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pagoYfacturacion/RegistrarPagos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ExportarDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ExportarDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ReportesAtencionMedica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ReportesAtencionMedica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ReportesFinancieros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/reportes/ReportesFinancieros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/MedicosAsistentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/MedicosAsistentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/RolesPermisos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/RolesPermisos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/errores/VentanaErrores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/errores/VentanaErrores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agenda_dia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agenda_dia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/citas_pasadas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/citas_pasadas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/citas_pendientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/citas_pendientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/datos_consultorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/datos_consultorio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/notificaciones_alerta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/notificaciones_alerta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/perfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/perfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/preferencias_sistema.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracion/preferencias_sistema.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/iniciar_consulta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/iniciar_consulta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/prescripcion_electronica.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/prescripcion_electronica.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/registrar_diagnostico_tratamiento_sintomas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/consultasMedicas/registrar_diagnostico_tratamiento_sintomas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/control_stock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/control_stock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/medicamentos_disponibles.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/medicamentos_disponibles.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/registro_insumos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/inventario/registro_insumos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/historial_clinico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/historial_clinico.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/facturacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/facturacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/historial_pagos_pacientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/historial_pagos_pacientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/registrar_pagos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pagoYfacturacion/registrar_pagos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/exportar_datos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/exportar_datos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/reportes_atencion_medica.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/reportes_atencion_medica.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/reportes_financieros.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/reportes/reportes_financieros.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/personal_general.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/personal_general.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/Inicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/Inicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/cerrarSesion/cerrarSesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/cerrarSesion/cerrarSesion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/cerrarSesion/salirSistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/cerrarSesion/salirSistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/agendaDia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/agendaDia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/agendarNuevaCita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/agendarNuevaCita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/citasPasadas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/citasPasadas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/citasPendientes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/citas/citasPendientes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/datosConsultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/datosConsultorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/notificacionAlerta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/notificacionAlerta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/perfil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/perfil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/preferenciasSistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracion/preferenciasSistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/iniciarConsulta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/iniciarConsulta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/prescripcionElectronica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/prescripcionElectronica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/registrarSintomasDiagnosticoTratamiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/consultasMedicas/registrarSintomasDiagnosticoTratamiento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/controlStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/controlStock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/medicamentoDisponibles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/medicamentoDisponibles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/registroInsumos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/inventario/registroInsumos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/buscarEditarPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/buscarEditarPaciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/historialClinico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/historialClinico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/facturacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/facturacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/historialPagosPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/historialPagosPaciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/registrarPagos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pagoYfacturacion/registrarPagos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/exportarDatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/exportarDatos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/reportesAtencionMedica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/reportesAtencionMedica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/reportesFinancieros.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/reportes/reportesFinancieros.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/medicosAsistentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/medicosAsistentes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/rolesPermisos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/rolesPermisos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/clientes/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/clientes/Paciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Empleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/controllerDataBase/pacientes/DBregistrarNuevoPaciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agenda_dia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agenda_dia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agendar_nueva_cita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agendar_nueva_cita.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/citas_pasadas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/citas_pasadas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/citas_pendientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/citas_pendientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/datos_consultorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/datos_consultorio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/notificaciones_alerta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/notificaciones_alerta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/perfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/perfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/preferencias_sistema.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracion/preferencias_sistema.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/iniciar_consulta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/iniciar_consulta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/prescripcion_electronica.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/prescripcion_electronica.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/registrar_diagnostico_tratamiento_sintomas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/consultasMedicas/registrar_diagnostico_tratamiento_sintomas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/control_stock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/control_stock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/medicamentos_disponibles.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/medicamentos_disponibles.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/registro_insumos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/inventario/registro_insumos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/historial_clinico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/historial_clinico.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/facturacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/facturacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/historial_pagos_pacientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/historial_pagos_pacientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/registrar_pagos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pagoYfacturacion/registrar_pagos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/exportar_datos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/exportar_datos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/reportes_atencion_medica.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/reportes_atencion_medica.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/reportes_financieros.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/reportes/reportes_financieros.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/medicos_asistentes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,27 +175,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConsultorioMedico.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "alexis",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "U:/Documents/GitHub/Cuentas/AlexAntonio29/ConsultorioMedico/conector/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConsultorioMedico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;alexis&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;U:/Documents/GitHub/Cuentas/AlexAntonio29/ConsultorioMedico/conector/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="U:\Documents\GitHub\Cuentas\AlexAntonio29\ConsultorioMedico\ConsultorioMedico\src\com\consultorio\util\conection\controllerDataBase" />
@@ -108,7 +239,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="47527000" />
+      <workItem from="1744921076130" duration="95979000" />
     </task>
     <servers />
   </component>
@@ -130,34 +261,94 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>422</line>
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
+          <line>423</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java</url>
-          <line>29</line>
+          <line>40</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/inventario/controlStock.java</url>
-          <line>46</line>
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/inventario/ControlStock.java</url>
+          <line>58</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/inventario/controlStock.java</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/inventario/ControlStock.java</url>
+          <line>65</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>626</line>
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
+          <line>627</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/panelControl.java</url>
-          <line>387</line>
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
+          <line>388</line>
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
+          <line>541</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
+          <line>381</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -7,7 +7,7 @@
 <?import javafx.collections.FXCollections?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.consultorio.controlador.reportes.exportarDatos"
+            fx:controller="com.consultorio.controlador.reportes.ExportarDatos"
             prefHeight="1080.0" prefWidth="1920.0"
             style="-fx-background-color: #F0F3F4;">
 

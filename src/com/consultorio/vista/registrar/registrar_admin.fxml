@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.consultorio.controlador.registrar.RegistrarAdmin"
+            style=" -fx-border-radius: 10; -fx-background-radius: 8;">
+
+    <children>
+        <ScrollPane fitToHeight="true" fitToWidth="true"
+                    prefWidth="800" prefHeight="600"
+                    hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                    AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: rgb(0,11,75);" >
+
+                    <Label text="Registrar" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" />
+
+                    <HBox alignment="CENTER" spacing="40">
+
+                        <!-- Columna izquierda -->
+                        <VBox spacing="15" prefWidth="300" style="-fx-background-color: #233f9c; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8;">
+                            <padding>
+                                <Insets top="20" bottom="20" left="30" right="30"/>
+                            </padding>
+                            <TextField focusTraversable="false" promptText="Nombre" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Apellido Paterno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Apellido Materno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Ocupación" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Especialidad" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                        </VBox>
+
+                        <!-- Columna derecha -->
+                        <VBox spacing="15" prefWidth="300" style="-fx-background-color: #233f9c; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8;">
+                            <padding>
+                                <Insets top="20" bottom="20" left="30" right="30"/>
+                            </padding>
+                            <TextField focusTraversable="false" promptText="Dirección" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Teléfono" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField focusTraversable="false" promptText="Email" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <DatePicker focusTraversable="false" fx:id="dpFechaNacimiento" promptText="Fecha de Nacimiento" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Sexo:" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" />
+                                <ChoiceBox fx:id="cbSexo" prefWidth="150" style="-fx-font-size: 15px;">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Masculino" />
+                                            <String fx:value="Femenino" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </HBox>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Edad:" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" />
+                                <ChoiceBox fx:id="cbEdad" prefWidth="150" style="-fx-font-size: 15px;" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+
+                    <Button fx:id="btnIngresar" text="Ingresar"
+                            onAction="#actionRegistrar"
+                            style="-fx-background-color: #101c8a; -fx-border-color: #ffffff; -fx-font-size: 15px; -fx-font-weight: bold; -fx-border-radius: 8; -fx-text-fill: white;"
+                            maxWidth="200" />
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

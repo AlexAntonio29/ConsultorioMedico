@@ -1,8 +1,19 @@
 package com.consultorio.controlador.inventario;
 
-public class medicamentoDisponibles {
+import java.sql.Connection;
 
-    public medicamentoDisponibles() {}
+public class MedicamentoDisponibles {
+
+
+    //Conector para base de datos
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
+    public MedicamentoDisponibles() {}
 
 
 

@@ -1,4 +1,14 @@
 package com.consultorio.controlador.configuracion;
 
-public class notificacionAlerta {
+import java.sql.Connection;
+
+public class NotificacionAlerta {
+
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
 }

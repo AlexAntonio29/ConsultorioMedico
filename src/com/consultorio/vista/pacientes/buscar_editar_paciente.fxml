@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.consultorio.controlador.pacientes.buscarEditarPaciente"
+            fx:controller="com.consultorio.controlador.pacientes.BuscarEditarPaciente"
             prefHeight="400.0" prefWidth="600.0"
             style="-fx-background-color: #ECF0F1;">
     <children>
