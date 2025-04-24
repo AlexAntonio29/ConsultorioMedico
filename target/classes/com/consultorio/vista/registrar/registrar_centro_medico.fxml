@@ -26,11 +26,10 @@
                         <TextField fx:id="txtDireccion" promptText="Dirección" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
                         <TextField fx:id="txtTelefono" promptText="Teléfono" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
 
-                        <DatePicker fx:id="dpFechaRegistro" promptText="Fecha de Registro" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-
                         <HBox alignment="CENTER_LEFT" spacing="10">
                             <Label style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Propietario:" />
-                            <ChoiceBox fx:id="cbPropietario" prefWidth="200" style="-fx-font-size: 15px;" />
+                            <Label fx:id="lbPropietario" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #4bcac4;" text="" />
+
                         </HBox>
 
                         <HBox alignment="CENTER">

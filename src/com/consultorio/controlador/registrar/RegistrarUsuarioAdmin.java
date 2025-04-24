@@ -92,24 +92,24 @@ catch (Exception e){
     public void cargarCentroMedico() throws IOException {
        try {
            FXMLLoader loader = new FXMLLoader(RegistrarCentroMedico.class.getResource("/com/consultorio/vista/registrar/registrar_centro_medico.fxml"));
-           Parent root = loader.load();
-           stage.setScene(new Scene(root));
            RegistrarCentroMedico controlador= loader.getController();
-
            controlador.setConector(connection);
            controlador.setStage(stage);
            controlador.setUsuario(cargarUsuario(new Usuario()));
+           Parent root = loader.load();
+           stage.setScene(new Scene(root));
+
            stage.centerOnScreen();
-
-           stage.initStyle(StageStyle.UNDECORATED);
-           // stage.sizeToScene();
            stage.setTitle("Registro Centro Medico");
-           stage.setMaximized(true);
+           //stage.initStyle(StageStyle.UNDECORATED);
+           // stage.sizeToScene();
 
-           stage.show();
+           //stage.setMaximized(true);
+
+           //stage.show();
 
        }catch (Exception e){
-          // ventanaErrores.ventanaErrorClasico("probando");
+           ventanaErrores.ventanaErrorClasico("Error al cargar componentes");
        }
     }
     //cargar usuario

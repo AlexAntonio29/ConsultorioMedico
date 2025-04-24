@@ -78,6 +78,7 @@ public class RegistrarCentroMedico {
     }
 
     public void cargarLabelPropietario(){
+        System.out.println(usuario.getUsuario());
         lbPropietario.setText(usuario.getUsuario());
     }
 
