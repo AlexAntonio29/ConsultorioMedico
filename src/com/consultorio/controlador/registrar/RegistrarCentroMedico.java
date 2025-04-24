@@ -101,9 +101,12 @@ catch (Exception e){
     }
 
     public void registrarEmpleadoBD(){
+        System.out.println(usuario.getEmpleado());
 
     }
-    public void registrarUsuarioBD(){}
+    public void registrarUsuarioBD(){
+        System.out.println(usuario);
+    }
 
     public void registrarCentroMedicoBD(){}
 }

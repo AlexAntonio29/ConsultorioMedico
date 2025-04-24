@@ -26,7 +26,7 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
-    public Empleado getIdEmpleado() {
+    public Empleado getEmpleado() {
         return empleado;
     }
 
