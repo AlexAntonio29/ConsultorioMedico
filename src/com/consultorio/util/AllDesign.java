@@ -5,13 +5,13 @@ import javafx.scene.control.Label;
 //import java.awt.event.ActionEvent;
 
 
-public class designAll {
+public class AllDesign {
 
     String designWhite;
 
 
     int categoria;
-    public designAll(int categoria ){//aqui debe de llevar el nombre del tipo de diseño por ejemplo 2)dark,1)white,0)clasico
+    public AllDesign(int categoria ){//aqui debe de llevar el nombre del tipo de diseño por ejemplo 2)dark,1)white,0)clasico
         this.categoria = categoria;
     }
 

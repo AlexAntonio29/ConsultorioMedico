@@ -1,8 +1,8 @@
 package com.consultorio.util.conection.controllerDataBase;
 
 
-import com.consultorio.util.alertaConfirmacion;
-import com.consultorio.util.designAll;
+import com.consultorio.util.AlertaConfirmacion;
+import com.consultorio.util.AllDesign;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +35,7 @@ public class DBpanelControl {
 
     //Crear una confirmacion Alerta
 
-    alertaConfirmacion alerta = new alertaConfirmacion();
+    AlertaConfirmacion alerta = new AlertaConfirmacion();
 
     //dimension menu izquierda para cualquier cosa que necesite la dimension
     double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;
@@ -92,7 +92,7 @@ public class DBpanelControl {
             private Label lbNameUser;
 
     int categoria=0;
-    designAll design;
+    AllDesign design;
 
 
 
@@ -101,7 +101,7 @@ public class DBpanelControl {
     this.categoria=categoria;
     //aqui sera llamado desde la dataBase
 
-        design = new designAll(categoria);
+        design = new AllDesign(categoria);
     }
 
 

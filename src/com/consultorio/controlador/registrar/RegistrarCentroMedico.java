@@ -2,6 +2,7 @@ package com.consultorio.controlador.registrar;
 
 import com.consultorio.controlador.iniciarSesion.IniciarSesion;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.AlertaConfirmacion;
 import com.consultorio.util.errores.VentanaErrores;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import java.sql.Connection;
 import java.time.DateTimeException;
 
 public class RegistrarCentroMedico {
+    AlertaConfirmacion alertaConfirmacion=new AlertaConfirmacion();
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
     Rectangle2D dimensionPantalla= Screen.getPrimary().getBounds();
@@ -47,8 +49,10 @@ public class RegistrarCentroMedico {
 @FXML
     public void actionBtnRegistrarCentroMedico() throws IOException {
 try {
+    if (alertaConfirmacion.mostrarConfirmacion("Estas seguro de registrar este Propietario?")){
     registrarDatosBD();
     cargarIniciarSesion();
+    }
 
 }catch (NumberFormatException e){
     mensajeError="Error de Formato favor de corregirlo";
@@ -102,6 +106,8 @@ catch (Exception e){
 
     public void registrarEmpleadoBD(){
         System.out.println(usuario.getEmpleado());
+
+        //agregar Empleado a Base de datos
 
     }
     public void registrarUsuarioBD(){

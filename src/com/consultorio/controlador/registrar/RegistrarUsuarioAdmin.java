@@ -62,10 +62,10 @@ public class RegistrarUsuarioAdmin {
     public void actionBtnRegistrarCentroMedico() throws IOException {
 
 try{
-
-
+    if (verificarPassword(tfPassword.getText(),tfPasswordSeguridad.getText())) {
         cargarCentroMedico();
-    System.out.println("Cargando centro medico");
+    System.out.println("Cargando centro medico"); }
+    else ventanaErrores.ventanaErrorClasico("Contraseña no coincide");
 }
 catch (NumberFormatException e){
     mensajeError="Error de Formato favor de corregirlo";
@@ -117,14 +117,14 @@ catch (Exception e){
     public Usuario cargarUsuario(Usuario usuario) throws IOException {
 
         System.out.println(empleado);
-        if (verificarPassword(tfPassword.getText(),tfPasswordSeguridad.getText())) {
+
+            usuario.setUsuario("1");
             usuario.setUsuario(lbUsuario.getText());
             usuario.setPassword(tfPassword.getText());
             usuario.setEmpleado(empleado);
             return usuario;
-        }
-        else ventanaErrores.ventanaErrorClasico("Contraseña no coincide");
-    return null;
+
+
     }
 
     public boolean verificarPassword(String password, String passwordSeguridad){

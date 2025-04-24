@@ -180,7 +180,7 @@ TextField lbEmail;
        }
     }
     public Empleado actionRegistrarEmpleado(Empleado empleado) {
-           //id se genera solo
+            empleado.setId("1");
             empleado.setNombre(lbNombre.getText());
             empleado.setaPaterno(lbApaterno.getText());
             empleado.setaMaterno(lbAmaterno.getText());

@@ -69,8 +69,7 @@ public class EmpleadoDB extends Persona {
                 + "foto = excluded.foto, ocupacion = excluded.ocupacion, especialidad = excluded.especialidad, "
                 + "fecha_ingreso = excluded.fecha_ingreso, edad = excluded.edad, sexo = excluded.sexo;";
 
-        try (
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, empleado.getId());
             stmt.setString(2, empleado.getCurp());

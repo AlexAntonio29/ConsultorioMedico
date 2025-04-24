@@ -29,8 +29,8 @@ import com.consultorio.controlador.reportes.ReportesFinancieros;
 import com.consultorio.controlador.usuarioPersonal.MedicosAsistentes;
 import com.consultorio.controlador.usuarioPersonal.PersonalGeneral;
 import com.consultorio.controlador.usuarioPersonal.RolesPermisos;
-import com.consultorio.util.designAll;
-import com.consultorio.util.alertaConfirmacion;
+import com.consultorio.util.AllDesign;
+import com.consultorio.util.AlertaConfirmacion;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,9 +52,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 
 
-import static javafx.scene.input.KeyCode.T;
-
-
 public class PanelControl {
 
 
@@ -74,7 +71,7 @@ public class PanelControl {
 
     //Crear una confirmacion Alerta
 
-    alertaConfirmacion alerta = new alertaConfirmacion();
+    AlertaConfirmacion alerta = new AlertaConfirmacion();
 
     //dimension menu izquierda para cualquier cosa que necesite la dimension
     double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;
@@ -131,7 +128,7 @@ public class PanelControl {
             private Label lbNameUser;
 
     int categoria=0;
-    designAll design;
+    AllDesign design;
 
 
 
@@ -139,7 +136,7 @@ public class PanelControl {
     public PanelControl(){
     this.categoria=categoria;
     //aqui sera llamado desde la dataBase
-        design = new designAll(categoria);
+        design = new AllDesign(categoria);
     }
 
     //ENVIAR PARAMETROS GLOBALES AL PANEL CONTROL
