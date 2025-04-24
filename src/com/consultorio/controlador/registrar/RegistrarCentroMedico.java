@@ -8,6 +8,7 @@ import com.consultorio.util.conection.modeloDataBase.estructura.CentroMedicoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
 import com.consultorio.util.errores.VentanaErrores;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -69,11 +70,14 @@ public class RegistrarCentroMedico {
 
     @FXML
     public void initialize(){
-        cargarContenidoDinamico();
+
+        Platform.runLater(()->{
+            cargarContenidoControladores();
+        });
 
     }
 
-    public void cargarContenidoDinamico(){
+    public void cargarContenidoControladores(){
         cargarLabelPropietario();
     }
 

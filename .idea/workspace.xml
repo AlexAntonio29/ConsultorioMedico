@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarCentroMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarCentroMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/estructura/CentroMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/estructura/CentroMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_centro_medico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_centro_medico.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +106,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="129460000" />
+      <workItem from="1744921076130" duration="130137000" />
     </task>
     <servers />
   </component>
