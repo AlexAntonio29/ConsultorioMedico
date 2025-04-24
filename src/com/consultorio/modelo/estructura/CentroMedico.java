@@ -8,7 +8,7 @@ public class CentroMedico {
     String direccion;
     String telefono;
     String fecha_registro;
-    Usuario id_propietario;
+    Usuario propietario;
 
     public CentroMedico() {}
 
@@ -27,6 +27,6 @@ public class CentroMedico {
     public String getFecha_registro() { return fecha_registro; }
     public void setFecha_registro(String fecha_registro){ this.fecha_registro = fecha_registro; }
 
-    public Usuario getId_propietario() { return id_propietario; }
-    public void setId_propietario(Usuario id_propietario){ this.id_propietario = id_propietario; }
+    public Usuario getPropietario() { return propietario; }
+    public void setPropietario(Usuario propietario){ this.propietario = propietario; }
 }

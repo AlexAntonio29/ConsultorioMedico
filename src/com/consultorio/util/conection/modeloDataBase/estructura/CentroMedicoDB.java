@@ -70,7 +70,7 @@ public class CentroMedicoDB {
             stmt.setString(2, centroMedico.getDireccion());
             stmt.setString(3, centroMedico.getTelefono());
             stmt.setDate(4, Date.valueOf(LocalDate.now())); // Fecha actual
-            stmt.setString(5, centroMedico.getId_propietario().getId());
+            stmt.setString(5, centroMedico.getPropietario().getId());
 
             stmt.executeUpdate();
             System.out.println("✅ Centro médico insertado/actualizado correctamente.");

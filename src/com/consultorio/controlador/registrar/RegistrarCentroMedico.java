@@ -201,7 +201,7 @@ catch (Exception e){
         }
 
 
-        centroMedico.setId_propietario(usuario);
+        centroMedico.setPropietario(usuario);
 
         return centroMedico;
 
