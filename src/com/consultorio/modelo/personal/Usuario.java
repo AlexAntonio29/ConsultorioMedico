@@ -4,9 +4,9 @@ public class Usuario {
     String id;
     String usuario;
     String password;
-    Empleado empleado;//llave forananeo
+    Empleado empleado;
 
-    public Usuario() {}
+   // public Usuario(String id, String usuario, String password, com.consultorio.util.conection.modeloDataBase.personal.Empleado empleado) {}
 
     public Usuario(String id, String usuario, String password, Empleado empleado) {
         this.id = id;

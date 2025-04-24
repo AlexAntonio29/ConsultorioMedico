@@ -15,11 +15,15 @@ public class Persona {
     private String email;
     private  String foto;
 
+    private String edad;
+    private String sexo;
+
+
     public Persona() {}
 
     public Persona(String id,String curp, String nombre, String aPaterno
     , String aMaterno, Date fnacimiento, String direccion , String telefono , String email
-    , String foto){
+    , String foto, String edad,String sexo){
         this.id=id;
         this.curp=curp;
         this.nombre=nombre;
@@ -30,8 +34,8 @@ public class Persona {
         this.telefono=telefono;
         this.email=email;
         this.foto=foto;
-
-
+        this.edad=edad;
+        this.sexo=sexo;
     }
     public String getId() {
         return id;
@@ -102,4 +106,11 @@ public class Persona {
 
     }
 
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
 }

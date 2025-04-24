@@ -15,12 +15,17 @@ public class Empleado extends Persona{
 
     }
 
-    public Empleado(String id,String curp, String nombre, String aPaterno
+    public Empleado(
+              String id,String curp, String nombre, String aPaterno
             , String aMaterno, Date fnacimiento, String direccion , String telefono , String email
-            , String foto,String ocupacion, String especialidad){
-        super(id, curp, nombre, aPaterno, aMaterno, fnacimiento, direccion, telefono, email, foto);
+            , String foto,String ocupacion, String especialidad, Date fecha_ingreso,String edad,String sexo){
+
+
+
+        super(id, curp, nombre, aPaterno, aMaterno, fnacimiento, direccion, telefono, email, foto, edad,sexo);
         this.ocupacion=ocupacion;
         this.especialidad=especialidad;
+        this.fecha_ingreso=fecha_ingreso;
     }
 
 
