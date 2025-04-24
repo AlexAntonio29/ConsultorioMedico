@@ -21,7 +21,7 @@ public class RegistrarNuevoPaciente {
 
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
-
+    String mensajeError="";
     ArrayList <String> listaEdad = new ArrayList <> ();
 
     ///ID DE DATOS DE PACIENTE
@@ -75,7 +75,7 @@ public class RegistrarNuevoPaciente {
     @FXML
     public void actionRegistrar(){
 
-        String mensajeError="";
+
 
         System.out.println("Entrar dentro de la funcion ejecutar");
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");

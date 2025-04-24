@@ -6,6 +6,7 @@ public class Usuario {
     String password;
     Empleado empleado;
 
+    public Usuario(){}
    // public Usuario(String id, String usuario, String password, com.consultorio.util.conection.modeloDataBase.personal.Empleado empleado) {}
 
     public Usuario(String id, String usuario, String password, Empleado empleado) {
@@ -39,7 +40,7 @@ public class Usuario {
         this.password = password;
     }
 
-    public void setIdEmpleado(Empleado empleado) {
+    public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
 }

@@ -29,21 +29,34 @@
                             <padding>
                                 <Insets top="20" bottom="20" left="30" right="30"/>
                             </padding>
-                            <TextField focusTraversable="false" promptText="Nombre" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Apellido Paterno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Apellido Materno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Ocupación" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Especialidad" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                        </VBox>
+                            <TextField fx:id="lbNombre" focusTraversable="false" promptText="Nombre" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+
+                            <TextField fx:id="lbApaterno" focusTraversable="false" promptText="Apellido Paterno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField fx:id="lbAmaterno" focusTraversable="false" promptText="Apellido Materno" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <HBox>
+                                <Label focusTraversable="false" text="Ocupacion: " style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffff" />
+
+                                <Label fx:id="lbOcupacion" focusTraversable="false" text="propietario" style="-fx-font-size: 15px; -fx-font-weight: bold;-fx-text-fill: #4bcac4" />
+
+
+                            </HBox>
+                            <HBox>
+                                <Label focusTraversable="false" text="Especialidad: " style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffff" />
+
+                                <Label fx:id="lbEspecialidad" focusTraversable="false" text="administrador" style="-fx-font-size: 15px; -fx-font-weight: bold;-fx-text-fill: #4bcac4" />
+
+
+                            </HBox>
+                          </VBox>
 
                         <!-- Columna derecha -->
                         <VBox spacing="15" prefWidth="300" style="-fx-background-color: #233f9c; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8;">
                             <padding>
                                 <Insets top="20" bottom="20" left="30" right="30"/>
                             </padding>
-                            <TextField focusTraversable="false" promptText="Dirección" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Teléfono" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-                            <TextField focusTraversable="false" promptText="Email" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField fx:id="lbDireccion" focusTraversable="false" promptText="Dirección" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField fx:id="lbTelefono" focusTraversable="false" promptText="Teléfono" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                            <TextField fx:id="lbEmail" focusTraversable="false" promptText="Email" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
                             <DatePicker focusTraversable="false" fx:id="dpFechaNacimiento" promptText="Fecha de Nacimiento" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
 
                             <HBox spacing="10" alignment="CENTER_LEFT">
@@ -51,8 +64,8 @@
                                 <ChoiceBox fx:id="cbSexo" prefWidth="150" style="-fx-font-size: 15px;">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Masculino" />
-                                            <String fx:value="Femenino" />
+                                            <String fx:value="masculino" />
+                                            <String fx:value="femenino" />
                                         </FXCollections>
                                     </items>
                                 </ChoiceBox>

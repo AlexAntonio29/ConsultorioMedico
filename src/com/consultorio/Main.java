@@ -73,8 +73,8 @@ public class Main extends Application  {
               accionesBasicasDB.verificarTablaVacia("usuario"))
       {
           System.out.println("estan vacias");
-         // registroPropietario(primaryStage);
-          iniciarSesion(primaryStage);
+          registroPropietario(primaryStage);
+          //iniciarSesion(primaryStage);
       }
       else {
           System.out.println("no estan vacias");

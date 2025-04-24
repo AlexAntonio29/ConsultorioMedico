@@ -2,20 +2,20 @@ package com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedic
 
 import com.consultorio.util.conection.modeloDataBase.clientes.DBPaciente;
 import com.consultorio.util.conection.modeloDataBase.estructura.Consultorio;
-import com.consultorio.util.conection.modeloDataBase.personal.Empleado;
+import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 
 import java.time.LocalTime;
 import java.util.Date;
 
 public class Cita {
 
-    Empleado idUsuario;
+    EmpleadoDB idUsuario;
     DBPaciente idPaciente;
     Date fecha;
     LocalTime hora;
     Consultorio nConsultorio;
 
-    public Empleado getIdUsuario() {
+    public EmpleadoDB getIdUsuario() {
         return idUsuario;
     }
 
@@ -35,7 +35,7 @@ public class Cita {
         return nConsultorio;
     }
 
-    public void setIdUsuario(Empleado idUsuario) {
+    public void setIdUsuario(EmpleadoDB idUsuario) {
         this.idUsuario = idUsuario;
     }
 

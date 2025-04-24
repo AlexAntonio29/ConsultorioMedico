@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/CentroMedico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/validadCorreo/ValidadorRegexCorreo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_usuario_admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/modelo/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/modelo/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/Cita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_centro_medico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_centro_medico.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/iniciarSesion/iniciarSesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/iniciarSesion/iniciarSesion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarCentroMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarCentroMedico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/clientes/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/clientes/Paciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/modelo/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/modelo/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Empleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/personal/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/actions/DBAccionesBasicas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/actions/DBAccionesBasicas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_centro_medico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_centro_medico.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +69,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ConsultorioMedico.executor": "Run",
+    "Application.ConsultorioMedico.executor": "Debug",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -110,7 +132,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="104177000" />
+      <workItem from="1744921076130" duration="119278000" />
     </task>
     <servers />
   </component>
@@ -173,13 +195,112 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
-          <line>57</line>
+          <line>72</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/actions/DBAccionesBasicas.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="93" />
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarUsuarioAdmin.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>198</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>186</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>187</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>178</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>190</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>197</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>193</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>195</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java</url>
+          <line>181</line>
+          <properties class="com.consultorio.controlador.registrar.RegistrarAdmin" method="actionRegistrarEmpleado">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

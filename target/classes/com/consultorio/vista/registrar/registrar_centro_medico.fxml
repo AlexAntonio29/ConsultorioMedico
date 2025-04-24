@@ -12,7 +12,7 @@
             fx:controller="com.consultorio.controlador.registrar.RegistrarCentroMedico">
 
     <children>
-        <ScrollPane  fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <content>
                 <HBox alignment="CENTER">
                     <VBox alignment="TOP_CENTER" maxWidth="900" prefWidth="700" spacing="15" style="-fx-background-color: #000b4b; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8;">
