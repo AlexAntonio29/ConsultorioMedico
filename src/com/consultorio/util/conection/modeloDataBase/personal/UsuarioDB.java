@@ -95,10 +95,24 @@ public class UsuarioDB {
 
     }
 
-    public void setUsuario(){
-        //agregar usuario a base de datos
+    public boolean setUsuario(Usuario usuario) {
+        String sql = "INSERT INTO usuario (usuario, password, id_empleado) "
+                + "VALUES (?, ?, ?) "
+                + "ON CONFLICT(usuario) DO UPDATE SET password = excluded.password, id_empleado = excluded.id_empleado;";
 
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
+            stmt.setString(1, usuario.getUsuario());
+            stmt.setString(2, usuario.getPassword());
+            stmt.setString(3, usuario.getEmpleado().getId()); // Asignar empleado al usuario
 
+            stmt.executeUpdate();
+            System.out.println("✅ Usuario insertado/actualizado correctamente.");
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
    }

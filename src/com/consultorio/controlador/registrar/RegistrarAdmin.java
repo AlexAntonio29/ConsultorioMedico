@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -181,6 +182,7 @@ TextField lbEmail;
     }
     public Empleado actionRegistrarEmpleado(Empleado empleado) {
             empleado.setId("1");
+            //curp
             empleado.setNombre(lbNombre.getText());
             empleado.setaPaterno(lbApaterno.getText());
             empleado.setaMaterno(lbAmaterno.getText());
@@ -193,7 +195,19 @@ TextField lbEmail;
             empleado.setEspecialidad(lbEspecialidad.getText());
         LocalDate fechaActual = LocalDate.now(); // Obtener la fecha actual
         java.util.Date date = Date.from(fechaActual.atStartOfDay(ZoneId.systemDefault()).toInstant()); // Convertir a Date
-        empleado.setFecha_ingreso(date);
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaActualString=formato.format(date);
+        //empleado.setFecha_ingreso((date));
+        try{
+            empleado.setFecha_ingreso(formato.parse(fechaActualString));
+            System.out.println(fechaActualString);
+            System.out.println(empleado.getFecha_ingreso());
+
+
+            System.out.println("Fecha agregada con exito");
+        }catch (Exception e){
+            System.out.println("Falla al asignar fechaActual");
+        }
             empleado.setEdad((String) cbEdad.getValue());
             empleado.setSexo((String) cbSexo.getValue());
         System.out.println("Empleado registrado");

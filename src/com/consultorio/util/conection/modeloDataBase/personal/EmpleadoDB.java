@@ -3,15 +3,14 @@ package com.consultorio.util.conection.modeloDataBase.personal;
 import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.util.conection.modeloDataBase.modelo.Persona;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Date;
+import java.sql.*;
+import java.text.SimpleDateFormat;
 
 public class EmpleadoDB extends Persona {
     //variables globales
     Connection connection;
+    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+
 
     public void setConector(Connection connection){
         this.connection=connection;
@@ -58,37 +57,37 @@ public class EmpleadoDB extends Persona {
     }
 
     public boolean setEmpleado(Empleado empleado) {
-        String sql = "INSERT INTO empleado (id, curp, nombre, apellido_paterno, apellido_materno, "
+        String sql = "INSERT INTO empleado (curp, nombre, apellido_paterno, apellido_materno, "
                 + "fecha_nacimiento, direccion, telefono, email, foto, ocupacion, especialidad, "
                 + "fecha_ingreso, edad, sexo) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
-                + "ON CONFLICT(id) DO UPDATE SET "
-                + "curp = excluded.curp, nombre = excluded.nombre, apellido_paterno = excluded.apellido_paterno, "
-                + "apellido_materno = excluded.apellido_materno, fecha_nacimiento = excluded.fecha_nacimiento, "
-                + "direccion = excluded.direccion, telefono = excluded.telefono, email = excluded.email, "
-                + "foto = excluded.foto, ocupacion = excluded.ocupacion, especialidad = excluded.especialidad, "
-                + "fecha_ingreso = excluded.fecha_ingreso, edad = excluded.edad, sexo = excluded.sexo;";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, empleado.getCurp());
+            stmt.setString(2, empleado.getNombre());
+            stmt.setString(3, empleado.getaPaterno());
+            stmt.setString(4, empleado.getaMaterno());
+            stmt.setDate(5, java.sql.Date.valueOf(empleado.getFnacimiento().toString()));
+            stmt.setString(6, empleado.getDireccion());
+            stmt.setString(7, empleado.getTelefono());
+            stmt.setString(8, empleado.getEmail());
+            stmt.setString(9, empleado.getFoto());
+            stmt.setString(10, empleado.getOcupacion());
+            stmt.setString(11, empleado.getEspecialidad());
+            stmt.setDate(12, java.sql.Date.valueOf(empleado.getFecha_ingreso().toString()));
 
-            stmt.setString(1, empleado.getId());
-            stmt.setString(2, empleado.getCurp());
-            stmt.setString(3, empleado.getNombre());
-            stmt.setString(4, empleado.getaPaterno());
-            stmt.setString(5, empleado.getaMaterno());
-            stmt.setDate(6, new java.sql.Date(empleado.getFnacimiento().getTime()));
-            stmt.setString(7, empleado.getDireccion());
-            stmt.setString(8, empleado.getTelefono());
-            stmt.setString(9, empleado.getEmail());
-            stmt.setString(10, empleado.getFoto());
-            stmt.setString(11, empleado.getOcupacion());
-            stmt.setString(12, empleado.getEspecialidad());
-            stmt.setDate(13, new java.sql.Date(empleado.getFecha_ingreso().getTime()));
-            stmt.setInt(14, Integer.parseInt(empleado.getEdad()));
-            stmt.setString(15, empleado.getSexo());
+            // Manejo seguro de edad
+            try {
+                stmt.setInt(13, Integer.parseInt(empleado.getEdad()));
+            } catch (NumberFormatException e) {
+                stmt.setInt(13, 0); // Valor por defecto si hay error
+                System.out.println("Edad inválida, se asigna 0.");
+            }
 
+            stmt.setString(14, empleado.getSexo());
             stmt.executeUpdate();
-            System.out.println("✅ Empleado insertado/actualizado correctamente.");
+
+            System.out.println(" Empleado insertado correctamente.");
             return true;
 
         } catch (SQLException e) {
