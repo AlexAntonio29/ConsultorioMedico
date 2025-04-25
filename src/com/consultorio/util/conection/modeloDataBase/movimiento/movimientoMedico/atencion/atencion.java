@@ -1,6 +1,6 @@
 package com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.atencion;
 
-import com.consultorio.util.conection.modeloDataBase.clientes.DBPaciente;
+import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
 import com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.atencion.proceso.Consulta;
 import com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.atencion.proceso.PrescripcionElectronica;
 import com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.atencion.proceso.Registro;
@@ -11,7 +11,7 @@ import java.util.Date;
 public class atencion {
     public int id;
     public UsuarioDB medico;//quien es usuario
-    public DBPaciente paciente;
+    public PacienteDB paciente;
     public Consulta consulta;
     public Registro registro;
     public PrescripcionElectronica prescripcion;
@@ -28,10 +28,10 @@ public class atencion {
         this.id = id;
     }
 
-    public DBPaciente getPaciente() {
+    public PacienteDB getPaciente() {
         return paciente;
     }
-    public void setPaciente(DBPaciente paciente) {
+    public void setPaciente(PacienteDB paciente) {
         this.paciente = paciente;
     }
 

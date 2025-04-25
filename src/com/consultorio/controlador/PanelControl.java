@@ -465,6 +465,8 @@ public class PanelControl {
             }
             if(controlador instanceof RegistrarNuevoPaciente){
                 ((RegistrarNuevoPaciente) controlador).setConector(connection);
+                ((RegistrarNuevoPaciente) controlador).setUsuario(usuario);
+
             }
             if(controlador instanceof BuscarEditarPaciente){
                 ((BuscarEditarPaciente) controlador).setConector(connection);

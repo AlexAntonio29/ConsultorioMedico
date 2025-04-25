@@ -1,16 +1,30 @@
 package com.consultorio.controlador.pacientes;
 
-import com.consultorio.modelo.personal.Empleado;
+import com.consultorio.modelo.clientes.Paciente;
+import com.consultorio.modelo.clientes.RegistroPaciente;
+import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.GetFecha;
+import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
+import com.consultorio.util.conection.modeloDataBase.clientes.RegistroPacienteDB;
 import com.consultorio.util.errores.VentanaErrores;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
+import java.sql.Date;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +37,17 @@ public class RegistrarNuevoPaciente {
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
+    String foto="";
+    File fileFoto=null;
+
+
+
+
+    PacienteDB pacienteDB = new PacienteDB();
+    RegistroPacienteDB registroPacienteDB = new RegistroPacienteDB();
+
+
+
 
     ///ID DE DATOS DE PACIENTE
     @FXML
@@ -53,7 +78,16 @@ public class RegistrarNuevoPaciente {
     @FXML
     ImageView ivFoto;
     @FXML
+    ImageView ivFotoCamera;
+    @FXML
+    Button btnCargarImg;
+    @FXML
    Button btnRegistrar;
+
+
+    @FXML
+    GridPane gridPane;
+
     public Connection connection;
 
     //obtener conector
@@ -63,11 +97,30 @@ public class RegistrarNuevoPaciente {
     }
 
 
+    public Usuario usuario;
+
+    public void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
+
+    public void cargarBDPaciente(){
+        pacienteDB.setConnection(connection);
+
+    }
+
+
 
     @FXML
     public void initialize() {
 
         cargar();
+
+        Platform.runLater(()->{
+            //cargar todo lo demas
+            pacienteDB.setConnection(connection);
+            registroPacienteDB.setConnection(connection);
+
+        });
 
     }
 
@@ -82,7 +135,9 @@ public class RegistrarNuevoPaciente {
 
 
         try {
-
+            Paciente paciente=new Paciente();
+            pacienteDB.setPaciente(cargarPaciente(paciente));
+            registroPacienteDB.setRegistroPaciente( cargarRegistroPaciente(new RegistroPaciente(),paciente));
 
 
 
@@ -95,7 +150,7 @@ public class RegistrarNuevoPaciente {
             mensajeError="Error al capturar fecha";
             ventanaErrores.ventanaErrorClasico(mensajeError);
         }catch (NullPointerException e){
-            mensajeError="No se ha seleccionado el sexo";
+            mensajeError="Datos no capturados";
             ventanaErrores.ventanaErrorClasico(mensajeError);
         }
         catch (Exception e){
@@ -106,10 +161,42 @@ public class RegistrarNuevoPaciente {
         System.out.println();
     }
 
-    public Empleado cargarPaciente(Empleado empleado){
+    public Paciente cargarPaciente(Paciente paciente){
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        String foto="";
+
+        if (fileFoto==null) foto="";
+        else {
+
+            String rutaDestinoFoto="src/resource/img/pacientes/";
+            File carpetaDestino= new File(rutaDestinoFoto);
+            if (!carpetaDestino.exists()) carpetaDestino.mkdir();
+
+            if (fileFoto!=null) {
+
+                String getIdPaciente="";//llamar a base de datos
+                if (pacienteDB.obtenerUltimoIdPaciente()==null) getIdPaciente="1";
+                else getIdPaciente=String.valueOf(Integer.parseInt(pacienteDB.obtenerUltimoIdPaciente())+1);
+
+
+                File destino = new File(carpetaDestino,"paciente_"+getIdPaciente);
+                try {
+                    Files.copy(fileFoto.toPath(),destino.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+                    foto=destino.getAbsolutePath();
+                    System.out.println("Foto guardado con exito");
+
+                }catch (Exception e){
+                    ventanaErrores.ventanaErrorClasico("Error al guardar foto");
+                }
+            }
+
+        }
+
+
+
+
+
         String nombre=tfNombre.getText();
         String curp=(tfCurp.getText());
         String apellido_paterno=tfApellidoPaterno.getText();
@@ -128,6 +215,7 @@ public class RegistrarNuevoPaciente {
 
 
 
+
         System.out.println(nombre);
         System.out.println(curp);
         System.out.println(apellido_paterno);
@@ -138,24 +226,86 @@ public class RegistrarNuevoPaciente {
         System.out.println(sexo);
         System.out.println(edad);
         System.out.println(email);
+        System.out.println(foto);
         System.out.println();
-        return empleado;
+
+        paciente.setNombre(nombre);
+        paciente.setCurp(curp);
+        paciente.setaPaterno(apellido_paterno);
+        paciente.setaMaterno(apellido_materno);
+        paciente.setFnacimiento(Date.valueOf(dpFechaNacimiento.getValue()));
+        paciente.setDireccion(direccion);
+        paciente.setTelefono(telefono);
+        paciente.setSexo(sexo);
+        paciente.setEdad(edad);
+        paciente.setEmail(email);
+        paciente.setFoto(foto);
+
+
+
+        return paciente;
+    }
+
+    public RegistroPaciente cargarRegistroPaciente(RegistroPaciente registroPaciente, Paciente paciente){
+
+        registroPaciente.setIdUsuario(Integer.parseInt(usuario.getId()));
+        registroPaciente.setIdPaciente(Integer.parseInt(pacienteDB.obtenerUltimoIdPaciente()));
+        registroPaciente.setFechaRegistro(new GetFecha().getFechaDateActual());
+        
+        return registroPaciente;
     }
 
     //___________________________________________________________________
+
+    //CARGAR IMAGEN AL PRESIONAR BOTON
+    @FXML
+    public void actionbtnCamera(){
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Selecciona Imagen");
+
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imágenes", "*.png", "*.jpg", "*.jpeg"));
+        //agregar variable al archivo
+
+        fileFoto = fileChooser.showOpenDialog(null);
+
+        if (fileFoto != null) {
+            foto = fileFoto.toURI().toString();
+            Image image = new Image(foto);
+            ivFoto.setImage(image);
+            System.out.println("Foto seleccionado");
+            System.out.println("Ruta: "+foto);
+           ivFoto.setPreserveRatio(true);
+           ivFoto.setFitWidth(100);
+           ivFoto.setFitHeight(100);
+           ivFoto.setPreserveRatio(false);
+           ivFoto.setSmooth(true);
+        }
+
+
+
+    }
+
+
+
+
 
 
 
     //metodos de ejecucion
 
     public void cargar(){
-        cargarFoto();
+        cargarImgDefault();
+
+
        // cargarItemsEdad();
     }
 
-    public void cargarFoto(){
+    public void cargarImgDefault(){
         //llamar metodo DataBase
+
         dirImage=getDataBase(dirImage);
+
 
 
         if (Objects.equals(dirImage, "")) dirImage="/resource/img/user_unknown.jpg";
@@ -168,7 +318,33 @@ public class RegistrarNuevoPaciente {
         ivFoto.setPreserveRatio(true); // Mantener la proporción
         ivFoto.setSmooth(true); // Suavizado para bordes más limpios
         ivFoto.setCache(true);
+
+
+        //cambiar figura del boton
+        btnCargarImg.setShape(new Circle(20));
+        btnCargarImg.setMinSize(20,20);
+        btnCargarImg.setMaxSize(30,30);
+        //cargar imagen foto
+        String dirImageFoto="/resource/img/camera.png";
+
+        ivFotoCamera.setImage(new Image(getClass().getResource(dirImageFoto).toExternalForm()));
+        ivFotoCamera.setFitWidth(20);
+        ivFotoCamera.setFitHeight(20);
+        ivFotoCamera.setPreserveRatio(true);
+        ivFotoCamera.setSmooth(true);
+        ivFotoCamera.setCache(true);
+
+
+        //gridPane.setAlignment(btnCargarImg, Pos.BOTTOM_RIGHT);
+
+
+
+
+
+
     }
+
+
 
    /* public void cargarItemsEdad(){
         comboTipoEdad.getItems().clear();

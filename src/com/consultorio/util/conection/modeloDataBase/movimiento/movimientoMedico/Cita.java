@@ -1,6 +1,6 @@
 package com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico;
 
-import com.consultorio.util.conection.modeloDataBase.clientes.DBPaciente;
+import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
 import com.consultorio.util.conection.modeloDataBase.estructura.Consultorio;
 import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Cita {
 
     EmpleadoDB idUsuario;
-    DBPaciente idPaciente;
+    PacienteDB idPaciente;
     Date fecha;
     LocalTime hora;
     Consultorio nConsultorio;
@@ -19,7 +19,7 @@ public class Cita {
         return idUsuario;
     }
 
-    public DBPaciente getIdPaciente() {
+    public PacienteDB getIdPaciente() {
         return idPaciente;
     }
 
@@ -39,7 +39,7 @@ public class Cita {
         this.idUsuario = idUsuario;
     }
 
-    public void setIdPaciente(DBPaciente idPaciente) {
+    public void setIdPaciente(PacienteDB idPaciente) {
         this.idPaciente = idPaciente;
     }
 
