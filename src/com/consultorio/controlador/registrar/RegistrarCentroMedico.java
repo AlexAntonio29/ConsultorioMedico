@@ -165,6 +165,7 @@ catch (Exception e){
         System.out.println(usuario.getEmpleado().getSexo());
         System.out.println();
         EmpleadoDB DBEmpleado= new EmpleadoDB();
+        DBEmpleado.setConector(connection);
         DBEmpleado.setEmpleado(usuario.getEmpleado());
 
         //agregar Empleado a Base de datos
@@ -173,6 +174,7 @@ catch (Exception e){
     public void registrarUsuarioBD(){
         System.out.println(usuario);
         UsuarioDB DBUsuario= new UsuarioDB();
+        DBUsuario.setConector(connection);
         DBUsuario.setUsuario(usuario);
     }
 
@@ -180,6 +182,7 @@ catch (Exception e){
 
       CentroMedico cm=  cargarCentroMedico(new CentroMedico());
         CentroMedicoDB DBCentroMedico = new CentroMedicoDB();
+        DBCentroMedico.setConector(connection);
         //agregar set
         DBCentroMedico.setCentroMedico(cm);
 
