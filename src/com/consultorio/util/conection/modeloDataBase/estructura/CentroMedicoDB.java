@@ -58,18 +58,21 @@ public class CentroMedicoDB {
     }
 
     public boolean setCentroMedico(CentroMedico centroMedico){
+
+
+        System.out.println();
         String sql = "INSERT INTO centro_medico (id, nombre, direccion, telefono, fecha_registro, id_propietario) "
-                + "VALUES (1, ?, ?, ?, ?, ?) "
-                + "ON CONFLICT(id) DO UPDATE SET "
-                + "nombre = excluded.nombre, direccion = excluded.direccion, telefono = excluded.telefono, "
-                + "fecha_registro = excluded.fecha_registro, id_propietario = excluded.id_propietario;";
+                + "VALUES (1, ?, ?, ?, ?, ?) ";
+
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+            String id = String.valueOf(centroMedico.getPropietario().getId());
 
             stmt.setString(1, centroMedico.getNombre());
             stmt.setString(2, centroMedico.getDireccion());
             stmt.setString(3, centroMedico.getTelefono());
-            stmt.setDate(4, Date.valueOf(LocalDate.now())); // Fecha actual
+            stmt.setDate(4, java.sql.Date.valueOf(centroMedico.getFecha_registro())); // Fecha actual
             stmt.setString(5, centroMedico.getPropietario().getId());
 
             stmt.executeUpdate();

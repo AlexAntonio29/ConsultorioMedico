@@ -97,8 +97,7 @@ public class UsuarioDB {
 
     public boolean setUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuario (usuario, password, id_empleado) "
-                + "VALUES (?, ?, ?) "
-                + "ON CONFLICT(usuario) DO UPDATE SET password = excluded.password, id_empleado = excluded.id_empleado;";
+                + "VALUES (?, ?, ?) ";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 

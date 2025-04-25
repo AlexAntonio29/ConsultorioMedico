@@ -118,7 +118,7 @@ catch (Exception e){
 
         System.out.println(empleado);
 
-            usuario.setUsuario("1");
+            usuario.setId("1");
             usuario.setUsuario(lbUsuario.getText());
             usuario.setPassword(tfPassword.getText());
             usuario.setEmpleado(empleado);
