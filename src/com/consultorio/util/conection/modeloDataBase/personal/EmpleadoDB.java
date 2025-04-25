@@ -62,6 +62,8 @@ public class EmpleadoDB extends Persona {
                 + "fecha_ingreso, edad, sexo) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
+        String formatoFechaIngreso= formato.format(empleado.getFecha_ingreso());
+
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, empleado.getCurp());
             stmt.setString(2, empleado.getNombre());
@@ -74,15 +76,9 @@ public class EmpleadoDB extends Persona {
             stmt.setString(9, empleado.getFoto());
             stmt.setString(10, empleado.getOcupacion());
             stmt.setString(11, empleado.getEspecialidad());
-            stmt.setDate(12, java.sql.Date.valueOf(empleado.getFecha_ingreso().toString()));
+            stmt.setDate(12, java.sql.Date.valueOf(formatoFechaIngreso));
+            stmt.setInt(13, Integer.parseInt(empleado.getEdad()));
 
-            // Manejo seguro de edad
-            try {
-                stmt.setInt(13, Integer.parseInt(empleado.getEdad()));
-            } catch (NumberFormatException e) {
-                stmt.setInt(13, 0); // Valor por defecto si hay error
-                System.out.println("Edad inválida, se asigna 0.");
-            }
 
             stmt.setString(14, empleado.getSexo());
             stmt.executeUpdate();
