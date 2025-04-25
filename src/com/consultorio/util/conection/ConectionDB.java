@@ -91,6 +91,7 @@ public class ConectionDB {
                         + "CREATE TABLE IF NOT EXISTS pacientes ( "
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "nombre TEXT, "
+                        + "curp TEXT UNIQUE,"
                         + "apellido_paterno TEXT, "
                         + "apellido_materno TEXT, "
                         + "fecha_nacimiento DATE, "

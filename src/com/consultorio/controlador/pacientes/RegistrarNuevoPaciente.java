@@ -13,7 +13,6 @@ import java.sql.Connection;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -22,11 +21,12 @@ public class RegistrarNuevoPaciente {
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
-    ArrayList <String> listaEdad = new ArrayList <> ();
 
     ///ID DE DATOS DE PACIENTE
     @FXML
     TextField tfNombre;
+    @FXML
+    TextField tfCurp;
    @FXML
            TextField tfApellidoPaterno;
    @FXML
@@ -39,8 +39,7 @@ public class RegistrarNuevoPaciente {
            TextField tfTelefono;
    @FXML
        ComboBox comboTipoSexo;
-   @FXML
-   ComboBox comboTipoEdad;
+
    @FXML
            TextField tfEmail;
 
@@ -83,6 +82,7 @@ public class RegistrarNuevoPaciente {
         try {
             String foto="";
             String nombre=tfNombre.getText();
+            String curp=(tfCurp.getText());
             String apellido_paterno=tfApellidoPaterno.getText();
             String apellido_materno=tfApellidoMaterno.getText();
             String fecha=dpFechaNacimiento.getValue().toString();
@@ -90,19 +90,20 @@ public class RegistrarNuevoPaciente {
             String direccion=tfDireccion.getText();
             String telefono=tfTelefono.getText();
             String sexo=comboTipoSexo.getValue().toString();
-            int edad=Integer.parseInt(comboTipoEdad.getValue().toString());
+           // resta de fecha actual - fecha nacimiento para edad
             String email=tfEmail.getText();
 
 
 
             System.out.println(nombre);
+            System.out.println(curp);
             System.out.println(apellido_paterno);
             System.out.println(apellido_materno);
             System.out.println(fecha);
             System.out.println(direccion);
             System.out.println(telefono);
             System.out.println(sexo);
-            System.out.println(edad);
+           //aqui va edad
             System.out.println(email);
             System.out.println();
 
@@ -137,7 +138,7 @@ public class RegistrarNuevoPaciente {
 
     public void cargar(){
         cargarFoto();
-        cargarItemsEdad();
+       // cargarItemsEdad();
     }
 
     public void cargarFoto(){
@@ -157,7 +158,7 @@ public class RegistrarNuevoPaciente {
         ivFoto.setCache(true);
     }
 
-    public void cargarItemsEdad(){
+   /* public void cargarItemsEdad(){
         comboTipoEdad.getItems().clear();
 
         for (int i=0;i<151;i++){
@@ -165,7 +166,7 @@ public class RegistrarNuevoPaciente {
         }
         comboTipoEdad.getItems().addAll(listaEdad);
         comboTipoEdad.setValue(listaEdad.get(0));
-    }
+    }*/
 
     public String getDataBase(String typeData){
 
