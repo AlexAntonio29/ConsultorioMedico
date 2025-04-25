@@ -78,7 +78,7 @@ public class Main extends Application  {
       }
       else {
           System.out.println("no estan vacias");
-
+          iniciarSesion(primaryStage);
       }
 
         //revisar aqui si ya existe el empleado 0, o la tabla admin no esta vacio

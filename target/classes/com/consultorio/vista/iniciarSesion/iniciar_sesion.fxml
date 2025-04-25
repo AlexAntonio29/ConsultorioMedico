@@ -8,11 +8,11 @@
 
     <VBox alignment="TOP_CENTER" style="-fx-background-color: #000b4b; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Iniciar Sesion" />
-        <TextField focusTraversable="false" promptText="Ingrese Usuario" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
+        <TextField fx:id="tfUsuario" focusTraversable="false" promptText="Ingrese Usuario" style="-fx-font-size: 15px; -fx-font-weight: bold;">
          <VBox.margin>
             <Insets top="80.0" />
          </VBox.margin></TextField>
-        <TextField focusTraversable="false" promptText="Ingrese Password" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
+        <TextField fx:id="tfPassword" focusTraversable="false" promptText="Ingrese Password" style="-fx-font-size: 15px; -fx-font-weight: bold;">
             <VBox.margin>
                 <Insets top="20.0" />
             </VBox.margin></TextField>

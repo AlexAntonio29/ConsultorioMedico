@@ -1,12 +1,16 @@
 package com.consultorio.controlador.iniciarSesion;
 
 import com.consultorio.controlador.PanelControl;
+import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
+import com.consultorio.util.errores.VentanaErrores;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -16,11 +20,16 @@ import java.sql.SQLException;
 
 public class IniciarSesion {
 
+    VentanaErrores ventanaErrores = new VentanaErrores();
     Rectangle2D dimensionPantalla= Screen.getPrimary().getBounds();
     Stage stage;
     Connection connection;
      @FXML
      Button btnIniciarSesion;
+     @FXML
+    TextField tfUsuario;
+     @FXML
+     TextField tfPassword;
 
 
     public void setStage(Stage stage) {
@@ -38,23 +47,34 @@ public class IniciarSesion {
     @FXML
     public void actionIniciarSesion() throws SQLException, IOException {
 
-
-
-
-
-        cargarPanelControl();
+        Usuario usuario= cargarUsuarioDB();
+        if (usuario!=null)
+            if (usuario.getPassword().equals(tfPassword.getText()))
+            cargarPanelControl(usuario);
+        else ventanaErrores.ventanaErrorClasico("Contraseña incorrecta");
+        else ventanaErrores.ventanaErrorClasico("El usuario no existe");
+    tfUsuario.setText("");
+    tfPassword.setText("");
     }
 
 
 
+    public Usuario cargarUsuarioDB() throws SQLException{
+        UsuarioDB usuarioDB = new UsuarioDB();
+        usuarioDB.setConector(connection);
+        Usuario usuario = usuarioDB.getUsuario(tfUsuario.getText());
+        return usuario;
 
-    public void cargarPanelControl() throws SQLException, IOException {
+    }
+
+    public void cargarPanelControl(Usuario usuario) throws SQLException, IOException {
         //Nos conectamos a un archivo llamado FXML llamado panel_control.fxml
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/consultorio/vista/panel_control.fxml"));
         Parent root = loader.load();//cargamos
 
         PanelControl panelControl = loader.getController();
         panelControl.setConector(connection);
+        panelControl.setUsuario(usuario);
 
 
         //hacer que no tenga el boton de cerra, minimizar ni maximizar

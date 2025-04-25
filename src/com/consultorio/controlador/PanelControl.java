@@ -29,6 +29,7 @@ import com.consultorio.controlador.reportes.ReportesFinancieros;
 import com.consultorio.controlador.usuarioPersonal.MedicosAsistentes;
 import com.consultorio.controlador.usuarioPersonal.PersonalGeneral;
 import com.consultorio.controlador.usuarioPersonal.RolesPermisos;
+import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.AllDesign;
 import com.consultorio.util.AlertaConfirmacion;
 import javafx.application.Platform;
@@ -129,9 +130,9 @@ public class PanelControl {
 
     int categoria=0;
     AllDesign design;
-
-
-
+    public Usuario usuario;
+    //agregar usuario
+    public void setUsuario(Usuario usuario){ this.usuario=usuario; }
 
     public PanelControl(){
     this.categoria=categoria;
@@ -157,6 +158,12 @@ public class PanelControl {
         ajustesDiseno();
 
 
+        Platform.runLater(()->{
+
+            cargarControladores();
+        });
+
+
         // Aqui agregare un diseño rapido para identificar limites de objetos, no sera lo ultimo
 
       vbMenuIzquierdo.setStyle("-fx-background-color: #000b4b;");
@@ -175,7 +182,6 @@ public class PanelControl {
 
     //CARGAR RECURSOS
     public void cargarRecursos(){
-
 
         loadImage();
 
@@ -201,7 +207,14 @@ public class PanelControl {
 
     }
 //LLAMADO DE DATABASE
+        //CARGA DE CONTROLOADORES DESDE SET
 
+    public void cargarControladores(){
+        loadLabelUserName();
+    }
+    public void loadLabelUserName(){
+        lbNameUser.setText(usuario.getUsuario());
+    }
 
     //LLAMADO IMAGEN
     public void loadImage(){

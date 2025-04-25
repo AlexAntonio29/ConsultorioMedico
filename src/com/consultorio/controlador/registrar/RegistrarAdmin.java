@@ -182,7 +182,7 @@ TextField lbEmail;
     }
     public Empleado actionRegistrarEmpleado(Empleado empleado) {
             empleado.setId("1");
-            //curp
+            empleado.setCurp("");
             empleado.setNombre(lbNombre.getText());
             empleado.setaPaterno(lbApaterno.getText());
             empleado.setaMaterno(lbAmaterno.getText());
@@ -190,7 +190,7 @@ TextField lbEmail;
             empleado.setDireccion(lbDireccion.getText());
             empleado.setTelefono(lbTelefono.getText());
             empleado.setEmail(lbEmail.getText());
-            //foto
+            empleado.setFoto("");
             empleado.setOcupacion(lbOcupacion.getText());
             empleado.setEspecialidad(lbEspecialidad.getText());
         LocalDate fechaActual = LocalDate.now(); // Obtener la fecha actual

@@ -21,12 +21,15 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+
+import java.nio.file.Path;
 
 public class RegistrarCentroMedico {
     AlertaConfirmacion alertaConfirmacion=new AlertaConfirmacion();
@@ -93,7 +96,7 @@ public class RegistrarCentroMedico {
 try {
     if (alertaConfirmacion.mostrarConfirmacion("Estas seguro de registrar este Propietario?")){
     registrarDatosBD();
-    cargarIniciarSesion();
+    cargarReiniciarPrograma();
     }
 
 }catch (NumberFormatException e){
@@ -116,26 +119,43 @@ catch (Exception e){
 
     }
 
-    public void cargarIniciarSesion() throws IOException {
+    public void cargarReiniciarPrograma() throws IOException {
         //Nos conectamos a un archivo llamado FXML llamado panel_control.fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml"));
-        Parent root = loader.load();//cargamos
 
-        IniciarSesion iniciarSesion = loader.getController();
-        iniciarSesion.setConector(connection);
+        System.out.println("Cargar y reiniciar");
+        try {
 
 
-        //hacer que no tenga el boton de cerra, minimizar ni maximizar
-       // stage.initStyle(StageStyle.UNDECORATED);
-        //primaryStage.sizeToScene();
-        stage.setTitle("Iniciar Sesion");//definir titulo
-        //primaryStage.setAlwaysOnTop(true);//mantenerse encima de todos
 
-        stage.setMaximized(true);
-        stage.setScene(new Scene(root));//creacion de escena
-        stage.centerOnScreen();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/consultorio/vista/iniciarSesion/iniciar_sesion.fxml"));
+            Parent root = loader.load();
+            stage.setScene(new Scene(root));//creacion de escena
+            IniciarSesion controlador= loader.getController();
 
-        stage.show();//mostrar
+            controlador.setConector(connection);
+            controlador.setStage(stage);
+
+            //stage.centerOnScreen();
+            stage.setX((Screen.getPrimary().getBounds().getWidth() - stage.getWidth())/2);
+            stage.setY((Screen.getPrimary().getBounds().getHeight() - stage.getHeight())/2);
+
+            //stage.initStyle(StageStyle.UNDECORATED);
+            //primaryStage.sizeToScene();
+            //stage.setTitle("Iniciar Sesion");
+            // primaryStage.setMaximized(true);
+
+            //primaryStage.setWidth(400);
+            //primaryStage.setHeight(600);
+            //primaryStage.setMinWidth(400);
+            // primaryStage.setMinHeight(600);
+            //primaryStage.setMaxWidth(400);
+            // primaryStage.setMaxHeight(600);
+
+           // stage.show();
+        }catch (Exception e) {
+            System.out.println("Error al reiniciar o cerrar programa");
+        }
+
     }
 
     //REGSITRAR EMPLEADO EN BASE DE DATOS

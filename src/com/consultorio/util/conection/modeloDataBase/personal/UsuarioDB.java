@@ -1,11 +1,13 @@
 package com.consultorio.util.conection.modeloDataBase.personal;
 
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.modelo.personal.Empleado;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class UsuarioDB {
 
@@ -40,35 +42,34 @@ public class UsuarioDB {
 
 
 
-    public Usuario getUsuario( String nombreTabla, String nombreUsuario){
-       // Usuario usuario = new Usuario("1","","",new com.consultorio.modelo.personal.Empleado());
-        //tomar usuario de base de datos y mandarlo a donde se ocupe
-
+    public Usuario getUsuario(String nombreUsuario) {
         String sql = "SELECT u.id AS usuario_id, u.usuario, u.password, "
-                + "e.id AS empleado_id, e.nombre, e.apellido_paterno, e.apellido_materno, e.fecha_nacimiento, "
-                + "e.ocupacion, e.especialidad, e.direccion, e.telefono, e.email, e.fecha_ingreso, e.foto "
+                + "e.id AS empleado_id, e.curp, e.nombre, e.apellido_paterno, e.apellido_materno, "
+                + "e.fecha_nacimiento, e.ocupacion, e.especialidad, e.direccion, e.telefono, "
+                + "e.email, e.fecha_ingreso, e.foto, e.edad, e.sexo "
                 + "FROM usuario u "
                 + "JOIN empleado e ON u.id_empleado = e.id "
                 + "WHERE u.usuario = ?";
 
-
-
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, nombreUsuario);
-            ResultSet rs = stmt.executeQuery();//ejecutar consulta
+            ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
                 // Crear el objeto Empleado
                 String idUsuario = rs.getString("usuario_id");
                 String idEmpleado = rs.getString("empleado_id");
 
-                // Crear el objeto Usuario con el empleado
+                // **Verifica si "curp" existe antes de acceder**
+                String curp = rs.getString("curp") != null ? rs.getString("curp") : "";
+
                 return new Usuario(
                         idUsuario,
                         rs.getString("usuario"),
                         rs.getString("password"),
                         new com.consultorio.modelo.personal.Empleado(
                                 idEmpleado,
-                                rs.getString("curp"),
+                                curp, // ✅ Ahora verificamos antes de usarlo
                                 rs.getString("nombre"),
                                 rs.getString("apellido_paterno"),
                                 rs.getString("apellido_materno"),
@@ -84,16 +85,15 @@ public class UsuarioDB {
                                 rs.getString("sexo")
                         )
                 );
-
-
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
 
+        return null; // Si no encuentra el usuario
     }
+
 
     public boolean setUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuario (usuario, password, id_empleado) "
