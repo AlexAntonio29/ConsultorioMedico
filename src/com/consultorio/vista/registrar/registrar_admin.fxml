@@ -71,10 +71,6 @@
                                 </ChoiceBox>
                             </HBox>
 
-                            <HBox spacing="10" alignment="CENTER_LEFT">
-                                <Label text="Edad:" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" />
-                                <ChoiceBox fx:id="cbEdad" prefWidth="150" style="-fx-font-size: 15px;" />
-                            </HBox>
                         </VBox>
                     </HBox>
 

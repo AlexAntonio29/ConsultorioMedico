@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi_base.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/registrar/registrar_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/registrar/RegistrarAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/registrar/registrar_admin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +116,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="145264000" />
+      <workItem from="1744921076130" duration="149598000" />
     </task>
     <servers />
   </component>
@@ -293,6 +301,98 @@
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java</url>
           <line>73</line>
           <option name="timeStamp" value="356" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="357" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="358" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="359" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="360" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>186</line>
+          <option name="timeStamp" value="361" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="362" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="363" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="364" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="365" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="368" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="371" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="372" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="373" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="374" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>25</line>
+          <properties field="conectionDB" class="com.consultorio.Main" />
+          <option name="timeStamp" value="369" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/Main.java</url>
+          <line>26</line>
+          <properties field="conexionDB" class="com.consultorio.Main" />
+          <option name="timeStamp" value="370" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

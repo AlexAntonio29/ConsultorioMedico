@@ -21,6 +21,7 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import static com.consultorio.util.validadCorreo.ValidadorRegexCorreo.validarCorreo;
@@ -33,8 +34,7 @@ public class RegistrarAdmin {
 
     @FXML
     ChoiceBox cbSexo;
-    @FXML
-    ChoiceBox cbEdad;
+
 
     @FXML
     Button btnIngresar;
@@ -90,7 +90,7 @@ TextField lbEmail;
 
        cbSexo.setValue("masculino");
     }
-
+/*
     public void cargarCbEdad(){
         ArrayList<String> lista=new ArrayList<>();
         for(int i=18;i<151;i++)
@@ -99,11 +99,11 @@ TextField lbEmail;
         cbEdad.setValue(lista.get(0));
 
 
-    }
+    }*/
 
     public void cargar(){
         cargarCbSexo();
-        cargarCbEdad();
+        //cargarCbEdad();
     }
 
 
@@ -208,8 +208,12 @@ TextField lbEmail;
         }catch (Exception e){
             System.out.println("Falla al asignar fechaActual");
         }
-            empleado.setEdad((String) cbEdad.getValue());
-            empleado.setSexo((String) cbSexo.getValue());
+        empleado.setEdad(String.valueOf(
+                ChronoUnit.YEARS.between(dpFechaNacimiento.getValue(), LocalDate.now()) // Calcular edad
+        ));
+
+
+        empleado.setSexo((String) cbSexo.getValue());
         System.out.println("Empleado registrado");
 
         System.out.println(empleado);

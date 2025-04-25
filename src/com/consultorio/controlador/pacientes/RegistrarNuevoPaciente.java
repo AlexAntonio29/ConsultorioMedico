@@ -1,5 +1,6 @@
 package com.consultorio.controlador.pacientes;
 
+import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.util.errores.VentanaErrores;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -13,6 +14,7 @@ import java.sql.Connection;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 
@@ -77,35 +79,10 @@ public class RegistrarNuevoPaciente {
 
 
         System.out.println("Entrar dentro de la funcion ejecutar");
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
 
         try {
-            String foto="";
-            String nombre=tfNombre.getText();
-            String curp=(tfCurp.getText());
-            String apellido_paterno=tfApellidoPaterno.getText();
-            String apellido_materno=tfApellidoMaterno.getText();
-            String fecha=dpFechaNacimiento.getValue().toString();
-            LocalDate.parse(fecha,formato);
-            String direccion=tfDireccion.getText();
-            String telefono=tfTelefono.getText();
-            String sexo=comboTipoSexo.getValue().toString();
-           // resta de fecha actual - fecha nacimiento para edad
-            String email=tfEmail.getText();
 
-
-
-            System.out.println(nombre);
-            System.out.println(curp);
-            System.out.println(apellido_paterno);
-            System.out.println(apellido_materno);
-            System.out.println(fecha);
-            System.out.println(direccion);
-            System.out.println(telefono);
-            System.out.println(sexo);
-           //aqui va edad
-            System.out.println(email);
-            System.out.println();
 
 
 
@@ -129,6 +106,41 @@ public class RegistrarNuevoPaciente {
         System.out.println();
     }
 
+    public Empleado cargarPaciente(Empleado empleado){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        String foto="";
+        String nombre=tfNombre.getText();
+        String curp=(tfCurp.getText());
+        String apellido_paterno=tfApellidoPaterno.getText();
+        String apellido_materno=tfApellidoMaterno.getText();
+        String fecha=dpFechaNacimiento.getValue().toString();
+        LocalDate.parse(fecha,formato);
+        String direccion=tfDireccion.getText();
+        String telefono=tfTelefono.getText();
+        String sexo=comboTipoSexo.getValue().toString();
+        // resta de fecha actual - fecha nacimiento para edad
+        String edad = String.valueOf(
+                ChronoUnit.YEARS.between(dpFechaNacimiento.getValue(), LocalDate.now()) // Calcular edad
+
+        );
+        String email=tfEmail.getText();
+
+
+
+        System.out.println(nombre);
+        System.out.println(curp);
+        System.out.println(apellido_paterno);
+        System.out.println(apellido_materno);
+        System.out.println(fecha);
+        System.out.println(direccion);
+        System.out.println(telefono);
+        System.out.println(sexo);
+        System.out.println(edad);
+        System.out.println(email);
+        System.out.println();
+        return empleado;
+    }
 
     //___________________________________________________________________
 
