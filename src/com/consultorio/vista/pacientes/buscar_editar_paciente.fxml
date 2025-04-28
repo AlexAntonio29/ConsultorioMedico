@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.pacientes.BuscarEditarPaciente"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: #ECF0F1;">
+    <children>
+        <!-- Contenedor principal centrado en la interfaz -->
+        <VBox alignment="TOP_CENTER" spacing="20.0"
+              AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Buscar / Editar Paciente" />
+
+
+            <!-- Sección de búsqueda -->
+            <HBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Label text="Buscar Paciente:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="tfBusqueda" promptText="Ingrese nombre o ID" prefWidth="250"/>
+                    <Button fx:id="btnBuscar" text="Buscar" onAction="#btnBuscarOnAction"
+                            style="-fx-background-color:#3498DB; -fx-text-fill: white; -fx-background-radius: 5;"/>
+                </children>
+            </HBox>
+
+            <!-- Tabla para mostrar resultados de búsqueda -->
+            <TableView fx:id="tvPacientes" prefHeight="150.0" prefWidth="580.0">
+                <columns>
+                    <TableColumn fx:id="colID" text="ID" prefWidth="100"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="240"/>
+                    <TableColumn fx:id="colApellido" text="Apellido" prefWidth="240"/>
+                </columns>
+            </TableView>
+
+            <!-- Formulario para editar datos del paciente seleccionado -->
+            <GridPane hgap="10.0" vgap="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 20;">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="60"/>
+                </columnConstraints>
+                <children>
+                    <!-- Fila 0: Nombre -->
+                    <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="tfNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Nombre"/>
+
+                    <!-- Fila 1: Apellido -->
+                    <Label text="Apellido:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="tfApellido" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Apellido"/>
+
+                    <!-- Fila 2: Fecha de Nacimiento -->
+                    <Label text="Fecha Nac.:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <DatePicker fx:id="dpFechaNacimiento" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Fecha de Nacimiento"/>
+
+                    <!-- Fila 3: Botones para Editar y Guardar -->
+                    <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                        <children>
+                            <Button fx:id="btnEditar" text="Editar"
+                                    style="-fx-background-color:#E67E22; -fx-text-fill: white; -fx-background-radius: 5;" prefWidth="100"/>
+                            <Button fx:id="btnGuardarCambios" text="Guardar Cambios"
+                                    style="-fx-background-color:#2ECC71; -fx-text-fill: white; -fx-background-radius: 5;" prefWidth="150"/>
+                        </children>
+                    </HBox>
+                </children>
+            </GridPane>
+        </VBox>
+    </children>
+</AnchorPane>

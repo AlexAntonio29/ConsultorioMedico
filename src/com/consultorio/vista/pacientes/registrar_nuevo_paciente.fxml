@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.skin.TabPaneSkin.TabControlButtons?>
+<ScrollPane fitToWidth="true" fitToHeight="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.pacientes.RegistrarNuevoPaciente">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ECF0F1;" >
+
+
+
+    <children>
+        <!-- Contenedor principal centrado -->
+        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+            <children>
+
+                <!-- Título del formulario -->
+                <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Registrar Nuevo Paciente" />
+                <!-- Contenedor del formulario -->
+                <GridPane fx:id="gridPane" hgap="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" vgap="20.0">
+                    <!-- Definir dos columnas: una para etiquetas y otra para campos -->
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+                    <children>
+
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Foto:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <StackPane  GridPane.columnIndex="1" GridPane.rowIndex="0">
+
+                            <ImageView  fx:id="ivFoto" fitHeight="100" fitWidth="100" StackPane.alignment="BOTTOM_RIGHT" >
+                                <image>
+
+                                </image>
+
+
+
+                            </ImageView>
+                            <Button onAction="#actionbtnCamera" StackPane.alignment="BOTTOM_RIGHT" fx:id="btnCargarImg" style="-fx-border-radius: 10">
+                                <graphic>
+                                    <ImageView  fx:id="ivFotoCamera" >
+                                        <image>
+
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                        </StackPane>
+
+
+                        <!-- Fila 0: Nombre -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField style="-fx-font-size: 16px; -fx-font-weight: bold;" fx:id="tfNombre" promptText="Ingrese el nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label  style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Curp" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+                        <TextField fx:id="tfCurp" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Curp" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <!-- Fila 1: Apellido Paterno -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Paterno:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfApellidoPaterno" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el apellido paterno" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <!-- Fila 2: Apellido Materno -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Materno:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfApellidoMaterno" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el apellido materno" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Fila 3: Fecha de Nacimiento -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Fecha de Nacimiento:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="dpFechaNacimiento" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Seleccione la fecha" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <!-- Fila 4: Dirección -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Dirección:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextField fx:id="tfDireccion" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese la dirección" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                        <!-- Fila 5: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <TextField fx:id="tfTelefono" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el teléfono" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <!-- Fila 6: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Sexo:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="comboTipoSexo" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Sexo" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Femenino" />
+                                    <String fx:value="Masculino" />
+
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <!-- Fila 7: -->
+
+                        <!-- Fila 8: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <TextField fx:id="tfEmail" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el email" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+
+
+                        <!-- Fila 9: Botón de Registro -->
+                        <Button fx:id="btnRegistrar" maxWidth="200" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Registrar" GridPane.columnIndex="1" GridPane.rowIndex="10" onAction="#actionRegistrar"/>
+                    </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
+</ScrollPane>

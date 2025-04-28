@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.consultorio.controlador.consultasMedicas.RegistrarSintomasDiagnosticoTratamiento"
+            prefHeight="1080.0" prefWidth="1920.0"
+            style="-fx-background-color: #F8F9FA;">
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0"
+              AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="50.0"
+              AnchorPane.rightAnchor="50.0" AnchorPane.bottomAnchor="30.0">
+            <children>
+
+                <Label text="Registrar Síntomas, Diagnóstico y Tratamiento"
+                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+
+                <Label text="Síntomas:" />
+                <TextArea fx:id="txtSintomas" promptText="Describa los síntomas" prefRowCount="3" />
+
+                <Label text="Diagnóstico:" />
+                <TextArea fx:id="txtDiagnostico" promptText="Ingrese el diagnóstico" prefRowCount="3" />
+
+                <Label text="Tratamiento:" />
+                <TextArea fx:id="txtTratamiento" promptText="Describa el tratamiento sugerido" prefRowCount="3" />
+
+                <Button text="Guardar Consulta" fx:id="btnGuardar"
+                        style="-fx-background-color: #E67E22; -fx-text-fill: white; -fx-font-size: 16px;" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Aqui se inicia el codigo fxml que creamos lo podemos modificar para mayor rapidez en Scene Buidler  -->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="spPanel" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.PanelControl">
+   <children>
+
+
+      <HBox fx:id="hbestructuraPanel" prefHeight="624.0" prefWidth="903.0">
+         <children>
+
+      <VBox fx:id="vbMenuIzquierdo">
+         <children>
+            <ImageView fx:id="ivImageMenu" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+
+                     <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+
+
+                        </ImageView>
+            <Label fx:id="lbNameUser" text="UserRoot" style=""/>
+
+             <Button fx:id="bInicio" mnemonicParsing="false" onAction="#actionPushInicio" onMouseEntered="#actionInicio" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inicio/DashBoard">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                
+            </Button>
+            <Button fx:id="bPacientes" mnemonicParsing="false" onAction="#actionPacientes" onMouseEntered="#actionPacientes" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Pacientes">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bCitas" mnemonicParsing="false" onAction="#actionCitas" onMouseEntered="#actionCitas" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Citas">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bConsultasMedicas" mnemonicParsing="false" onAction="#actionConsultasMedicas" onMouseEntered="#actionConsultasMedicas" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Consultas Medicas">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bInventario"  mnemonicParsing="false" onAction="#actionInventario" onMouseEntered="#actionInventario" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inventario">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bPagoFacturacion" mnemonicParsing="false" onAction="#actionPagoFacturacion" onMouseEntered="#actionPagoFacturacion" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Pago y Facturacion">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bReportes" mnemonicParsing="false" onAction="#actionReporte" onMouseEntered="#actionReporte" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Reportes">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bUsuarioPersonal" mnemonicParsing="false" onAction="#actionUsuarioPersonal" onMouseEntered="#actionUsuarioPersonal" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Usuarios/Personal">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bConfiguracion" mnemonicParsing="false" onAction="#actionConfiguracion" onMouseEntered="#actionConfiguracion" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Configuración">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bCerraSesion" mnemonicParsing="false" onAction="#actionCerrarSesion" onMouseEntered="#actionCerrarSesion" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Cerrar Sesión">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="0.0" />
+         </padding>
+      </VBox>
+
+            <AnchorPane fx:id="apPanelDinamico" prefHeight="624.0" prefWidth="927.0">
+               <children>
+                  <Button fx:id="bInicio1" mnemonicParsing="false" prefHeight="25.0" prefWidth="255.0" text="Inicio/DashBoard">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin></Button>
+               </children>
+            </AnchorPane>
+
+         </children>
+      </HBox>
+      <VBox fx:id="vbSubMenu" minHeight="0.0" onMouseEntered="#mostrarSubmenu" onMouseExited="#ocultarSubmenu">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets bottom="50.0" left="20.0" top="150.0" />
+         </padding>
+      </VBox>
+
+      
+
+        </children>
+
+
+        </StackPane>
