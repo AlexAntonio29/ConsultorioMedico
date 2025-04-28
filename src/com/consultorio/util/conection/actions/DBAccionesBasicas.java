@@ -1,7 +1,6 @@
 package com.consultorio.util.conection.actions;
 
-import com.consultorio.modelo.personal.Usuario;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

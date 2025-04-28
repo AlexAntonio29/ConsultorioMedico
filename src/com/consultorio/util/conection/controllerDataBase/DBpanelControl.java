@@ -1,7 +1,7 @@
 package com.consultorio.util.conection.controllerDataBase;
 
 
-import com.consultorio.util.AlertaConfirmacion;
+import com.consultorio.util.alertas.AlertaConfirmacion;
 import com.consultorio.util.AllDesign;
 import javafx.application.Platform;
 import javafx.fxml.FXML;

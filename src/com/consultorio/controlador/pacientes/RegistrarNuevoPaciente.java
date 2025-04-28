@@ -4,12 +4,12 @@ import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.clientes.RegistroPaciente;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.GetFecha;
+import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
 import com.consultorio.util.conection.modeloDataBase.clientes.RegistroPacienteDB;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
@@ -37,6 +37,8 @@ public class RegistrarNuevoPaciente {
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
+
+    AlertaAprobacion alertaAprobacion= new AlertaAprobacion();
     String foto="";
     File fileFoto=null;
 
@@ -139,6 +141,22 @@ public class RegistrarNuevoPaciente {
             pacienteDB.setPaciente(cargarPaciente(paciente));
             registroPacienteDB.setRegistroPaciente( cargarRegistroPaciente(new RegistroPaciente(),paciente));
 
+            alertaAprobacion.ventanaAprobacion("Registro del Paciente Exitoso");
+
+            tfNombre.clear();
+            tfCurp.clear();
+            tfApellidoPaterno.clear();
+            tfApellidoMaterno.clear();
+            dpFechaNacimiento.setValue(null);
+            tfDireccion.clear();
+            tfTelefono.clear();
+            comboTipoSexo.getSelectionModel().clearSelection();
+            comboTipoSexo.setPromptText("Ingrese Sexo");
+            tfEmail.clear();
+
+            dirImage="/resource/img/user_unknown.jpg";
+            ivFoto.setImage(new Image(getClass().getResource(dirImage).toExternalForm()));
+
 
 
 
@@ -165,34 +183,6 @@ public class RegistrarNuevoPaciente {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 
-        if (fileFoto==null) foto="";
-        else {
-
-            String rutaDestinoFoto="src/resource/img/pacientes/";
-            File carpetaDestino= new File(rutaDestinoFoto);
-            if (!carpetaDestino.exists()) carpetaDestino.mkdir();
-
-            if (fileFoto!=null) {
-
-                String getIdPaciente="";//llamar a base de datos
-                if (pacienteDB.obtenerUltimoIdPaciente()==null) getIdPaciente="1";
-                else getIdPaciente=String.valueOf(Integer.parseInt(pacienteDB.obtenerUltimoIdPaciente())+1);
-
-
-                File destino = new File(carpetaDestino,"paciente_"+getIdPaciente);
-                try {
-                    Files.copy(fileFoto.toPath(),destino.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-                    foto=destino.getAbsolutePath();
-                    System.out.println("Foto guardado con exito");
-
-                }catch (Exception e){
-                    ventanaErrores.ventanaErrorClasico("Error al guardar foto");
-                }
-            }
-
-        }
-
 
 
 
@@ -213,6 +203,34 @@ public class RegistrarNuevoPaciente {
         );
         String email=tfEmail.getText();
 
+
+        if (fileFoto==null) foto="";
+        else {
+
+            String rutaDestinoFoto="src/resource/img/pacientes/";
+            File carpetaDestino= new File(rutaDestinoFoto);
+            if (!carpetaDestino.exists()) carpetaDestino.mkdir();
+
+            if (fileFoto!=null) {
+
+                String getIdPaciente=curp;//llamar a base de datos
+                //if (pacienteDB.obtenerUltimoIdPaciente()==null) getIdPaciente="1";
+               // else getIdPaciente=String.valueOf(Integer.parseInt(pacienteDB.obtenerUltimoIdPaciente())+1);
+
+
+                File destino = new File(carpetaDestino,"paciente_"+getIdPaciente);
+                try {
+                    Files.copy(fileFoto.toPath(),destino.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+                    foto=destino.getAbsolutePath();
+                    System.out.println("Foto guardado con exito");
+
+                }catch (Exception e){
+                    ventanaErrores.ventanaErrorClasico("Error al guardar foto");
+                }
+            }
+
+        }
 
 
 
@@ -251,7 +269,7 @@ public class RegistrarNuevoPaciente {
         registroPaciente.setIdUsuario(Integer.parseInt(usuario.getId()));
         registroPaciente.setIdPaciente(Integer.parseInt(pacienteDB.obtenerUltimoIdPaciente()));
         registroPaciente.setFechaRegistro(new GetFecha().getFechaDateActual());
-        
+
         return registroPaciente;
     }
 

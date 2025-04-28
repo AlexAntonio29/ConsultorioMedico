@@ -2,7 +2,7 @@ package com.consultorio.controlador.registrar;
 
 import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.Usuario;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;

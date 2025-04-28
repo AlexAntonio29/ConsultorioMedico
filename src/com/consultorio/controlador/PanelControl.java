@@ -31,7 +31,7 @@ import com.consultorio.controlador.usuarioPersonal.PersonalGeneral;
 import com.consultorio.controlador.usuarioPersonal.RolesPermisos;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.AllDesign;
-import com.consultorio.util.AlertaConfirmacion;
+import com.consultorio.util.alertas.AlertaConfirmacion;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

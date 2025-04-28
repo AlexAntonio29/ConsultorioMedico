@@ -1,7 +1,7 @@
 package com.consultorio.controlador.registrar;
 
 import com.consultorio.modelo.personal.Empleado;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 import com.consultorio.util.validadCorreo.ValidadorRegexCorreo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 
 import static com.consultorio.util.validadCorreo.ValidadorRegexCorreo.validarCorreo;
 

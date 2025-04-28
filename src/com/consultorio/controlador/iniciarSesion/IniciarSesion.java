@@ -3,7 +3,7 @@ package com.consultorio.controlador.iniciarSesion;
 import com.consultorio.controlador.PanelControl;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;

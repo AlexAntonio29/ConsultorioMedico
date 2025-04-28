@@ -3,11 +3,11 @@ package com.consultorio.controlador.registrar;
 import com.consultorio.controlador.iniciarSesion.IniciarSesion;
 import com.consultorio.modelo.estructura.CentroMedico;
 import com.consultorio.modelo.personal.Usuario;
-import com.consultorio.util.AlertaConfirmacion;
+import com.consultorio.util.alertas.AlertaConfirmacion;
 import com.consultorio.util.conection.modeloDataBase.estructura.CentroMedicoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,15 +21,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneId;
-
-import java.nio.file.Path;
 
 public class RegistrarCentroMedico {
     AlertaConfirmacion alertaConfirmacion=new AlertaConfirmacion();

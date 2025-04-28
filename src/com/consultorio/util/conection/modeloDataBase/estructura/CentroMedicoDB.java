@@ -1,11 +1,10 @@
 package com.consultorio.util.conection.modeloDataBase.estructura;
 
 import com.consultorio.modelo.estructura.CentroMedico;
-import com.consultorio.util.errores.VentanaErrores;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 public class CentroMedicoDB {
 
