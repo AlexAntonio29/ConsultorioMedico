@@ -1,31 +1,23 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-;
+
 public class Main extends Application {
 
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("formulario_doctor.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Formulario Doctor");
+        stage.show();
 
 
-    public void start(Stage primaryStage) {
-
-    /*    FormularioPaciente formulario = new FormularioPaciente();
-
-        Scene contenidoVentana = new Scene(formulario.getRoot(),800,800);
-
-        primaryStage.setTitle("Consultorio");
-
-        primaryStage.setScene(contenidoVentana);
-
-        primaryStage.show();
-
-
-*/
     }
 
-
-
     public static void main(String[] args) {
-      //  launch(args);  // Llamada para iniciar la aplicación JavaFX
+        launch(args);
     }
 }
