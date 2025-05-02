@@ -26,6 +26,7 @@ import com.consultorio.controlador.pagoYfacturacion.RegistrarPagos;
 import com.consultorio.controlador.reportes.ExportarDatos;
 import com.consultorio.controlador.reportes.ReportesAtencionMedica;
 import com.consultorio.controlador.reportes.ReportesFinancieros;
+import com.consultorio.controlador.usuarioPersonal.AgregarPersonal;
 import com.consultorio.controlador.usuarioPersonal.MedicosAsistentes;
 import com.consultorio.controlador.usuarioPersonal.PersonalGeneral;
 import com.consultorio.controlador.usuarioPersonal.RolesPermisos;
@@ -342,6 +343,12 @@ public class PanelControl {
                 break;
 
             // Usuarios / Personal
+            case "Agregar personal":
+                System.out.println("Acción: Agregar personal");
+                updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml", AgregarPersonal.class);
+
+                break;
+
             case "Personal general":
                 System.out.println("Acción: Personal general");
                 updateContenidoAnchorPane("/com/consultorio/vista/usuarioPersonal/personal_general.fxml",PersonalGeneral.class);
@@ -523,6 +530,10 @@ public class PanelControl {
             if(controlador instanceof ExportarDatos){
                 ((ExportarDatos) controlador).setConector(connection);
             }
+            if(controlador instanceof AgregarPersonal){
+                ((AgregarPersonal) controlador).setConector(connection);
+                ((AgregarPersonal) controlador).setUsuario(usuario);
+            }
             if(controlador instanceof PersonalGeneral){
                 ((PersonalGeneral) controlador).setConector(connection);
             }
@@ -669,7 +680,7 @@ public class PanelControl {
     @FXML
     public void actionUsuarioPersonal() {
         design.getDesignButton(bUsuarioPersonal,1);
-        cadenaSubMenu = new String[]{"Personal general","Médicos y asistentes", "Roles y permisos"};
+        cadenaSubMenu = new String[]{"Agregar personal","Personal general","Médicos y asistentes", "Roles y permisos"};
         vbSubMenu.getChildren().clear();
         imprimirSubMenu(cadenaSubMenu);
     }

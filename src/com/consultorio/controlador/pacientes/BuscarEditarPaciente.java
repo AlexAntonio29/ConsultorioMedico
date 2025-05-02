@@ -21,7 +21,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 
@@ -31,6 +32,7 @@ import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class BuscarEditarPaciente {
@@ -42,6 +44,8 @@ public class BuscarEditarPaciente {
     @FXML
     Button btnCargarImg;
   ArrayList<Paciente> listaPaciente = new ArrayList<>();
+
+  @FXML TextField tfBusqueda;
 
   @FXML
     AnchorPane rootPanel;
@@ -55,8 +59,9 @@ public class BuscarEditarPaciente {
     ImageView ivFotoCamera;
 
 
+
     @FXML
-    VBox vBoxFormulario;
+    GridPane GridPaneFormulario;
     //AGREGAR LOS TEXTFIELD
 
     @FXML ImageView ivFoto;
@@ -69,6 +74,11 @@ public class BuscarEditarPaciente {
     @FXML TextField tfTelefono;
     @FXML ComboBox comboTipoSexo;
     @FXML TextField tfEmail;
+
+    @FXML
+    HBox hboxBusqueda;
+
+
 
 
 
@@ -110,8 +120,10 @@ public class BuscarEditarPaciente {
         fileFoto = fileChooser.showOpenDialog(null);
 
         if (fileFoto != null) {
-            foto = fileFoto.toURI().toString();
-            Image image = new Image(foto);
+            foto=fileFoto.getAbsolutePath();
+            String fotoRuta= fileFoto.toURI().toString();
+            Image image = new Image(fotoRuta);
+
             ivFoto.setImage(image);
             System.out.println("Foto seleccionado");
             System.out.println("Ruta: "+foto);
@@ -213,11 +225,19 @@ public class BuscarEditarPaciente {
                     ivFoto.setFitHeight(100);
                     ivFoto.setPreserveRatio(false);
                     ivFoto.setSmooth(true);
-                //pegar demas datos
+                //pegar demas datos\
+                    }else {
+                    ivFoto.setImage(new Image("/resource/img/user_unknown.jpg"));
+                    ivFoto.setPreserveRatio(true);
+                    ivFoto.setFitWidth(100);
+                    ivFoto.setFitHeight(100);
+                    ivFoto.setPreserveRatio(false);
+                    ivFoto.setSmooth(true);
+                } //dirImage="/resource/img/user_unknown.jpg"
 
                     tfNombre.setText(seleccionado.getNombre());
                     tfApellidoPaterno.setText(seleccionado.getAPaterno());
-                    tfApellidoMaterno.setText(seleccionado.getAPaterno());
+                    tfApellidoMaterno.setText(seleccionado.getAMaterno());
                     if (seleccionado.getFnacimiento()!=null) System.out.println("fecha Correcta");
                     else System.out.println("Fecha mal");
                     String localDate = String.valueOf(seleccionado.getFnacimiento());
@@ -232,7 +252,7 @@ public class BuscarEditarPaciente {
 
 
 
-                }
+
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -249,22 +269,16 @@ public class BuscarEditarPaciente {
     }
 
     public void getPacientes(){
+        tvPacientes.getItems().clear();
+        listaPaciente.clear();
+        List<Paciente> pacientes = pacienteDB.getPacientes();
 
-
-
-
-        int contador=1;
-
-        Paciente paciente;
-        while ((paciente= pacienteDB.getPaciente(contador))!=null){
-
-            Paciente newPaciente = paciente;
-
+        for (Paciente p: pacientes) {
+            Paciente newPaciente = p;
             if (esPropietario||esMiPaciente(usuario.getId(),newPaciente.getId())){
-              //  imprimirPacientes(newPaciente);
-                listaPaciente.add(paciente);
+                //  imprimirPacientes(newPaciente);
+                listaPaciente.add(p);
             }
-            contador++;
         }
 
         imprimirPacientes();
@@ -356,7 +370,10 @@ public class BuscarEditarPaciente {
         cargarImgDefault();
 
         tvPacientes.setVisible(true);
-        vBoxFormulario.setVisible(false);
+        tvPacientes.setManaged(true);
+        hboxBusqueda.setVisible(true);
+        GridPaneFormulario.setVisible(false);
+        GridPaneFormulario.setManaged(false);
 
         // cargarItemsEdad();
     }
@@ -446,7 +463,11 @@ try {
     }
     @FXML public void actionEditarPaciente(){
         tvPacientes.setVisible(false);
-        vBoxFormulario.setVisible(true);
+        tvPacientes.setManaged(false);
+       hboxBusqueda.setVisible(false);
+
+        GridPaneFormulario.setVisible(true);
+        GridPaneFormulario.setManaged(true);
         btnEditar.setDisable(true);
         btnGuardar.setDisable(false);
         btnCancelar.setDisable(false);
@@ -465,6 +486,7 @@ try {
             pacienteModificado.setSexo(String.valueOf(comboTipoSexo.getValue()));
             pacienteModificado.setEdad(new GetFecha().calcularEdad(pacienteModificado.getFnacimiento()));
             pacienteModificado.setEmail(tfEmail.getText());
+
             pacienteModificado.setFoto(foto);
 
 
@@ -487,7 +509,14 @@ try {
     }
     @FXML public void actionCancelarPaciente(){
         tvPacientes.setVisible(true);
-        vBoxFormulario.setVisible(false);
+        tvPacientes.setManaged(true);
+        hboxBusqueda.setVisible(true);
+
+
+        GridPaneFormulario.setVisible(false);
+        GridPaneFormulario.setManaged(false);
+
+
         btnEditar.setDisable(false);
         btnEliminar.setDisable(false);
         btnGuardar.setDisable(true);
@@ -518,5 +547,15 @@ try {
     }
 
 
+//SECCION DE BUSQUEDA
 
+    @FXML public void onBusqueda(){
+
+        String textoBusqueda = tfBusqueda.getText().trim();
+
+        if (!textoBusqueda.isEmpty()) {
+            List<Paciente> resultados = pacienteDB.buscarPaciente(textoBusqueda);
+            tvPacientes.getItems().setAll(resultados); // Actualizar la tabla con los resultados
+        }else getPacientes();
+    }
 }

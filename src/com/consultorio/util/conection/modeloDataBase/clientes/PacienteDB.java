@@ -4,7 +4,9 @@ import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.util.conection.modeloDataBase.modelo.Persona;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class PacienteDB extends Persona {
 
@@ -133,4 +135,94 @@ public class PacienteDB extends Persona {
             return false;
         }
     }
+
+
+    public List<Paciente> getPacientes() {
+        List<Paciente> listaPacientes = new ArrayList<>();
+        String sql = "SELECT * FROM pacientes";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Paciente paciente = new Paciente(
+                        String.valueOf(rs.getInt("id")), // Convertir a String para la clase Paciente
+                        rs.getString("curp"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido_paterno"),
+                        rs.getString("apellido_materno"),
+                        rs.getDate("fecha_nacimiento"),
+                        rs.getString("direccion"),
+                        rs.getString("telefono"),
+                        rs.getString("email"),
+                        rs.getString("foto"),
+                        String.valueOf(rs.getInt("edad")), // Convertir a String para la clase Paciente
+                        rs.getString("sexo")
+                );
+
+                // Filtrar si es propietario o si es su paciente
+                    listaPacientes.add(paciente);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Llamar a imprimirPacientes() después de cargar la lista
+
+        return listaPacientes;
+    }
+
+
+    // Método para buscar en cualquier columna de la tabla
+    public List<Paciente> buscarPaciente(String textoBusqueda) {
+        List<Paciente> listaResultados = new ArrayList<>();
+        String sql = "SELECT * FROM pacientes WHERE " +
+                "id LIKE ? OR " +
+                "nombre LIKE ? OR " +
+                "curp LIKE ? OR " +
+                "apellido_paterno LIKE ? OR " +
+                "apellido_materno LIKE ? OR " +
+                "fecha_nacimiento LIKE ? OR " +
+                "direccion LIKE ? OR " +
+                "telefono LIKE ? OR " +
+                "sexo LIKE ? OR " +
+                "edad LIKE ? OR " +
+                "email LIKE ? OR " +
+                "foto LIKE ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            for (int i = 1; i <= 12; i++) {
+                stmt.setString(i, "%" + textoBusqueda + "%"); // Buscar coincidencias parciales
+            }
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Paciente paciente = new Paciente(
+                            String.valueOf(rs.getInt("id")),
+                            rs.getString("curp"),
+                            rs.getString("nombre"),
+                            rs.getString("apellido_paterno"),
+                            rs.getString("apellido_materno"),
+                            rs.getDate("fecha_nacimiento"),
+                            rs.getString("direccion"),
+                            rs.getString("telefono"),
+                            rs.getString("email"),
+                            rs.getString("foto"),
+                            String.valueOf(rs.getInt("edad")),
+                            rs.getString("sexo")
+                    );
+                    listaResultados.add(paciente);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaResultados;
+    }
+
+
+
 }

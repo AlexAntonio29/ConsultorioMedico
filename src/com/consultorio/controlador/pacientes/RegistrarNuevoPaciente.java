@@ -304,12 +304,7 @@ public class RegistrarNuevoPaciente {
 
     }
 
-
-
-
-
-
-
+    
     //metodos de ejecucion
 
     public void cargar(){
