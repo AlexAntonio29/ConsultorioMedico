@@ -1,7 +1,7 @@
 package com.consultorio.util.conection.controllerDataBase;
 
 
-import com.consultorio.util.alertas.AlertaConfirmacion;
+import com.consultorio.util.alertas.Alerta;
 import com.consultorio.util.AllDesign;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -35,7 +35,7 @@ public class DBpanelControl {
 
     //Crear una confirmacion Alerta
 
-    AlertaConfirmacion alerta = new AlertaConfirmacion();
+    Alerta alerta = new Alerta();
 
     //dimension menu izquierda para cualquier cosa que necesite la dimension
     double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;

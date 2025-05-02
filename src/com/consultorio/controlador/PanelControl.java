@@ -31,7 +31,7 @@ import com.consultorio.controlador.usuarioPersonal.PersonalGeneral;
 import com.consultorio.controlador.usuarioPersonal.RolesPermisos;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.AllDesign;
-import com.consultorio.util.alertas.AlertaConfirmacion;
+import com.consultorio.util.alertas.Alerta;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,7 +72,7 @@ public class PanelControl {
 
     //Crear una confirmacion Alerta
 
-    AlertaConfirmacion alerta = new AlertaConfirmacion();
+    Alerta alerta = new Alerta();
 
     //dimension menu izquierda para cualquier cosa que necesite la dimension
     double dimensionMenuIzquierdo= dimensionPantalla.getWidth()/4;
@@ -571,7 +571,7 @@ public class PanelControl {
             AnchorPane.setTopAnchor(contenidoAnchorPanelDinamico, 0.0);
             AnchorPane.setBottomAnchor(contenidoAnchorPanelDinamico, 0.0);
             AnchorPane.setLeftAnchor(contenidoAnchorPanelDinamico, 0.0);
-            AnchorPane.setRightAnchor(contenidoAnchorPanelDinamico, 0.0);
+           AnchorPane.setRightAnchor(contenidoAnchorPanelDinamico, 0.0);
 
 
             //cargar los datos de la base de datos

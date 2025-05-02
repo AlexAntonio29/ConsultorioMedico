@@ -105,4 +105,32 @@ public class PacienteDB extends Persona {
             return false;
         }
     }
+
+
+    public boolean updatePaciente(Paciente paciente) {
+        String sql = "UPDATE pacientes SET nombre = ?, curp = ?, apellido_paterno = ?, apellido_materno = ?, fecha_nacimiento = ?, direccion = ?, telefono = ?, sexo = ?, edad = ?, email = ?, foto = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, paciente.getNombre());
+            stmt.setString(2, paciente.getCurp());
+            stmt.setString(3, paciente.getAPaterno());
+            stmt.setString(4, paciente.getAMaterno());
+            stmt.setDate(5, new java.sql.Date(paciente.getFnacimiento().getTime())); // Convertir Date a java.sql.Date
+            stmt.setString(6, paciente.getDireccion());
+            stmt.setString(7, paciente.getTelefono());
+            stmt.setString(8, paciente.getSexo());
+            stmt.setInt(9, Integer.parseInt(paciente.getEdad())); // Convertir edad a Integer
+            stmt.setString(10, paciente.getEmail());
+            stmt.setString(11, paciente.getFoto());
+
+            // Aquí el ID solo sirve para identificar el paciente, no se modifica
+            stmt.setInt(12, Integer.parseInt(paciente.getId()));
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0; // Retorna true si se actualizó el paciente correctamente
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

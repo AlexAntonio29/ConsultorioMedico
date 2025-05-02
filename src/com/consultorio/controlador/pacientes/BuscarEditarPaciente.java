@@ -2,18 +2,17 @@ package com.consultorio.controlador.pacientes;
 
 import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
-import com.consultorio.util.alertas.AlertaConfirmacion;
+import com.consultorio.util.alertas.Alerta;
 import com.consultorio.util.alertas.errores.VentanaErrores;
 import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
 import com.consultorio.util.conection.modeloDataBase.clientes.RegistroPacienteDB;
 import javafx.application.Platform;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -22,16 +21,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 
 
-import java.awt.*;
 import java.io.File;
-import java.security.PublicKey;
 import java.sql.Connection;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
@@ -58,6 +55,8 @@ public class BuscarEditarPaciente {
     ImageView ivFotoCamera;
 
 
+    @FXML
+    VBox vBoxFormulario;
     //AGREGAR LOS TEXTFIELD
 
     @FXML ImageView ivFoto;
@@ -75,6 +74,8 @@ public class BuscarEditarPaciente {
 
     @FXML Button btnEditar;
     @FXML Button btnEliminar;
+    @FXML Button btnGuardar;
+    @FXML Button btnCancelar;
 
 
 
@@ -131,7 +132,7 @@ public class BuscarEditarPaciente {
 
 
 
-    AlertaConfirmacion alerta = new AlertaConfirmacion();
+    Alerta alerta = new Alerta();
     AlertaAprobacion alertaAprobacion= new AlertaAprobacion();
     VentanaErrores error= new VentanaErrores();
 
@@ -192,6 +193,8 @@ public class BuscarEditarPaciente {
 
             btnEditar.setDisable(false);
             btnEliminar.setDisable(false);
+            //btnGuardar.setDisable(false);
+            //btnCancelar.setDisable(false);
 
 
             //AGREGAR DATOS A LA
@@ -200,8 +203,8 @@ public class BuscarEditarPaciente {
 
             try {
                 if (!Objects.equals(seleccionado.getFoto(), "")) {
-                    String url = "file:/"+seleccionado.getFoto();
-                    Image image = new Image(url);
+                    foto = seleccionado.getFoto();
+                    Image image = new Image("file:/"+foto);
                     ivFoto.setImage(image);
                     System.out.println("Foto seleccionado");
                     System.out.println("Ruta: "+foto);
@@ -352,6 +355,8 @@ public class BuscarEditarPaciente {
     public void cargar(){
         cargarImgDefault();
 
+        tvPacientes.setVisible(true);
+        vBoxFormulario.setVisible(false);
 
         // cargarItemsEdad();
     }
@@ -424,8 +429,8 @@ try {
 
 
         if (alerta.mostrarConfirmacion("¿Desea Eliminar al paciente?")){
-       // pacienteDB.eliminarPaciente(Integer.parseInt(seleccionado.getId()));
-        alertaAprobacion.ventanaAprobacion("Paciente eliminado exitosamente");
+        pacienteDB.eliminarPaciente(Integer.parseInt(seleccionado.getId()));
+        alerta.AccionExitosa("Paciente eliminado exitosamente");
 
         recargarFXML();
 
@@ -439,16 +444,73 @@ try {
 }
 
     }
+    @FXML public void actionEditarPaciente(){
+        tvPacientes.setVisible(false);
+        vBoxFormulario.setVisible(true);
+        btnEditar.setDisable(true);
+        btnGuardar.setDisable(false);
+        btnCancelar.setDisable(false);
 
+    }
+    @FXML public void actionGuardarPaciente(){
+        try {
+
+            Paciente pacienteModificado = seleccionado;
+            pacienteModificado.setNombre(tfNombre.getText());
+            pacienteModificado.setAPaterno(tfApellidoPaterno.getText());
+            pacienteModificado.setAPaterno(tfApellidoMaterno.getText());
+            pacienteModificado.setFnacimiento(new GetFecha().convertirDatePickerADate(dpFechaNacimiento));
+            pacienteModificado.setDireccion(tfDireccion.getText());
+            pacienteModificado.setTelefono(tfTelefono.getText());
+            pacienteModificado.setSexo(String.valueOf(comboTipoSexo.getValue()));
+            pacienteModificado.setEdad(new GetFecha().calcularEdad(pacienteModificado.getFnacimiento()));
+            pacienteModificado.setEmail(tfEmail.getText());
+            pacienteModificado.setFoto(foto);
+
+
+
+            if (alerta.mostrarConfirmacion("¿Desea Modificar al paciente?")){
+                 pacienteDB.updatePaciente(pacienteModificado);
+                alerta.AccionExitosa("Paciente Modificado exitosamente");
+
+                recargarFXML();
+
+            }
+            else {
+                System.out.println("operacion eliminar paciente cancelada");
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("ERROR REVISAR EN actionEliminarPaciente");
+        }
+
+    }
+    @FXML public void actionCancelarPaciente(){
+        tvPacientes.setVisible(true);
+        vBoxFormulario.setVisible(false);
+        btnEditar.setDisable(false);
+        btnEliminar.setDisable(false);
+        btnGuardar.setDisable(true);
+        btnCancelar.setDisable(true);
+    }
 
     public void recargarFXML(){
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml"));
             Parent nuevoContenido = loader.load();
-
+            BuscarEditarPaciente controller = loader.getController();
+            controller.setConector(connection);
+            controller.setUsuario(usuario);
             rootPanel.getChildren().clear();
             rootPanel.getChildren().add(nuevoContenido);
+            for (Node nodo : rootPanel.getChildren()) {
+                AnchorPane.setTopAnchor(nodo, 0.0);
+                AnchorPane.setBottomAnchor(nodo, 0.0);
+                AnchorPane.setLeftAnchor(nodo, 0.0);
+                AnchorPane.setRightAnchor(nodo, 0.0);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

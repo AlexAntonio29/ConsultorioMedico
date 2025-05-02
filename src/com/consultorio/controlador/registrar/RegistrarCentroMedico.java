@@ -3,7 +3,7 @@ package com.consultorio.controlador.registrar;
 import com.consultorio.controlador.iniciarSesion.IniciarSesion;
 import com.consultorio.modelo.estructura.CentroMedico;
 import com.consultorio.modelo.personal.Usuario;
-import com.consultorio.util.alertas.AlertaConfirmacion;
+import com.consultorio.util.alertas.Alerta;
 import com.consultorio.util.conection.modeloDataBase.estructura.CentroMedicoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
@@ -29,7 +29,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class RegistrarCentroMedico {
-    AlertaConfirmacion alertaConfirmacion=new AlertaConfirmacion();
+    Alerta alertaConfirmacion=new Alerta();
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
     Rectangle2D dimensionPantalla= Screen.getPrimary().getBounds();
