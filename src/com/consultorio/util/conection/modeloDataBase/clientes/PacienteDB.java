@@ -29,8 +29,8 @@ public class PacienteDB extends Persona {
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, paciente.getNombre());
             stmt.setString(2, paciente.getCurp());
-            stmt.setString(3, paciente.getaPaterno());
-            stmt.setString(4, paciente.getaMaterno());
+            stmt.setString(3, paciente.getAPaterno());
+            stmt.setString(4, paciente.getAMaterno());
             stmt.setDate(5, java.sql.Date.valueOf(paciente.getFnacimiento().toString()));
             stmt.setString(6, paciente.getDireccion());
             stmt.setString(7, paciente.getTelefono());
@@ -87,5 +87,22 @@ public class PacienteDB extends Persona {
             e.printStackTrace();
         }
         return null; // 📌 Si no hay pacientes, retorna `null`
+    }
+
+
+
+    public boolean eliminarPaciente(int id) {
+        String sql = "DELETE FROM pacientes WHERE id = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            int filasAfectadas = stmt.executeUpdate();
+            System.out.println("paciente eliminado correctamente");
+            return filasAfectadas > 0; // Si al menos una fila fue eliminada, retorna true
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Fallo al eliminar paciente");
+            return false;
+        }
     }
 }

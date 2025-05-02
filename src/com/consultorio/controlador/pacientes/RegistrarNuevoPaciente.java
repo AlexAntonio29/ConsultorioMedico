@@ -249,8 +249,8 @@ public class RegistrarNuevoPaciente {
 
         paciente.setNombre(nombre);
         paciente.setCurp(curp);
-        paciente.setaPaterno(apellido_paterno);
-        paciente.setaMaterno(apellido_materno);
+        paciente.setAPaterno(apellido_paterno);
+        paciente.setAMaterno(apellido_materno);
         paciente.setFnacimiento(Date.valueOf(dpFechaNacimiento.getValue()));
         paciente.setDireccion(direccion);
         paciente.setTelefono(telefono);

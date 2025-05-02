@@ -168,8 +168,8 @@ catch (Exception e){
         System.out.println(usuario.getEmpleado().getId());
         System.out.println(usuario.getEmpleado().getCurp());
         System.out.println(usuario.getEmpleado().getNombre());
-        System.out.println(usuario.getEmpleado().getaPaterno());
-        System.out.println(usuario.getEmpleado().getaMaterno());
+        System.out.println(usuario.getEmpleado().getAPaterno());
+        System.out.println(usuario.getEmpleado().getAMaterno());
         System.out.println(usuario.getEmpleado().getFnacimiento());
         System.out.println(usuario.getEmpleado().getDireccion());
         System.out.println(usuario.getEmpleado().getTelefono());

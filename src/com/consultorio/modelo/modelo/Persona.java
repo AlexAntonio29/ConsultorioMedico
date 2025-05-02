@@ -57,17 +57,17 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getaPaterno() {
+    public String getAPaterno() {
         return aPaterno;
 
     }
-    public void setaPaterno(String aPaterno) {
+    public void setAPaterno(String aPaterno) {
         this.aPaterno = aPaterno;
     }
-    public String getaMaterno() {
+    public String getAMaterno() {
         return aMaterno;
     }
-    public void setaMaterno(String aMaterno) {
+    public void setAMaterno(String aMaterno) {
         this.aMaterno = aMaterno;
     }
     public Date getFnacimiento() {

@@ -61,6 +61,40 @@ public class RegistroPacienteDB {
         return null;
     }
 
+
+
+//obtener registro de paciente de acuerdo a si es su usuario
+    public RegistroPaciente getRegistroPaciente(int idUsuario, int idPaciente) {
+        String sql = "SELECT * FROM registro_paciente WHERE id_usuario = ? AND id_paciente = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, idUsuario);
+            stmt.setInt(2, idPaciente);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Suponiendo que tienes una clase RegistroPaciente
+                return new RegistroPaciente(
+                        rs.getInt("id"),
+                        rs.getInt("id_usuario"),
+                        rs.getInt("id_paciente"),
+                        rs.getDate("fecha_registro")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null; // Si no se encuentra un registro, devuelve null
+    }
+
+
+    public boolean existeRegistroPaciente(int idUsuario, int idPaciente) {
+        return getRegistroPaciente(idUsuario, idPaciente) != null;
+    }
+
+
     // 🔹 Método para obtener todos los registros de pacientes
     public List<RegistroPaciente> obtenerTodosLosRegistros() {
         List<RegistroPaciente> listaRegistros = new ArrayList<>();

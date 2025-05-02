@@ -50,7 +50,7 @@
                   <Insets bottom="5.0" top="5.0" />
                </padding>
             </Button>
-            <Button fx:id="bInventario" mnemonicParsing="false" onAction="#actionInventario" onMouseEntered="#actionInventario" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inventario">
+            <Button fx:id="bInventario"  mnemonicParsing="false" onAction="#actionInventario" onMouseEntered="#actionInventario" onMouseExited="#ocultarSubmenu" prefHeight="25.0" prefWidth="400.0" text="Inventario">
                <padding>
                   <Insets bottom="5.0" top="5.0" />
                </padding>

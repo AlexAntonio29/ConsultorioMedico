@@ -67,8 +67,8 @@ public class EmpleadoDB extends Persona {
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, empleado.getCurp());
             stmt.setString(2, empleado.getNombre());
-            stmt.setString(3, empleado.getaPaterno());
-            stmt.setString(4, empleado.getaMaterno());
+            stmt.setString(3, empleado.getAPaterno());
+            stmt.setString(4, empleado.getAMaterno());
             stmt.setDate(5, java.sql.Date.valueOf(empleado.getFnacimiento().toString()));
             stmt.setString(6, empleado.getDireccion());
             stmt.setString(7, empleado.getTelefono());
