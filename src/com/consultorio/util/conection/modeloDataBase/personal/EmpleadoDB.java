@@ -209,7 +209,10 @@ public String obtenerUltimoIdPaciente() {
                 "sexo LIKE ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            for (int i = 1; i <= 16; i++) {
+           /* for (int i = 1; i <= 16; i++) {
+                stmt.setString(i, "%" + textoBusqueda + "%"); // Buscar coincidencias parciales
+            }*/
+            for (int i = 1; i <= 12; i++) {
                 stmt.setString(i, "%" + textoBusqueda + "%"); // Buscar coincidencias parciales
             }
 

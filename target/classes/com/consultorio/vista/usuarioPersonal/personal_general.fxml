@@ -1,64 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.consultorio.controlador.usuarioPersonal.PersonalGeneral"
-            prefHeight="400.0" prefWidth="600.0">
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.usuarioPersonal.PersonalGeneral">
+    <AnchorPane fx:id="rootPanel" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ECF0F1;">
+        <children>
+            <!-- Contenedor principal centrado en la interfaz -->
+            <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 
-    <VBox alignment="TOP_CENTER" spacing="20.0"
-          AnchorPane.topAnchor="40.0" AnchorPane.leftAnchor="60.0"
-          AnchorPane.rightAnchor="60.0" AnchorPane.bottomAnchor="40.0">
-
-        <Label text="Personal General" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
-
-        <HBox alignment="CENTER_LEFT" spacing="10.0">
-            <Label style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #34495E;" text="Buscar:" />
-            <TextField fx:id="tfBuscar" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #494949;" />
-            <Button fx:id="bBuscarStock" style="-fx-text-fill: #ffffff; -fx-background-color: #233f9c" text="Buscar" />
-
-        </HBox>
+                <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Personal General" />
 
 
-    <ScrollPane fitToWidth="false" fitToHeight="false" hbarPolicy="ALWAYS" vbarPolicy="AS_NEEDED">
-        <content>
-
-        <TableView fx:id="tvPersonalGeneral" >
-            <columns>
-                <TableColumn fx:id="colFoto" text="Foto" prefWidth="100"/>
-                <TableColumn fx:id="colID" text="ID" prefWidth="100"/>
-                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
-                <TableColumn fx:id="colApellidoPaterno" text="Apellido Paterno" prefWidth="200"/>
-                <TableColumn fx:id="colApellidoMaterno" text="Apellido Materno" prefWidth="200"/>
-                <TableColumn fx:id="colFechaNacimiento" text="Fecha Nacimiento" prefWidth="200"/>
-                <TableColumn fx:id="colOcupacion" text="Ocupacion" prefWidth="200"/>
-                <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="200"/>
-                <TableColumn fx:id="colDireccion" text="Direccion" prefWidth="200"/>
-                <TableColumn fx:id="colTelefono" text="Telefono" prefWidth="200"/>
-                <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
-                <TableColumn fx:id="colFechaIngreso" text="Fecha Ingreso" prefWidth="200"/>
-                <TableColumn fx:id="colSexo" text="Sexo" prefWidth="200"/>
-                <TableColumn fx:id="colEdad" text="Edad" prefWidth="100"/>
-
-            </columns>
-        </TableView>
-    </content></ScrollPane>
-
-        <HBox alignment="CENTER" spacing="15.0">
-            <Button fx:id="btnAgregar" prefWidth="150.0" style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px;" text="Añadir Empleado" />
-            <Button fx:id="btnModificar" prefWidth="150.0" style="-fx-background-color: #ef8300; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px;" text="Añadir Empleado" />
-            <Button fx:id="btnEliminar" prefWidth="150.0" style="-fx-background-color: #ff0000; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px;" text="Añadir Empleado" />
-
-        </HBox>
+                <!-- Sección de búsqueda -->
+                <HBox fx:id="hboxBusqueda" alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Buscar Empleado:" />
+                        <TextField fx:id="tfBusqueda" onKeyReleased="#onBusqueda" prefWidth="250" promptText="Ingrese nombre o ID" />
+                        <!-- <Button fx:id="btnBuscar" onAction="#btnBuscarOnAction" style="-fx-background-color:#3498DB; -fx-text-fill: white; -fx-background-radius: 5;" text="Buscar" />-->
+                    </children>
+                </HBox>
 
 
 
-    </VBox>
+
+                <!-- Tabla para mostrar resultados de búsqueda -->
+                <TableView fx:id="tvEmpleados" minHeight="250">
+
+                    <columns>
+
+                        <TableColumn fx:id="colID" prefWidth="100" text="ID" />
+                        <TableColumn fx:id="colFoto" prefWidth="240" text="Foto" />
+                        <TableColumn fx:id="colNombre" prefWidth="240" text="Nombre" />
+                        <TableColumn fx:id="colApellidoPaterno" prefWidth="240" text="ApellidoPaterno" />
+                        <TableColumn fx:id="colApellidoMaterno" prefWidth="240" text="ApellidoMaterno" />
+                        <TableColumn fx:id="colFechaNacimiento" prefWidth="240" text="Fecha Nacimiento" />
+                        <TableColumn fx:id="colCurp" prefWidth="240" text="Curp" />
+                        <TableColumn fx:id="colDireccion" prefWidth="240" text="Direccion" />
+                        <TableColumn fx:id="colTelefono" prefWidth="240" text="Telefono" />
+                        <TableColumn fx:id="colSexo" prefWidth="240" text="Sexo" />
+                        <TableColumn fx:id="colEdad" prefWidth="240" text="Edad" />
+                        <TableColumn fx:id="colEmail" prefWidth="240" text="Email" />
+                        <TableColumn fx:id="colOcupacion" prefWidth="240" text="Ocupacion" />
+                        <TableColumn fx:id="colEspecialidad" prefWidth="240" text="Especialidad" />
+                        <TableColumn fx:id="colFRegistro" prefWidth="240" text="Fecha Registro" />
+
+                    </columns>
 
 
-</AnchorPane>
+
+                </TableView>
+
+
+
+
+                <!-- Formulario para editar datos del empleado seleccionado -->
+                <GridPane fx:id="GridPaneFormulario" hgap="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 20;" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="40" />
+                        <ColumnConstraints percentWidth="60" />
+                    </columnConstraints>
+                    <children>
+
+
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Foto:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+                        <StackPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+
+                            <ImageView fx:id="ivFoto" fitHeight="100" fitWidth="100" StackPane.alignment="BOTTOM_RIGHT">
+                                <image>
+
+                                </image>
+
+                            </ImageView>
+                            <Button fx:id="btnCargarImg" onAction="#actionbtnCamera" style="-fx-border-radius: 10" StackPane.alignment="BOTTOM_RIGHT">
+                                <graphic>
+                                    <ImageView fx:id="ivFotoCamera">
+                                        <image>
+
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+
+                        </StackPane>
+
+
+                        <!-- Fila 0: Nombre -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="tfNombre" promptText="Ingrese el nombre" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Curp" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+                        <TextField fx:id="tfCurp" promptText="Ingrese Curp" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <!-- Fila 1: Apellido Paterno -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Paterno:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfApellidoPaterno" promptText="Ingrese el apellido paterno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <!-- Fila 2: Apellido Materno -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Materno:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfApellidoMaterno" promptText="Ingrese el apellido materno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Fila 3: Fecha de Nacimiento -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Fecha de Nacimiento:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="dpFechaNacimiento" promptText="Seleccione la fecha" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <!-- Fila 4: Dirección -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Dirección:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextField fx:id="tfDireccion" promptText="Ingrese la dirección" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                        <!-- Fila 5: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <TextField fx:id="tfTelefono" promptText="Ingrese el teléfono" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <!-- Fila 6: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Sexo:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="comboTipoSexo" promptText="Ingrese Sexo" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Femenino" />
+                                    <String fx:value="Masculino" />
+
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <!-- Fila 7: -->
+
+                        <!-- Fila 8: Teléfono -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <TextField fx:id="tfEmail" promptText="Ingrese el email" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Ocupación:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                        <ComboBox fx:id="comboTipoOcupacion" onAction="#cargarComboEspecialidad" promptText="Seleccione Ocupacion" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList" >
+                                    <String fx:value="Administrador" />
+                                    <String fx:value="Medico" />
+                                    <String fx:value="Asistente" />
+                                    <String fx:value="Enfermero" />
+                                    <String fx:value="Residuos Biologicos" />
+                                    <String fx:value="Mantenimiento General" />
+                                    <String fx:value="Jardinero" />
+                                    <String fx:value="Limpieza" />
+                                    <String fx:value="Guardia de seguridad" />
+                                    <String fx:value="Chofer de Ambulancia" />
+                                    <String fx:value="Encargado de Almacen Medico" />
+                                    <String fx:value="Repartidor Medicamentos" />
+                                    <String fx:value="Auxiliar de Cafeteria" />
+
+
+
+
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Especialidad:" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                        <ComboBox fx:id="comboTipoEspecialidad" promptText="Seleccione Especialidadad" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+
+
+                        <!-- Fila 3: Botones para Editar y Guardar -->
+
+                    </children>
+
+                </GridPane>
+                <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                    <children>
+                        <Button fx:id="btnCancelar" disable="true" onAction="#actionCancelarEmpleado" prefWidth="100" style="-fx-background-color:#233f9c; -fx-text-fill: white; -fx-background-radius: 5;" text="Cancelar" />
+
+                        <Button fx:id="btnGuardar" disable="true" onAction="#actionGuardarEmpleado" prefWidth="100" style="-fx-background-color:#4bcac4; -fx-text-fill: white; -fx-background-radius: 5;" text="Guardar Empleado" />
+                        <Button fx:id="btnEditar" disable="true" onAction="#actionEditarEmpleado" prefWidth="100" style="-fx-background-color:#E67E22; -fx-text-fill: white; -fx-background-radius: 5;" text="Editar Empleado" />
+
+                        <Button fx:id="btnEliminar" disable="true" onAction="#actionEliminarEmpleado" prefWidth="150" style="-fx-background-color:#c50000; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar Empleado">
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin></Button>
+
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="100.0" />
+                    </VBox.margin>
+
+                </HBox>
+            </VBox>
+        </children>
+    </AnchorPane>
+</ScrollPane>

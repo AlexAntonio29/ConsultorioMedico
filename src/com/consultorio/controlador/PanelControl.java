@@ -536,6 +536,7 @@ public class PanelControl {
             }
             if(controlador instanceof PersonalGeneral){
                 ((PersonalGeneral) controlador).setConector(connection);
+                ((PersonalGeneral) controlador).setUsuario(usuario);
             }
             if(controlador instanceof MedicosAsistentes){
                 ((MedicosAsistentes) controlador).setConector(connection);
