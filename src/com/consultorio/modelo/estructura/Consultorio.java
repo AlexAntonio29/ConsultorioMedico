@@ -4,10 +4,18 @@ public class Consultorio {
 
     String nConsultorio;
     String especialidad;
-    boolean disponibilidad;
-    String edificio;
-    String piso;
+    int disponibilidad;
+    Edificio edificio;
+    String numeroPiso;
 
+    public Consultorio(){}
+    public Consultorio(String nConsultorio, String especialidad, int disponibilidad, Edificio edificio, String numeroPiso) {
+        this.nConsultorio = nConsultorio;
+        this.especialidad = especialidad;
+        this.disponibilidad = disponibilidad;
+        this.edificio = edificio;
+        this.numeroPiso = numeroPiso;
+    }
 
 
     public String getnConsultorio() {
@@ -18,15 +26,15 @@ public class Consultorio {
         return especialidad;
     }
 
-    public boolean isDisponibilidad() {
+    public int getDisponibilidad() {
         return disponibilidad;
     }
 
-    public String getPiso() {
-        return piso;
+    public String getNumeroPiso() {
+        return numeroPiso;
     }
 
-    public String getEdificio() {
+    public Edificio getEdificio() {
         return edificio;
     }
 
@@ -38,15 +46,15 @@ public class Consultorio {
         this.especialidad = especialidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(int disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
-    public void setPiso(String piso) {
-        this.piso = piso;
+    public void setNumeroPiso(String numeroPiso) {
+        this.numeroPiso = numeroPiso;
     }
 
-    public void setEdificio(String edificio) {
+    public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
     }
 

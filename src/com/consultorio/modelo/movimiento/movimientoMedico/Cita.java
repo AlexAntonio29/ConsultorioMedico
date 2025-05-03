@@ -1,26 +1,43 @@
 package com.consultorio.modelo.movimiento.movimientoMedico;
 
 import com.consultorio.modelo.estructura.Consultorio;
-import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.clientes.Paciente;
+import com.consultorio.modelo.personal.Usuario;
 
 import java.time.LocalTime;
 import java.util.Date;
 
 public class Cita {
-
-    Empleado idUsuario;
-    Paciente idPaciente;
+    String id;
+    Usuario usuario;
+    Paciente paciente;
     Date fecha;
     LocalTime hora;
-    Consultorio nConsultorio;
+    Consultorio consultorio;
 
-    public Empleado getIdUsuario() {
-        return idUsuario;
+    public Cita(String id, Usuario usuario, Paciente paciente, java.sql.Date fecha, LocalTime hora, Consultorio consultorio) {
+        this.id = id;
+        this.usuario = usuario;
+        this.paciente = paciente;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.consultorio = consultorio;
     }
 
-    public Paciente getIdPaciente() {
-        return idPaciente;
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
     }
 
     public Date getFecha() {
@@ -31,16 +48,16 @@ public class Cita {
         return hora;
     }
 
-    public Consultorio getnConsultorio() {
-        return nConsultorio;
+    public Consultorio getConsultorio() {
+        return consultorio;
     }
 
-    public void setIdUsuario(Empleado idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public void setIdPaciente(Paciente idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     public void setFecha(Date fecha) {
@@ -51,7 +68,7 @@ public class Cita {
         this.hora = hora;
     }
 
-    public void setnConsultorio(Consultorio nConsultorio) {
-        this.nConsultorio = nConsultorio;
+    public void setConsultorio(Consultorio consultorio) {
+        this.consultorio = consultorio;
     }
 }

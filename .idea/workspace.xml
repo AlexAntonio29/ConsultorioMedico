@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/AgregarPersonal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/RegistroEmpleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/RegistroEmpleadoDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/BuscarEditarPaciente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/BuscarEditarPaciente$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/buscarEditarPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/buscarEditarPaciente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/GetFecha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/GetFecha.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/buscar_editar_paciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +111,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="220896000" />
+      <workItem from="1744921076130" duration="223442000" />
     </task>
     <servers />
   </component>

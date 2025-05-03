@@ -6,9 +6,17 @@ public class Edificio {
     String numeroEdificio;
     String nombreEdificio;
     String direccionEdificio;
+    String numeroPisos;
 
     public Edificio(){
 
+    }
+    public Edificio(String id, String numeroEdificio, String nombreEdificio, String direccionEdificio, String numeroPisos){
+        this.id = id;
+        this.numeroEdificio = numeroEdificio;
+        this.nombreEdificio = nombreEdificio;
+        this.direccionEdificio = direccionEdificio;
+        this.numeroPisos = numeroPisos;
     }
 
     public String getId() {
@@ -42,5 +50,11 @@ public class Edificio {
         this.direccionEdificio = direccionEdificio;
     }
 
+    public String getNumeroPisos() {
+        return numeroPisos;
+    }
 
+    public void setNumeroPisos(String numeroPisos) {
+        this.numeroPisos = numeroPisos;
+    }
 }

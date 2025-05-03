@@ -1,13 +1,13 @@
 package com.consultorio.util.conection.modeloDataBase.estructura;
 
-public class Edificio {
+public class EdificioDB {
 
     String id;
     String numeroEdificio;
     String nombreEdificio;
     String direccionEdificio;
 
-    public Edificio(){
+    public EdificioDB(){
 
     }
 
