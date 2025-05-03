@@ -128,10 +128,10 @@ public class ConsultorioDB {
         List<Consultorio> listaConsultorio = new ArrayList<>();
         String sql = "SELECT " +
                 "c.nConsultorio AS nConsultorio_consultorio, c.especialidad AS especialidad_consultorio, " +
-                "c.disponibilidad AS disponibilidad_consultorio, c.numero_piso AS numero_piso_consultorio," +
-                "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio," +
-                "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio" +
-                " FROM consultorio c " +
+                "c.disponibilidad AS disponibilidad_consultorio, c.numero_piso AS numero_piso_consultorio, " +
+                "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio, " +
+                "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio " +
+                "FROM consultorio c " +
                 "JOIN edificio e ON c.id_edificio = e.id ";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql);
@@ -177,24 +177,16 @@ public class ConsultorioDB {
         List<Consultorio> listaResultados = new ArrayList<>();
         String sql ="SELECT " +
                 "c.nConsultorio AS nConsultorio_consultorio, c.especialidad AS especialidad_consultorio, " +
-                "c.disponibilidad AS disponibilidad_consultorio, c.numero_piso AS numero_piso_consultorio," +
-                "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio," +
-                "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio" +
-                " FROM consultorio c " +
+                "c.disponibilidad AS disponibilidad_consultorio, c.numero_piso AS numero_piso_consultorio, " +
+                "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio, " +
+                "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio " +
+                "FROM consultorio c " +
                 "JOIN edificio e ON c.id_edificio = e.id "+
-                " WHERE " +
-                "id LIKE ? OR " +
-                "nombre LIKE ? OR " +
-                "curp LIKE ? OR " +
-                "apellido_paterno LIKE ? OR " +
-                "apellido_materno LIKE ? OR " +
-                "fecha_nacimiento LIKE ? OR " +
-                "direccion LIKE ? OR " +
-                "telefono LIKE ? OR " +
-                "sexo LIKE ? OR " +
-                "edad LIKE ? OR " +
-                "email LIKE ? OR " +
-                "foto LIKE ?";
+                "WHERE " +
+                "c.nConsultorio LIKE ? OR " +
+                "c.especialidad LIKE ? OR " +
+                "c.disponibilidad LIKE ? OR " +
+                "c.numero_piso LIKE ? ";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             for (int i = 1; i <= 12; i++) {
