@@ -1,6 +1,6 @@
 package com.consultorio.util.conection.modeloDataBase.estructura;
 
-import com.consultorio.modelo.estructura.Consultorio;
+
 import com.consultorio.modelo.estructura.Edificio;
 
 import java.sql.*;
@@ -111,7 +111,7 @@ public class EdificioDB {
     }
 
     public List<Edificio> getEdificio() {
-        List<Edificio> listaConsultorio = new ArrayList<>();
+        List<Edificio> listaEdificio = new ArrayList<>();
         String sql = "SELECT " +
                 "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio, " +
                 "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio " +
@@ -130,7 +130,7 @@ public class EdificioDB {
                 );
 
                 // Filtrar si es propietario o si es su paciente
-                listaConsultorio.add(edificio);
+                listaEdificio.add(edificio);
 
             }
 
@@ -140,12 +140,12 @@ public class EdificioDB {
 
         // Llamar a imprimirPacientes() después de cargar la lista
 
-        return listaConsultorio;
+        return listaEdificio;
     }
 
     // Método para buscar en cualquier columna de la tabla
-    public List<Consultorio> buscarEdificio(String textoBusqueda) {
-        List<Consultorio> listaResultados = new ArrayList<>();
+    public List<Edificio> buscarEdificio(String textoBusqueda) {
+        List<Edificio> listaResultados = new ArrayList<>();
         String sql ="SELECT " +
                 "e.id AS id_edificio, e.numeroEdificio AS numero_edificio, e.nombreEdificio AS nombre_edificio, " +
                 "e.direccion AS direccion_edificio, e.numeroPisos AS numero_pisos_edificio " +
@@ -173,17 +173,7 @@ public class EdificioDB {
                     );
 
 
-
-
-                    Consultorio consultorio = new Consultorio(
-                            rs.getString("nConsultorio_consultorio"),
-                            rs.getString("especialidad_consultorio"),
-                            rs.getInt("disponibilidad_consultorio"),
-                            edificio,
-                            rs.getString("numero_piso_consultorio")
-
-                    );
-                    listaResultados.add(consultorio);
+                    listaResultados.add(edificio);
                 }
             }
 
@@ -192,5 +182,50 @@ public class EdificioDB {
         }
         return listaResultados;
     }
+
+
+    public List<Edificio> getEdificios() {
+        List<Edificio> listaEdificios = new ArrayList<>();
+        String sql = "SELECT * FROM edificio"; // 📌 Recupera todos los edificios
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Edificio edificio = new Edificio(
+                        rs.getString("id"),
+                        rs.getString("numeroEdificio"),
+                        rs.getString("nombreEdificio"),
+                        rs.getString("direccion"),
+                        rs.getString("numeroPisos")
+                );
+
+                listaEdificios.add(edificio);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaEdificios;
+    }
+
+    public List<String> getIdEdificios() {
+        List<String> listaIds = new ArrayList<>();
+        String sql = "SELECT id FROM edificio"; // 📌 Recupera solo los IDs
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                listaIds.add(rs.getString("id")); // 📌 Agrega cada ID a la lista
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaIds;
+    }
+
+
 
 }

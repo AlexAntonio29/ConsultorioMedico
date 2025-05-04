@@ -2,7 +2,6 @@ package com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedic
 
 import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.estructura.Consultorio;
-import com.consultorio.modelo.estructura.Edificio;
 import com.consultorio.modelo.movimiento.movimientoMedico.Cita;
 import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.Usuario;
@@ -101,7 +100,7 @@ public class CitaDB {
                         rs.getString("paciente_sexo")
                 );
 
-                Edificio edificio = new Edificio(
+                com.consultorio.modelo.estructura.Edificio edificio = new com.consultorio.modelo.estructura.Edificio(
                         rs.getString("id_edificio"),
                         rs.getString("numeroEdificio_edificio"),
                         rs.getString("nombreEdificio_edificio"),
@@ -202,7 +201,7 @@ public class CitaDB {
                         rs.getString("paciente_sexo")
                 );
 
-                Edificio edificio = new Edificio(
+                com.consultorio.modelo.estructura.Edificio edificio = new com.consultorio.modelo.estructura.Edificio(
                         rs.getString("id_edificio"),
                         rs.getString("numeroEdificio_edificio"),
                         rs.getString("nombreEdificio_edificio"),
@@ -349,7 +348,7 @@ public class CitaDB {
                 );
 
 
-                Edificio edificio = new Edificio(
+                com.consultorio.modelo.estructura.Edificio edificio = new com.consultorio.modelo.estructura.Edificio(
                         rs.getString("id_edificio"),
                         rs.getString("numeroEdificio_edificio"),
                         rs.getString("nombreEdificio_edificio"),

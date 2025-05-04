@@ -4,7 +4,6 @@ import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.Consulta;
 import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.PrescripcionElectronica;
 import com.consultorio.modelo.movimiento.movimientoMedico.atencion.proceso.Registro;
-import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.Usuario;
 
 import java.util.Date;

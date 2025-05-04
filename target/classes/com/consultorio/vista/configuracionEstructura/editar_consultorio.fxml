@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.configuracionEstructura.EditarConsultorio">
+    <AnchorPane fx:id="rootPanel" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ECF0F1;">
+        <children>
+            <!-- Contenedor principal centrado en la interfaz -->
+            <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+                <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Buscar / Editar Consultorio" />
+
+
+                <!-- Sección de búsqueda -->
+                <HBox fx:id="hboxBusqueda" alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Buscar Edificio:" />
+                        <TextField fx:id="tfBusqueda" onKeyReleased="#onBusqueda" prefWidth="250" promptText="Ingrese nombre o ID" />
+                        <!-- <Button fx:id="btnBuscar" onAction="#btnBuscarOnAction" style="-fx-background-color:#3498DB; -fx-text-fill: white; -fx-background-radius: 5;" text="Buscar" />-->
+                    </children>
+                </HBox>
+
+
+
+
+                <!-- Tabla para mostrar resultados de búsqueda -->
+                <TableView fx:id="tvEdificios" minHeight="250">
+
+                    <columns>
+
+                        <TableColumn fx:id="colID" prefWidth="100" text="ID" />
+                        <TableColumn fx:id="colNumEdificio" prefWidth="240" text="Foto" />
+                        <TableColumn fx:id="colNomEdificio" prefWidth="240" text="Nombre" />
+                        <TableColumn fx:id="colDireccion" prefWidth="240" text="ApellidoPaterno" />
+                        <TableColumn fx:id="colNumPisos" prefWidth="240" text="ApellidoMaterno" />
+
+
+                    </columns>
+
+
+
+                </TableView>
+
+
+
+
+                <!-- Formulario para editar datos del Edificio seleccionado -->
+                <GridPane fx:id="GridPaneFormulario" hgap="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 20;" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="40" />
+                        <ColumnConstraints percentWidth="60" />
+                    </columnConstraints>
+                    <children>
+
+
+
+
+
+                        <!-- Fila 0: Numero de Edificio -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="tfNombre" promptText="Ingrese el nombre" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <!-- Fila 1: Nombre de Edificio -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Curp" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="tfCurp" promptText="Ingrese Curp" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <!-- Fila 2: Direccion de Edificio -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Paterno:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfApellidoPaterno" promptText="Ingrese el apellido paterno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <!-- Fila 3: Numero de pisos -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Materno:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfApellidoMaterno" promptText="Ingrese el apellido materno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Fila 3: Botones para Editar y Guardar -->
+
+                    </children>
+
+                </GridPane>
+                <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                    <children>
+                        <Button fx:id="btnCancelar" disable="true" onAction="#actionCancelarPaciente" prefWidth="100" style="-fx-background-color:#233f9c; -fx-text-fill: white; -fx-background-radius: 5;" text="Cancelar" />
+
+                        <Button fx:id="btnGuardar" disable="true" onAction="#actionGuardarPaciente" prefWidth="100" style="-fx-background-color:#4bcac4; -fx-text-fill: white; -fx-background-radius: 5;" text="Guardar Edificio" />
+                        <Button fx:id="btnEditar" disable="true" onAction="#actionEditarPaciente" prefWidth="100" style="-fx-background-color:#E67E22; -fx-text-fill: white; -fx-background-radius: 5;" text="Editar Edificio" />
+
+                        <Button fx:id="btnEliminar" disable="true" onAction="#actionEliminarPaciente" prefWidth="150" style="-fx-background-color:#c50000; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar Edificio">
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin></Button>
+
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="100.0" />
+                    </VBox.margin>
+
+                </HBox>
+            </VBox>
+        </children>
+    </AnchorPane>
+</ScrollPane>

@@ -11,6 +11,10 @@ import com.consultorio.controlador.configuracion.DatosConsultorio;
 import com.consultorio.controlador.configuracion.NotificacionAlerta;
 import com.consultorio.controlador.configuracion.Perfil;
 import com.consultorio.controlador.configuracion.PreferenciasSistema;
+import com.consultorio.controlador.configuracionEstructura.AgregarConsultorio;
+import com.consultorio.controlador.configuracionEstructura.AgregarEdificio;
+import com.consultorio.controlador.configuracionEstructura.EditarConsultorio;
+import com.consultorio.controlador.configuracionEstructura.EditarEdificio;
 import com.consultorio.controlador.consultasMedicas.IniciarConsulta;
 import com.consultorio.controlador.consultasMedicas.PrescripcionElectronica;
 import com.consultorio.controlador.consultasMedicas.RegistrarSintomasDiagnosticoTratamiento;
@@ -107,6 +111,8 @@ public class PanelControl {
     @FXML
     private Button bUsuarioPersonal;
     @FXML
+    private Button bEstructura;
+    @FXML
     private Button bConfiguracion;
     @FXML
     private Button bCitas;
@@ -198,6 +204,7 @@ public class PanelControl {
         design.getDesignButton(bCitas,0);
         design.getDesignButton(bReportes,0);
         design.getDesignButton(bUsuarioPersonal,0);
+        design.getDesignButton(bEstructura,0);
         design.getDesignButton(bConsultasMedicas,0);
         design.getDesignButton(bInventario,0);
         design.getDesignButton(bPagoFacturacion,0);
@@ -342,6 +349,24 @@ public class PanelControl {
                 updateContenidoAnchorPane("/com/consultorio/vista/reportes/exportar_datos.fxml", ExportarDatos.class);
                 break;
 
+             //Configuracion Estructura
+            case "Agregar edificio":
+                System.out.println("Accion: Agregar edificio");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/agregar_edificio.fxml", AgregarEdificio.class);
+                break;
+            case "Editar edificio":
+                System.out.println("Accion: Editar edificio");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/editar_edificio.fxml", EditarEdificio.class);
+                break;
+            case "Agregar consultorio":
+                System.out.println("Accion: Agregar consultorio");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml", AgregarConsultorio.class);
+                break;
+            case "Editar consultorio":
+                System.out.println("Accion: Editar consultorio");
+                updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/editar_consultorio.fxml", EditarConsultorio.class);
+                break;
+
             // Usuarios / Personal
             case "Agregar personal":
                 System.out.println("Acción: Agregar personal");
@@ -448,6 +473,7 @@ public class PanelControl {
         design.getDesignButton(bCitas,0);
         design.getDesignButton(bReportes,0);
         design.getDesignButton(bUsuarioPersonal,0);
+        design.getDesignButton(bEstructura,0);
         design.getDesignButton(bConsultasMedicas,0);
         design.getDesignButton(bInventario,0);
         design.getDesignButton(bPagoFacturacion,0);
@@ -530,6 +556,25 @@ public class PanelControl {
             if(controlador instanceof ExportarDatos){
                 ((ExportarDatos) controlador).setConector(connection);
             }
+            if(controlador instanceof AgregarEdificio){
+                ((AgregarEdificio) controlador).setConector(connection);
+                ((AgregarEdificio) controlador).setUsuario(usuario);
+            }
+
+            if(controlador instanceof EditarEdificio){
+                ((EditarEdificio) controlador).setConector(connection);
+                ((EditarEdificio) controlador).setUsuario(usuario);
+            }
+            if(controlador instanceof AgregarConsultorio){
+                ((AgregarConsultorio) controlador).setConector(connection);
+                ((AgregarConsultorio) controlador).setUsuario(usuario);
+            }
+
+            if(controlador instanceof EditarConsultorio){
+                ((EditarConsultorio) controlador).setConector(connection);
+                ((EditarConsultorio) controlador).setUsuario(usuario);
+            }
+
             if(controlador instanceof AgregarPersonal){
                 ((AgregarPersonal) controlador).setConector(connection);
                 ((AgregarPersonal) controlador).setUsuario(usuario);
@@ -682,6 +727,14 @@ public class PanelControl {
     public void actionUsuarioPersonal() {
         design.getDesignButton(bUsuarioPersonal,1);
         cadenaSubMenu = new String[]{"Agregar personal","Personal general","Médicos y asistentes", "Roles y permisos"};
+        vbSubMenu.getChildren().clear();
+        imprimirSubMenu(cadenaSubMenu);
+    }
+
+    @FXML
+    public void actionConfiguracicoEstructura(){
+        design.getDesignButton(bEstructura,1);
+        cadenaSubMenu= new String[]{"Agregar edificio","Editar edificio","Agregar consultorio","Editar consultorio" };
         vbSubMenu.getChildren().clear();
         imprimirSubMenu(cadenaSubMenu);
     }

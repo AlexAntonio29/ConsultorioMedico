@@ -1,14 +1,11 @@
 package com.consultorio.controlador.usuarioPersonal;
 
-import com.consultorio.modelo.clientes.Paciente;
-import com.consultorio.modelo.clientes.RegistroPaciente;
 import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.RegistroEmpleado;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.alertas.errores.VentanaErrores;
-import com.consultorio.util.conection.modeloDataBase.clientes.RegistroPacienteDB;
 import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.RegistroEmpleadoDB;
 import javafx.application.Platform;

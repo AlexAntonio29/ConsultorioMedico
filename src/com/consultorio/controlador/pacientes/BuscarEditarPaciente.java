@@ -482,6 +482,7 @@ try {
             pacienteModificado.setAPaterno(tfApellidoMaterno.getText());
             pacienteModificado.setFnacimiento(new GetFecha().convertirDatePickerADate(dpFechaNacimiento));
             pacienteModificado.setDireccion(tfDireccion.getText());
+            pacienteModificado.setCurp(tfCurp.getText());//verificar
             pacienteModificado.setTelefono(tfTelefono.getText());
             pacienteModificado.setSexo(String.valueOf(comboTipoSexo.getValue()));
             pacienteModificado.setEdad(new GetFecha().calcularEdad(pacienteModificado.getFnacimiento()));

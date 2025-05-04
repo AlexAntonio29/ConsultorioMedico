@@ -195,7 +195,7 @@ public class ConsultorioDB {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    Edificio edificio = new Edificio(
+                   Edificio edificio = new Edificio(
                             rs.getString("id_edificio"),
                             rs.getString("numero_edificio"),
                             rs.getString("nombre_edificio"),

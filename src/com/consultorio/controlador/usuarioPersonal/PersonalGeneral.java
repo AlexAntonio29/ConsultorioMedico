@@ -496,6 +496,7 @@ if (!Objects.equals(seleccionado.getId(), "1")){
             empleadoModificado.setAPaterno(tfApellidoMaterno.getText());
             empleadoModificado.setFnacimiento(new GetFecha().convertirDatePickerADate(dpFechaNacimiento));
             empleadoModificado.setDireccion(tfDireccion.getText());
+            empleadoModificado.setCurp(tfCurp.getText());
             empleadoModificado.setTelefono(tfTelefono.getText());
             empleadoModificado.setSexo(String.valueOf(comboTipoSexo.getValue()));
             empleadoModificado.setEdad(new GetFecha().calcularEdad(empleadoModificado.getFnacimiento()));

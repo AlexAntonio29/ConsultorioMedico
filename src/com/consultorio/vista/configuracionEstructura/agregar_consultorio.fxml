@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.skin.TabPaneSkin.TabControlButtons?>
+<ScrollPane fitToWidth="true" fitToHeight="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.configuracionEstructura.AgregarConsultorio">
+    <AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ECF0F1;" >
+
+
+
+        <children>
+            <!-- Contenedor principal centrado -->
+            <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+                <children>
+
+                    <!-- Título del formulario -->
+                    <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Registrar Edificio" />
+                    <!-- Contenedor del formulario -->
+                    <GridPane fx:id="gridPane" hgap="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" vgap="20.0">
+                        <!-- Definir dos columnas: una para etiquetas y otra para campos -->
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="30" />
+                            <ColumnConstraints percentWidth="70" />
+                        </columnConstraints>
+                        <children>
+
+
+
+                            <!-- Fila 0: Numero Consultorio llave primaria-->
+                            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Numero edificio:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="tfNumConsultorio" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese numeroEdificio" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                            <!-- Fila 1: Especialidad -->
+                            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Nombre Edificio:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="cbEspecialidad" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Especialidad" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Medicina General" />
+                                        <String fx:value="Cardiología" />
+                                        <String fx:value="Pediatría" />
+                                        <String fx:value="Ginecología y Obstetricia" />
+                                        <String fx:value="Dermatología" />
+                                        <String fx:value="Neurología" />
+                                        <String fx:value="Ortopedia" />
+                                        <String fx:value="Endocrinología" />
+                                        <String fx:value="Gastroenterología" />
+                                        <String fx:value="Oncología" />
+                                        <String fx:value="Urología" />
+                                        <String fx:value="Oftalmología" />
+                                        <String fx:value="Otorrinolaringología" />
+                                        <String fx:value="Psiquiatría" />
+                                        <String fx:value="Medicina Interna" />
+                                        <String fx:value="Neumología" />
+                                        <String fx:value="Nefrología" />
+                                        <String fx:value="Reumatología" />
+                                        <String fx:value="Cirugía General" />
+                                        <String fx:value="Anestesiología" />
+                                        <String fx:value="Medicina del Trabajo" />
+                                        <String fx:value="Medicina de Rehabilitación" />
+                                    </FXCollections>
+
+                                </items>
+
+                            </ComboBox >
+
+                            <!-- Fila 2: Id Edificio -->
+                            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Direccion:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="cbIdEdificio" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Edificio" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                            <!-- Fila 3: Numero Piso -->
+                            <Label  style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Numero pisos: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                            <TextField fx:id="tfNumPiso" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el numero de pisos" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+
+                            <!-- Fila 9: Botón de Registro -->
+                            <Button fx:id="btnRegistrar" maxWidth="200" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Registrar" GridPane.columnIndex="1" GridPane.rowIndex="10" onAction="#actionRegistrar"/> <!--onAction="#actionRegistrar"-->
+                        </children>
+
+                    </GridPane>
+                </children>
+            </VBox>
+        </children>
+    </AnchorPane>
+</ScrollPane>
