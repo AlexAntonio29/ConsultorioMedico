@@ -174,6 +174,27 @@ public class PacienteDB extends Persona {
         return listaPacientes;
     }
 
+    public List<String> getIdPacientesIdString(){
+        List<String> listaIdPacientes = new ArrayList<>();
+
+        String sql = "SELECT id FROM pacientes ";
+
+        try(PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+
+                listaIdPacientes.add(rs.getString("id"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return listaIdPacientes;
+
+    }
+
 
     // Método para buscar en cualquier columna de la tabla
     public List<Paciente> buscarPaciente(String textoBusqueda) {

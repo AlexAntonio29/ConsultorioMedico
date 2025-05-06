@@ -263,6 +263,21 @@ public class CitaDB {
         }
     }
 
+    public String obtenerUltimoIdCita() {
+        String sql = "SELECT id FROM citas ORDER BY id DESC LIMIT 1"; // 📌 Obtener el último ID
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            if (rs.next()) {
+                return rs.getString("id"); // 📌 Devuelve el ID como String
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // 📌 Si no hay citas, retorna `null`
+    }
+
+
     // 📌 Eliminar una cita por ID
     public boolean eliminarCita(int id) {
         String sql = "DELETE FROM citas WHERE id = ?";

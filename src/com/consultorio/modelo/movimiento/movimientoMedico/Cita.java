@@ -16,6 +16,8 @@ public class Cita {
     String motivo;
     Consultorio consultorio;
 
+    public Cita(){}
+
     public Cita(String id, Usuario usuario, Paciente paciente, java.sql.Date fecha, LocalTime hora, String motivo, Consultorio consultorio) {
         this.id = id;
         this.usuario = usuario;

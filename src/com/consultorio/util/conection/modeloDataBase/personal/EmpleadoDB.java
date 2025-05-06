@@ -13,7 +13,7 @@ import java.util.Objects;
 public class EmpleadoDB extends Persona {
     //variables globales
 
-    UsuarioDB usuarioDB = new UsuarioDB();
+
     Connection connection;
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -138,6 +138,7 @@ public class EmpleadoDB extends Persona {
         try (PreparedStatement stmt = connection.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
+                UsuarioDB usuarioDB=new UsuarioDB();
                 usuarioDB.setConector(connection);
             if (!(usuarioDB.existeUsuarioConIdEmpleado(rs.getString("id")))) {
                 Empleado empleado = getEmpleado(rs.getString("id"));
@@ -207,6 +208,7 @@ public class EmpleadoDB extends Persona {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
+                UsuarioDB usuarioDB=new UsuarioDB();
                 usuarioDB.setConector(connection);
                 if (!(usuarioDB.existeUsuarioConIdEmpleado(rs.getString("id")))) {
                     Empleado empleado = getEmpleado(rs.getString("id"));

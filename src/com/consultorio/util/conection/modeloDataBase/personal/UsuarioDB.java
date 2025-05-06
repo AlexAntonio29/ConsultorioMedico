@@ -19,6 +19,8 @@ public class UsuarioDB {
         System.out.println("Conector en "+ this);
     }
 
+    EmpleadoDB empleadoDB = new EmpleadoDB();
+
     public boolean existeUsuario(String nombreTabla, String nombreUsuario){
         String sql="SELECT COUNT(*) FROM " +nombreTabla+" WHERE usuario = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -181,6 +183,92 @@ public class UsuarioDB {
         return listaUsuarios;
     }
 
+    public List<Usuario> getUsuariosMedicos() {
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        String sql = "SELECT u.id AS usuario_id, u.usuario, u.password, "
+                + "e.id AS empleado_id, e.curp, e.nombre, e.apellido_paterno, e.apellido_materno, "
+                + "e.fecha_nacimiento, e.ocupacion, e.especialidad, e.direccion, e.telefono, "
+                + "e.email, e.fecha_ingreso, e.foto, e.edad, e.sexo "
+                + "FROM usuario u "
+                + "JOIN empleado e ON u.id_empleado = e.id ";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+
+                empleadoDB.setConector(connection);
+                String idEmpleado = rs.getString("empleado_id");
+                if ("Medico".equals(empleadoDB.getEmpleado(idEmpleado).getOcupacion())){
+                    String idUsuario = rs.getString("usuario_id");
+
+
+                    // **Verifica si "curp" existe antes de acceder**
+                    String curp = rs.getString("curp") != null ? rs.getString("curp") : "";
+
+                    Usuario usuario = new Usuario(
+                            idUsuario,
+                            rs.getString("usuario"),
+                            rs.getString("password"),
+                            new com.consultorio.modelo.personal.Empleado(
+                                    idEmpleado,
+                                    curp, // ✅ Ahora verificamos antes de usarlo
+                                    rs.getString("nombre"),
+                                    rs.getString("apellido_paterno"),
+                                    rs.getString("apellido_materno"),
+                                    rs.getDate("fecha_nacimiento"),
+                                    rs.getString("direccion"),
+                                    rs.getString("telefono"),
+                                    rs.getString("email"),
+                                    rs.getString("foto"),
+                                    rs.getString("ocupacion"),
+                                    rs.getString("especialidad"),
+                                    rs.getDate("fecha_ingreso"),
+                                    rs.getString("edad"),
+                                    rs.getString("sexo")
+                            )
+                    );
+                    listaUsuarios.add(usuario);
+
+                }
+
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaUsuarios;
+    }
+
+    public List<String> getUsuariosMedicosString() {
+        List<String> listaUsuarios = new ArrayList<>();
+        String sql = "SELECT u.id AS usuario_id, u.usuario, u.password, "
+                + "e.id AS empleado_id, e.curp, e.nombre, e.apellido_paterno, e.apellido_materno, "
+                + "e.fecha_nacimiento, e.ocupacion, e.especialidad, e.direccion, e.telefono, "
+                + "e.email, e.fecha_ingreso, e.foto, e.edad, e.sexo "
+                + "FROM usuario u "
+                + "JOIN empleado e ON u.id_empleado = e.id ";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+
+                empleadoDB.setConector(connection);
+                String idEmpleado = rs.getString("empleado_id");
+                if ("Medico".equals(empleadoDB.getEmpleado(idEmpleado).getOcupacion())){
+                    listaUsuarios.add(rs.getString("usuario_id"));
+                }
+
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaUsuarios;
+    }
 
 
     public boolean updateUsuario(Usuario usuario) {

@@ -1,28 +1,37 @@
 package com.consultorio.controlador.citas;
 
 import com.consultorio.controlador.configuracionEstructura.AgregarConsultorio;
+import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.estructura.Consultorio;
 import com.consultorio.modelo.estructura.Edificio;
 import com.consultorio.modelo.estructura.RegistroConsultorio;
+import com.consultorio.modelo.movimiento.movimientoMedico.Cita;
+import com.consultorio.modelo.movimiento.movimientoMedico.RegistroCita;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.alertas.errores.VentanaErrores;
+import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
 import com.consultorio.util.conection.modeloDataBase.estructura.ConsultorioDB;
-import com.consultorio.util.conection.modeloDataBase.estructura.EdificioDB;
-import com.consultorio.util.conection.modeloDataBase.estructura.RegistroConsultorioDB;
+import com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.CitaDB;
+import com.consultorio.util.conection.modeloDataBase.movimiento.movimientoMedico.atencion.RegistroCitaDB;
+import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.sql.Connection;
+import java.sql.Time;
 import java.time.DateTimeException;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 public class AgendarNuevaCita {
@@ -30,7 +39,7 @@ public class AgendarNuevaCita {
 
     @FXML
     AnchorPane rootPanel;
-    String ruta="/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml";
+    String ruta="/com/consultorio/vista/citas/agendar_nueva_cita.fxml";
     CargarFXML cargarFXML= new CargarFXML();
 
 
@@ -43,9 +52,13 @@ public class AgendarNuevaCita {
 
 
 
-    public EdificioDB edificioDB= new EdificioDB();
-    ConsultorioDB consultorioDB = new ConsultorioDB();
-    RegistroConsultorioDB registroConsultorioDB = new RegistroConsultorioDB();
+   // public EdificioDB edificioDB= new EdificioDB();
+    CitaDB citaDB = new CitaDB();
+    RegistroCitaDB registroCitaDB = new RegistroCitaDB();
+
+    UsuarioDB usuarioDB = new UsuarioDB();
+    PacienteDB pacienteDB = new PacienteDB();
+    ConsultorioDB consultorioDB= new ConsultorioDB();
 
 
 
@@ -53,13 +66,16 @@ public class AgendarNuevaCita {
     ///ID DE DATOS DE Edificio
 
     @FXML
-    TextField tfNumConsultorio;
+    ComboBox comboPaciente;
     @FXML
-    ComboBox cbEspecialidad;
+    DatePicker dpfechaCita;
     @FXML
-    ComboBox cbIdEdificio;
+    ComboBox comboHora;
     @FXML
-    TextField tfNumPiso;
+    ComboBox comboDoctor;
+    @FXML ComboBox comboConsultorio;
+    @FXML
+    TextField txtMotivo;
 
 
 
@@ -91,7 +107,7 @@ public class AgendarNuevaCita {
     }
 
     public void cargarBDEdificio(){
-        consultorioDB.setConnection(connection);
+        citaDB.setConnection(connection);
 
     }
 
@@ -104,12 +120,18 @@ public class AgendarNuevaCita {
 
         Platform.runLater(()->{
             //cargar todo lo demas
-            edificioDB.setConnection(connection);
-            consultorioDB.setConnection(connection);
-            registroConsultorioDB.setConnection(connection);
+           // edificioDB.setConnection(connection);
+            citaDB.setConnection(connection);
+            registroCitaDB.setConnection(connection);
 
             cargarFXML.setConector(connection);
             cargarFXML.setUsuario(usuario);
+
+            usuarioDB.setConector(connection);
+            usuarioDB.setUsuario(usuario);
+
+            pacienteDB.setConnection(connection);
+            consultorioDB.setConnection(connection);
             cargar();
 
         });
@@ -128,12 +150,11 @@ public class AgendarNuevaCita {
 
         try {
 
-            int verificarEnteros=Integer.parseInt(tfNumConsultorio.getText());
-            verificarEnteros=Integer.parseInt(tfNumPiso.getText());
 
-            Consultorio consultorio=new Consultorio();
-            consultorioDB.setConsultorio(cargarConsultorio(consultorio));
-            registroConsultorioDB.setRegistroConsultorio( cargarRegistroConsultorio(new RegistroConsultorio()));
+
+            Cita cita=new Cita();
+            citaDB.setCita(cargarCita(cita));
+            registroCitaDB.setRegistroCita( cargarRegistroCita(new RegistroCita()));
 
 
            /*tfNumConsultorio.clear();
@@ -148,7 +169,7 @@ public class AgendarNuevaCita {
 
             */
 
-            cargarFXML.updateContenidoAnchorPane(ruta, AgregarConsultorio.class,rootPanel);
+            cargarFXML.updateContenidoAnchorPane(ruta, AgendarNuevaCita.class,rootPanel);
 
 
 
@@ -173,42 +194,39 @@ public class AgendarNuevaCita {
         System.out.println();
     }
 
-    public Consultorio cargarConsultorio(Consultorio consultorio){
-        String numConsultorio = tfNumConsultorio.getText();
-        String especialidad= cbEspecialidad.getValue().toString();
-        Edificio edificio= edificioDB.getEdificio(Integer.parseInt((String) cbIdEdificio.getValue()));
-        String numPiso= tfNumPiso.getText();
-
-
-        System.out.println(numConsultorio);
-        System.out.println(especialidad);
-        System.out.println(edificio);
-        System.out.println(numPiso);
-
-
-        consultorio.setNConsultorio(numConsultorio);
-        consultorio.setEspecialidad(especialidad);
-        consultorio.setEdificio(edificio);
-        consultorio.setNumeroPiso(numPiso);
+    public Cita cargarCita(Cita cita){
+        Paciente paciente= pacienteDB.getPaciente(Integer.parseInt(comboPaciente.getValue().toString()));
+        Date fecha= java.sql.Date.valueOf(dpfechaCita.getValue());
+        LocalTime hora= LocalTime.parse(comboHora.getValue().toString());
+        Usuario doctor = usuarioDB.getUsuario(comboDoctor.getValue().toString());//doctor
+        Consultorio consultorio= consultorioDB.getConsultorio(comboConsultorio.getValue().toString());
+        String motivo= txtMotivo.getText();
 
 
 
-        return consultorio;
+
+        cita.setPaciente(paciente);
+        cita.setFecha(fecha);
+        cita.setHora(hora);
+        cita.setUsuario(doctor);
+        cita.setConsultorio(consultorio);
+        cita.setMotivo(motivo);
+
+
+
+        return cita;
     }
 
-    public RegistroConsultorio cargarRegistroConsultorio(RegistroConsultorio registroConsultorio){
+    public RegistroCita cargarRegistroCita(RegistroCita registroCita){
 
         String user=usuario.getId();
-        String numConsultorio = consultorioDB.obtenerUltimoIdConsultorio();
+        String idCita = citaDB.obtenerUltimoIdCita();
         String fecha=new GetFecha().getFechaStringActual();
-        System.out.println(user);
-        System.out.println(numConsultorio);
-        System.out.println(fecha);
 
-        registroConsultorio.setIdUsuario(user);
-        registroConsultorio.setNConsultorio(numConsultorio);
-        registroConsultorio.setFechaRegistro(new GetFecha().getFechaDateActual());
-        return registroConsultorio;
+        registroCita.setIdUsuario(user);
+        registroCita.setIdCita(idCita);
+        registroCita.setFechaRegistro(new GetFecha().getFechaDateActual());
+        return registroCita;
     }
 
     //___________________________________________________________________
@@ -224,10 +242,21 @@ public class AgendarNuevaCita {
     }
     public void cargarItemsComboBoxIDEdificio(){
 
-        List<Edificio> lista = edificioDB.getEdificios();
-        List<String> listaId = edificioDB.getIdEdificios();
+        List<Paciente> pacientes= pacienteDB.getPacientes();
+        List<Consultorio> consultorios= consultorioDB.getConsultorios();
+        List<Usuario> doctores= usuarioDB.getUsuariosMedicos();
 
-        cbIdEdificio.setItems(FXCollections.observableArrayList(listaId));
+        //List<Edificio> lista = edificioDB.getEdificios();
+
+        List<String> listaIdPacientes =pacienteDB.getIdPacientesIdString();
+        List<String> listaIdConsultorio = consultorioDB.getIdConsultoriosIdString();
+        List<String> listaIdDoctores = usuarioDB.getUsuariosMedicosString();
+
+        comboPaciente.setItems(FXCollections.observableArrayList(listaIdPacientes));
+        comboConsultorio.setItems(FXCollections.observableArrayList(listaIdConsultorio));
+        comboDoctor.setItems(FXCollections.observableArrayList(listaIdDoctores));
+
+        //comboHora.setItems(FXCollections.observableArrayList(listaId));
     }
 
 

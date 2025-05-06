@@ -76,6 +76,28 @@ public class ConsultorioDB {
         return null;
     }
 
+    public List<String> getIdConsultoriosIdString(){
+        List<String>lista= new ArrayList<>();
+
+        String sql="SELECT nConsultorio FROM consultorio";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+              ResultSet rs = stmt.executeQuery() ){
+
+            while (rs.next()) {
+
+                lista.add(rs.getString("nConsultorio"));
+
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return lista;
+
+
+    }
+
     public String obtenerUltimoIdConsultorio() {
         String sql = "SELECT nConsultorio FROM consultorio ORDER BY nConsultorio DESC LIMIT 1"; // 📌 Obtener el último ID
         try (Statement stmt = connection.createStatement();

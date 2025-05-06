@@ -521,6 +521,7 @@ public class PanelControl {
             }
             if(controlador instanceof AgendarNuevaCita){
                 ((AgendarNuevaCita) controlador).setConector(connection);
+                ((AgendarNuevaCita) controlador).setUsuario(usuario);
             }
             if(controlador instanceof AgendaDia){
                 ((AgendaDia) controlador).setConector(connection);
