@@ -111,6 +111,58 @@ public class UsuarioDB {
         return null; // Si no encuentra el usuario
     }
 
+    public Usuario getUsuarioId(String id) {
+        String sql = "SELECT u.id AS usuario_id, u.usuario, u.password, "
+                + "e.id AS empleado_id, e.curp, e.nombre, e.apellido_paterno, e.apellido_materno, "
+                + "e.fecha_nacimiento, e.ocupacion, e.especialidad, e.direccion, e.telefono, "
+                + "e.email, e.fecha_ingreso, e.foto, e.edad, e.sexo "
+                + "FROM usuario u "
+                + "JOIN empleado e ON u.id_empleado = e.id "
+                + "WHERE u.id = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Crear el objeto Usuario
+                String idUsuario = rs.getString("usuario_id");
+                String idEmpleado = rs.getString("empleado_id");
+
+                // **Verifica si "curp" existe antes de acceder**
+                String curp = rs.getString("curp") != null ? rs.getString("curp") : "";
+
+                return new Usuario(
+                        idUsuario,
+                        rs.getString("usuario"),
+                        rs.getString("password"),
+                        new com.consultorio.modelo.personal.Empleado(
+                                idEmpleado,
+                                curp, // ✅ Ahora verificamos antes de usarlo
+                                rs.getString("nombre"),
+                                rs.getString("apellido_paterno"),
+                                rs.getString("apellido_materno"),
+                                rs.getDate("fecha_nacimiento"),
+                                rs.getString("direccion"),
+                                rs.getString("telefono"),
+                                rs.getString("email"),
+                                rs.getString("foto"),
+                                rs.getString("ocupacion"),
+                                rs.getString("especialidad"),
+                                rs.getDate("fecha_ingreso"),
+                                rs.getString("edad"),
+                                rs.getString("sexo")
+                        )
+                );
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null; // Si no encuentra el usuario
+    }
+
 
 
     public boolean setUsuario(Usuario usuario) {

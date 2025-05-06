@@ -7,6 +7,7 @@ import com.consultorio.modelo.estructura.Edificio;
 import com.consultorio.modelo.estructura.RegistroConsultorio;
 import com.consultorio.modelo.movimiento.movimientoMedico.Cita;
 import com.consultorio.modelo.movimiento.movimientoMedico.RegistroCita;
+import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
@@ -20,10 +21,7 @@ import com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
@@ -33,6 +31,8 @@ import java.time.DateTimeException;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AgendarNuevaCita {
     public AgendarNuevaCita(){}
@@ -128,8 +128,6 @@ public class AgendarNuevaCita {
             cargarFXML.setUsuario(usuario);
 
             usuarioDB.setConector(connection);
-            usuarioDB.setUsuario(usuario);
-
             pacienteDB.setConnection(connection);
             consultorioDB.setConnection(connection);
             cargar();
@@ -141,7 +139,7 @@ public class AgendarNuevaCita {
     //cargar funciones action
 
     @FXML
-    public void actionRegistrar(){
+    public void actionRegistrar()throws IllegalAccessException{
 
 
 
@@ -150,11 +148,19 @@ public class AgendarNuevaCita {
 
         try {
 
+        if (!(     comboPaciente.getSelectionModel().getSelectedItem()==null||comboPaciente.getSelectionModel().getSelectedItem().equals("")
+                || comboDoctor.getSelectionModel().getSelectedItem()==null|| comboDoctor.getSelectionModel().getSelectedItem().equals("")
+                || comboConsultorio.getSelectionModel().getSelectedItem()==null|| comboConsultorio.getSelectionModel().getSelectedItem().equals("")
+                || dpfechaCita.getValue()==null||txtMotivo.getText()==null||txtMotivo.getText().equals(""))
 
+        ) {
 
-            Cita cita=new Cita();
-            citaDB.setCita(cargarCita(cita));
-            registroCitaDB.setRegistroCita( cargarRegistroCita(new RegistroCita()));
+            if (new GetFecha().esFechaHoraValida(dpfechaCita, LocalTime.parse( comboHora.getValue().toString()))) {
+
+                if (new AlertaAprobacion().mostrarConfirmacion("Deseas Agendar Esta Cita?")) {
+                    Cita cita = new Cita();
+                    citaDB.setCita(cargarCita(cita));
+                    registroCitaDB.setRegistroCita(cargarRegistroCita(new RegistroCita()));
 
 
            /*tfNumConsultorio.clear();
@@ -169,7 +175,10 @@ public class AgendarNuevaCita {
 
             */
 
-            cargarFXML.updateContenidoAnchorPane(ruta, AgendarNuevaCita.class,rootPanel);
+                    cargarFXML.updateContenidoAnchorPane(ruta, AgendarNuevaCita.class, rootPanel);
+                }
+            }else ventanaErrores.ventanaErrorClasico("Fecha Pasada... Vuelve a asignar");
+        } else ventanaErrores.ventanaErrorClasico("Datos no Capturados - Verificar Informacíon");
 
 
 
@@ -198,7 +207,7 @@ public class AgendarNuevaCita {
         Paciente paciente= pacienteDB.getPaciente(Integer.parseInt(comboPaciente.getValue().toString()));
         Date fecha= java.sql.Date.valueOf(dpfechaCita.getValue());
         LocalTime hora= LocalTime.parse(comboHora.getValue().toString());
-        Usuario doctor = usuarioDB.getUsuario(comboDoctor.getValue().toString());//doctor
+        Usuario doctor = usuarioDB.getUsuarioId(comboDoctor.getValue().toString());//doctor
         Consultorio consultorio= consultorioDB.getConsultorio(comboConsultorio.getValue().toString());
         String motivo= txtMotivo.getText();
 
@@ -239,12 +248,30 @@ public class AgendarNuevaCita {
         cargarItemsComboBoxIDEdificio();
 
         // cargarItemsEdad();
+    } public static Map<String, String> convertirListaAMapPaciente(List<Paciente> listaPacientes) {
+        return listaPacientes.stream()
+                .collect(Collectors.toMap(Paciente::getId,
+                        paciente -> paciente.getNombre() + " " + paciente.getAPaterno()+ " " + paciente.getAMaterno()));
+    }
+    public static Map<String, String> convertirListaAMapConsultorio(List<Consultorio> listaConsultorio) {
+        return listaConsultorio.stream()
+                .collect(Collectors.toMap(Consultorio::getNConsultorio,
+                        consultorio ->"( "+consultorio.getEspecialidad()+") NumeroPiso:"+ consultorio.getNumeroPiso()+" - Nombre Edificio: "+consultorio.getEdificio().getNombreEdificio()));
+    }
+    public static Map<String, String> convertirListaAMapUsuario(List<Usuario> listaEmpleados) {//doctor
+        return listaEmpleados.stream()
+                .collect(Collectors.toMap(Usuario::getId,
+                        usuario ->"("+usuario.getEmpleado().getEspecialidad()+")- "+ usuario.getUsuario() + " " + usuario.getEmpleado().getNombre() + " " + usuario.getEmpleado().getAPaterno()+ " " + usuario.getEmpleado().getAMaterno()));
     }
     public void cargarItemsComboBoxIDEdificio(){
 
         List<Paciente> pacientes= pacienteDB.getPacientes();
         List<Consultorio> consultorios= consultorioDB.getConsultorios();
         List<Usuario> doctores= usuarioDB.getUsuariosMedicos();
+
+        Map<String,String> mapaPaciente=convertirListaAMapPaciente(pacientes);
+        Map<String,String> mapaConsultorio=convertirListaAMapConsultorio(consultorios);
+        Map<String,String> mapaDoctor=convertirListaAMapUsuario(doctores);
 
         //List<Edificio> lista = edificioDB.getEdificios();
 
@@ -255,6 +282,42 @@ public class AgendarNuevaCita {
         comboPaciente.setItems(FXCollections.observableArrayList(listaIdPacientes));
         comboConsultorio.setItems(FXCollections.observableArrayList(listaIdConsultorio));
         comboDoctor.setItems(FXCollections.observableArrayList(listaIdDoctores));
+
+        comboPaciente.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item + " - " + mapaPaciente.get(item)); // 📌 Muestra 'ID - Nombre'
+                }
+            }
+        });
+
+        comboConsultorio.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item + " - " + mapaConsultorio.get(item)); // 📌 Muestra 'ID - Nombre'
+                }
+            }
+        });
+
+        comboDoctor.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item + " - " + mapaDoctor.get(item)); // 📌 Muestra 'ID - Nombre'
+                }
+            }
+        });
 
         //comboHora.setItems(FXCollections.observableArrayList(listaId));
     }

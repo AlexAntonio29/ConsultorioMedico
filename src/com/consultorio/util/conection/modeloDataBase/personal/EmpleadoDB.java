@@ -14,6 +14,8 @@ public class EmpleadoDB extends Persona {
     //variables globales
 
 
+
+
     Connection connection;
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 

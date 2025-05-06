@@ -97,7 +97,7 @@
                                        GridPane.rowIndex="5" GridPane.columnIndex="1" />
 
                             <!-- Fila 9: Botón de Registro -->
-                            <Button fx:id="btnRegistrar" maxWidth="200" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Registrar" GridPane.columnIndex="1" GridPane.rowIndex="10" /> <!--onAction="#actionRegistrar"-->
+                            <Button fx:id="btnRegistrar" maxWidth="200" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Registrar" GridPane.columnIndex="1" GridPane.rowIndex="10" onAction="#actionRegistrar" /> <!--onAction="#actionRegistrar"-->
                         </children>
 
                     </GridPane>

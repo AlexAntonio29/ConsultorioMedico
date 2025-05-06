@@ -19,14 +19,15 @@ public class CitaDB {
 
     // 📌 Insertar una nueva cita en la BD
     public boolean setCita(Cita cita) {
-        String sql = "INSERT INTO citas (id_usuario, id_pacientes, fecha, hora, nConsultorio) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO citas (id_usuario, id_pacientes, fecha, hora, motivo, nConsultorio) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, Integer.parseInt(cita.getUsuario().getId()));
             stmt.setInt(2, Integer.parseInt(cita.getPaciente().getId()));
             stmt.setDate(3, java.sql.Date.valueOf(cita.getFecha().toString()));
             stmt.setTime(4, java.sql.Time.valueOf(cita.getHora()));
-            stmt.setString(5, cita.getConsultorio().getNConsultorio());
+            stmt.setString(5, cita.getMotivo());
+            stmt.setString(6, cita.getConsultorio().getNConsultorio());
 
             stmt.executeUpdate();
             return true;

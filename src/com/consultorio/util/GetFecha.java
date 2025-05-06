@@ -3,9 +3,7 @@ package com.consultorio.util;
 import javafx.scene.control.DatePicker;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.Date;
 
 public class GetFecha {
@@ -13,6 +11,24 @@ public class GetFecha {
     public GetFecha(){
 
     }
+
+    public boolean esFechaHoraValida(DatePicker datePicker, LocalTime hora) {
+        LocalDate fechaSeleccionada = datePicker.getValue();
+
+        if (fechaSeleccionada == null || hora == null) {
+            System.out.println("❌ La fecha o la hora no son válidas.");
+            return false;
+        }
+
+        LocalDateTime fechaHoraSeleccionada = LocalDateTime.of(fechaSeleccionada, hora);
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
+
+        return fechaHoraSeleccionada.isAfter(fechaHoraActual);
+    }
+
+
+
+
 
     public Date getFechaDateActual(){
         LocalDate fechaActual = LocalDate.now(); // Obtener la fecha actual

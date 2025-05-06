@@ -16,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -23,6 +24,8 @@ import javafx.scene.layout.GridPane;
 import java.sql.Connection;
 import java.time.DateTimeException;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AgregarConsultorio {
 
@@ -222,12 +225,30 @@ public class AgregarConsultorio {
 
         // cargarItemsEdad();
     }
+    public static Map<String, String> convertirListaAMapUsuario(List<Edificio> listaEdificio) {//doctor
+        return listaEdificio.stream()
+                .collect(Collectors.toMap(Edificio::getId,
+                        edificio ->"("+edificio.getNombreEdificio()+")- Numero Edificio"+ edificio.getNumeroEdificio() + " - Direccion:" + edificio.getDireccionEdificio() ));
+    }
     public void cargarItemsComboBoxIDEdificio(){
 
         List<Edificio> lista = edificioDB.getEdificios();
         List<String> listaId = edificioDB.getIdEdificios();
 
+        Map<String,String> mapa=convertirListaAMapUsuario(lista);
+
         cbIdEdificio.setItems(FXCollections.observableArrayList(listaId));
+        cbIdEdificio.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item + " - " + mapa.get(item)); // 📌 Muestra 'ID - Nombre'
+                }
+            }
+        });
     }
 
 

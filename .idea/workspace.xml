@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/RegistroCita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/atencion/RegistroCitaDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/CargarFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/CargarFXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/Cita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/Cita.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/clientes/PacienteDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/CargarFXML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/CargarFXML.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/GetFecha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/GetFecha.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" afterDir="false" />
@@ -61,7 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ConsultorioMedico.executor": "Debug",
+    "Application.ConsultorioMedico.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -128,7 +125,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="315423000" />
+      <workItem from="1744921076130" duration="320529000" />
     </task>
     <servers />
   </component>
@@ -296,7 +293,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>292</line>
+          <line>296</line>
           <option name="timeStamp" value="538" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -355,19 +352,79 @@
           <option name="timeStamp" value="697" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="789" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>139</line>
+          <line>141</line>
           <option name="timeStamp" value="790" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>140</line>
+          <line>143</line>
           <option name="timeStamp" value="791" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="800" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>212</line>
+          <option name="timeStamp" value="801" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="802" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="803" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="804" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="805" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="806" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="807" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/GetFecha.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="808" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="809" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="810" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="811" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/citas/AgendarNuevaCita.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="812" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java</url>
@@ -380,7 +437,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java</url>
-          <line>323</line>
+          <line>375</line>
           <properties class="com.consultorio.util.conection.modeloDataBase.personal.UsuarioDB" method="buscarUsuario">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
