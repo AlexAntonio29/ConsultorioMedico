@@ -139,6 +139,7 @@ public class ConectionDB {
                         + "id_pacientes INTEGER, "
                         + "fecha DATE, "
                         + "hora TIME, "
+                        + "motivo TEXT, "
                         + "nConsultorio TEXT, "
                         + "FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE ON UPDATE CASCADE, "
                         + "FOREIGN KEY (id_pacientes) REFERENCES pacientes(id) ON DELETE CASCADE ON UPDATE CASCADE, "

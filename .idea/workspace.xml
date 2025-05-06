@@ -5,45 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a1bde4-72a4-49ec-9680-373ecb1928d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarEdificio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/RegistroCentroMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/RegistroConsultorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/RegistroEdificio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroCentroMedicoDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroConsultorioDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroEdificioDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracionEstructura/agregar_edificio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracionEstructura/editar_consultorio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/consultorio/vista/configuracionEstructura/editar_edificio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/centro_medico.db" beforeDir="false" afterPath="$PROJECT_DIR$/centro_medico.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/RegistrarNuevoPaciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/AgregarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/AgregarPersonal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/clientes/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/RolesPermisos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/controlador/usuarioPersonal/RolesPermisos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Consultorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/estructura/Consultorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/movimiento/movimientoMedico/Cita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/RegistroUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/modelo/personal/RegistroUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/CargarFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/CargarFXML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/alertas/AlertaAprobacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/alertas/AlertaAprobacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/alertas/errores/VentanaErrores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/alertas/errores/VentanaErrores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/ConectionDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/RegistroEmpleadoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/RegistroEmpleadoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/RegistroUsuarioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/RegistroUsuarioDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/citas/agendar_nueva_cita.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarConsultorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/pacientes/registrarNuevoPaciente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/panelControl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/AgregarPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/AgregarPersonal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/PersonalGeneral$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/PersonalGeneral$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/PersonalGeneral.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/atencion/atencion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/rolesPermisos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/controlador/usuarioPersonal/rolesPermisos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/estructura/Consultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/estructura/Consultorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/Cita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/modelo/movimiento/movimientoMedico/Cita.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/alertas/AlertaAprobacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/alertas/AlertaAprobacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/alertas/errores/VentanaErrores.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/alertas/errores/VentanaErrores.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/ConectionDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/estructura/ConsultorioDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/movimiento/movimientoMedico/CitaDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/RegistroEmpleadoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/RegistroEmpleadoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agendar_nueva_cita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/citas/agendar_nueva_cita.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/agregar_edificio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/agregar_edificio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/editar_consultorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/configuracionEstructura/editar_consultorio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/panel_control.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/panel_control.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/consultorio/vista/usuarioPersonal/roles_permisos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +161,7 @@
       <workItem from="1744497838238" duration="26000" />
       <workItem from="1744497869154" duration="337000" />
       <workItem from="1744566279681" duration="64189000" />
-      <workItem from="1744921076130" duration="264805000" />
+      <workItem from="1744921076130" duration="303088000" />
     </task>
     <servers />
   </component>
@@ -169,11 +183,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
-          <line>423</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/Inicio.java</url>
           <line>40</line>
           <option name="timeStamp" value="31" />
@@ -190,12 +199,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
-          <line>611</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/PanelControl.java</url>
-          <line>423</line>
+          <line>429</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -207,11 +211,6 @@
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/registrar/RegistrarCentroMedico.java</url>
           <line>152</line>
           <option name="timeStamp" value="295" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/pacientes/BuscarEditarPaciente.java</url>
@@ -329,79 +328,14 @@
           <option name="timeStamp" value="528" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/UsuarioDB.java</url>
-          <line>219</line>
-          <option name="timeStamp" value="533" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="534" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>193</line>
-          <option name="timeStamp" value="535" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>220</line>
-          <option name="timeStamp" value="536" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>237</line>
-          <option name="timeStamp" value="537" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>194</line>
+          <line>292</line>
           <option name="timeStamp" value="538" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>242</line>
-          <option name="timeStamp" value="539" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>210</line>
-          <option name="timeStamp" value="540" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>218</line>
-          <option name="timeStamp" value="541" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/personal/EmpleadoDB.java</url>
-          <line>219</line>
-          <option name="timeStamp" value="542" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java</url>
-          <line>115</line>
+          <line>238</line>
           <option name="timeStamp" value="552" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="553" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="560" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="561" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/AgregarEdificio.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="562" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
@@ -409,27 +343,68 @@
           <option name="timeStamp" value="564" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroEdificioDB.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="566" />
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java</url>
+          <line>409</line>
+          <option name="timeStamp" value="689" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroEdificioDB.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="567" />
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java</url>
+          <line>410</line>
+          <option name="timeStamp" value="690" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroEdificioDB.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="568" />
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java</url>
+          <line>412</line>
+          <option name="timeStamp" value="691" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/RegistroEdificioDB.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="569" />
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>212</line>
+          <option name="timeStamp" value="692" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>213</line>
+          <option name="timeStamp" value="693" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>215</line>
+          <option name="timeStamp" value="694" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="695" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>219</line>
+          <option name="timeStamp" value="696" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/util/conection/modeloDataBase/estructura/EdificioDB.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="697" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/consultorio/controlador/configuracionEstructura/EditarConsultorio.java</url>
+          <line>118</line>
+          <properties class="com.consultorio.controlador.configuracionEstructura.EditarConsultorio" method="initialize">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="699" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.consultorio.controlador.configuracionEstructura.EditarConsultorio" memberName="usuario" />
+        <PinnedItemInfo parentTag="com.consultorio.controlador.configuracionEstructura.EditarConsultorio" memberName="connection" />
+        <PinnedItemInfo parentTag="com.consultorio.controlador.PanelControl" memberName="usuario" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

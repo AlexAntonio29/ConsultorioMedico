@@ -18,7 +18,7 @@ public class Consultorio {
     }
 
 
-    public String getnConsultorio() {
+    public String getNConsultorio() {
         return nConsultorio;
     }
 
@@ -38,7 +38,7 @@ public class Consultorio {
         return edificio;
     }
 
-    public void setnConsultorio(String nConsultorio) {
+    public void setNConsultorio(String nConsultorio) {
         this.nConsultorio = nConsultorio;
     }
 

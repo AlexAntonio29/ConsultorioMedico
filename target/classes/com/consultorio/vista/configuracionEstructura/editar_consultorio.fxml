@@ -29,15 +29,15 @@
 
 
                 <!-- Tabla para mostrar resultados de búsqueda -->
-                <TableView fx:id="tvEdificios" minHeight="250">
+                <TableView fx:id="tvConsultorio" minHeight="250">
 
                     <columns>
 
-                        <TableColumn fx:id="colID" prefWidth="100" text="ID" />
-                        <TableColumn fx:id="colNumEdificio" prefWidth="240" text="Foto" />
-                        <TableColumn fx:id="colNomEdificio" prefWidth="240" text="Nombre" />
-                        <TableColumn fx:id="colDireccion" prefWidth="240" text="ApellidoPaterno" />
-                        <TableColumn fx:id="colNumPisos" prefWidth="240" text="ApellidoMaterno" />
+                        <TableColumn fx:id="colNCounsltorio" prefWidth="100" text="Numero consultorio" />
+                        <TableColumn fx:id="colEspecialidad" prefWidth="240" text="Especialidad" />
+                        <TableColumn fx:id="colDisponibilidad" prefWidth="240" text="Disponibilidad" />
+                        <TableColumn fx:id="colIdEdificio" prefWidth="240" text="ID Edificio" />
+                        <TableColumn fx:id="colNumPiso" prefWidth="240" text="Numero Piso" />
 
 
                     </columns>
@@ -60,35 +60,70 @@
 
 
 
+                        <!-- Fila 0: Numero Consultorio llave primaria-->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Numero Consultorio:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="tfNumConsultorio" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese numero Consultorio" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <!-- Fila 0: Numero de Edificio -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <TextField fx:id="tfNombre" promptText="Ingrese el nombre" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <!-- Fila 1: Nombre de Edificio -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Curp" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <TextField fx:id="tfCurp" promptText="Ingrese Curp" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <!-- Fila 1: Especialidad -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Especialidad:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbEspecialidad" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Especialidad" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Medicina General" />
+                                    <String fx:value="Cardiología" />
+                                    <String fx:value="Pediatría" />
+                                    <String fx:value="Ginecología y Obstetricia" />
+                                    <String fx:value="Dermatología" />
+                                    <String fx:value="Neurología" />
+                                    <String fx:value="Ortopedia" />
+                                    <String fx:value="Endocrinología" />
+                                    <String fx:value="Gastroenterología" />
+                                    <String fx:value="Oncología" />
+                                    <String fx:value="Urología" />
+                                    <String fx:value="Oftalmología" />
+                                    <String fx:value="Otorrinolaringología" />
+                                    <String fx:value="Psiquiatría" />
+                                    <String fx:value="Medicina Interna" />
+                                    <String fx:value="Neumología" />
+                                    <String fx:value="Nefrología" />
+                                    <String fx:value="Reumatología" />
+                                    <String fx:value="Cirugía General" />
+                                    <String fx:value="Anestesiología" />
+                                    <String fx:value="Medicina del Trabajo" />
+                                    <String fx:value="Medicina de Rehabilitación" />
+                                </FXCollections>
 
-                        <!-- Fila 2: Direccion de Edificio -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Paterno:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <TextField fx:id="tfApellidoPaterno" promptText="Ingrese el apellido paterno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </items>
 
-                        <!-- Fila 3: Numero de pisos -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Apellido Materno:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                        <TextField fx:id="tfApellidoMaterno" promptText="Ingrese el apellido materno" style="-fx-font-size: 16px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        </ComboBox >
 
-                        <!-- Fila 3: Botones para Editar y Guardar -->
+                        <!-- Fila 2: Id Edificio -->
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="ID Edificio:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cbIdEdificio" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese Edificio" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <!-- Fila 3: Numero Piso -->
+                        <Label  style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Numero piso: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                        <TextField fx:id="tfNumPiso" style="-fx-font-size: 16px; -fx-font-weight: bold;" promptText="Ingrese el numero de piso" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+
 
                     </children>
 
                 </GridPane>
                 <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
                     <children>
-                        <Button fx:id="btnCancelar" disable="true" onAction="#actionCancelarPaciente" prefWidth="100" style="-fx-background-color:#233f9c; -fx-text-fill: white; -fx-background-radius: 5;" text="Cancelar" />
+                        <Button fx:id="btnCancelar" disable="true" onAction="#actionCancelarConsultorio" prefWidth="100" style="-fx-background-color:#233f9c; -fx-text-fill: white; -fx-background-radius: 5;" text="Cancelar" />
 
-                        <Button fx:id="btnGuardar" disable="true" onAction="#actionGuardarPaciente" prefWidth="100" style="-fx-background-color:#4bcac4; -fx-text-fill: white; -fx-background-radius: 5;" text="Guardar Edificio" />
-                        <Button fx:id="btnEditar" disable="true" onAction="#actionEditarPaciente" prefWidth="100" style="-fx-background-color:#E67E22; -fx-text-fill: white; -fx-background-radius: 5;" text="Editar Edificio" />
+                        <Button fx:id="btnGuardar" disable="true" onAction="#actionGuardarConsultorio" prefWidth="100" style="-fx-background-color:#4bcac4; -fx-text-fill: white; -fx-background-radius: 5;" text="Guardar Edificio" />
+                        <Button fx:id="btnEditar" disable="true" onAction="#actionEditarConsultorio" prefWidth="100" style="-fx-background-color:#E67E22; -fx-text-fill: white; -fx-background-radius: 5;" text="Editar Edificio" />
 
-                        <Button fx:id="btnEliminar" disable="true" onAction="#actionEliminarPaciente" prefWidth="150" style="-fx-background-color:#c50000; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar Edificio">
+                        <Button fx:id="btnEliminar" disable="true" onAction="#actionEliminarConsultorio" prefWidth="150" style="-fx-background-color:#c50000; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar Edificio">
                             <HBox.margin>
                                 <Insets left="50.0" />
                             </HBox.margin></Button>

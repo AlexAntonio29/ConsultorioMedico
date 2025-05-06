@@ -3,39 +3,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.consultorio.controlador.usuarioPersonal.RolesPermisos"
-            prefHeight="1080.0" prefWidth="1920.0"
-            style="-fx-background-color: #ECF0F1;">
+<ScrollPane fitToWidth="true" fitToHeight="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultorio.controlador.usuarioPersonal.RolesPermisos">
+    <AnchorPane fx:id="rootPanel" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ECF0F1;" >
 
-    <children>
-        <VBox alignment="TOP_CENTER" spacing="20.0"
-              AnchorPane.topAnchor="40.0" AnchorPane.leftAnchor="60.0"
-              AnchorPane.rightAnchor="60.0" AnchorPane.bottomAnchor="40.0">
-            <children>
 
-                <Label text="Administración de Roles y Permisos"
-                       style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
 
-                <HBox spacing="10">
-                    <Label text="Seleccionar Rol:"/>
-                    <ComboBox fx:id="comboRoles" prefWidth="200"/>
-                    <Button text="Agregar Rol" fx:id="btnAgregarRol"
-                            style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
-                </HBox>
+        <children>
+            <!-- Contenedor principal centrado -->
+            <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+                <children>
 
-                <Label text="Permisos Asignados:" style="-fx-font-weight: bold;" />
-                <ListView fx:id="listaPermisos" prefHeight="400" />
+                    <!-- Título del formulario -->
+                    <Label style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" text="Roles y permisos- Registrar Usuario" />
+                    <!-- Contenedor del formulario -->
+                    <GridPane fx:id="gridPane" hgap="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 30;" vgap="20.0">
+                        <!-- Definir dos columnas: una para etiquetas y otra para campos -->
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="30" />
+                            <ColumnConstraints percentWidth="70" />
+                        </columnConstraints>
+                        <children>
 
-                <HBox spacing="10">
-                    <TextField fx:id="txtNuevoPermiso" promptText="Nuevo Permiso" />
-                    <Button text="Agregar Permiso"
-                            fx:id="btnAgregarPermiso"
-                            style="-fx-background-color: #8E44AD; -fx-text-fill: white;"/>
-                </HBox>
 
-            </children>
-        </VBox>
-    </children>
-</AnchorPane>
+
+                            <!-- Id Empleado -->
+                            <Label text="Empleado :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <ComboBox fx:id="comboEmpleado" promptText="Seleccione Empleado"
+                                      GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#actionSelectComboEmpleado" >
+
+                            </ComboBox>
+                            <Label text="Usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="txtUsuario" editable="false" promptText="Usuario"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                            <Label text="Password:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="txtPassword" promptText="Ingrese Password"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            <Label text="Password nuevamente:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="txtPassword2" promptText="Ingrese Password nuevamente"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                            <!-- Fila 9: Botón de Registro -->
+                            <Button fx:id="btnRegistrar" maxWidth="200" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Registrar" GridPane.columnIndex="1" GridPane.rowIndex="10" onAction="#actionRegistrar"/> <!--onAction="#actionRegistrar"-->
+                        </children>
+
+                    </GridPane>
+                </children>
+            </VBox>
+        </children>
+    </AnchorPane>
+</ScrollPane>

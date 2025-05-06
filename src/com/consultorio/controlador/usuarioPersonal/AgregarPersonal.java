@@ -1,8 +1,10 @@
 package com.consultorio.controlador.usuarioPersonal;
 
+import com.consultorio.controlador.pacientes.RegistrarNuevoPaciente;
 import com.consultorio.modelo.personal.Empleado;
 import com.consultorio.modelo.personal.RegistroEmpleado;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.alertas.errores.VentanaErrores;
@@ -16,6 +18,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
@@ -43,6 +46,11 @@ public class AgregarPersonal {
 
     EmpleadoDB empleadoDB = new EmpleadoDB();
     RegistroEmpleadoDB registroEmpleadoDB= new RegistroEmpleadoDB();
+
+    @FXML
+    AnchorPane rootPanel;
+    String ruta="/com/consultorio/vista/usuarioPersonal/agregar_personal.fxml";
+    CargarFXML cargarFXML= new CargarFXML();
 
 
     @FXML
@@ -82,20 +90,34 @@ public class AgregarPersonal {
         Platform.runLater(() -> {
             empleadoDB.setConector(connection);
             registroEmpleadoDB.setConnection(connection);
+
+            cargarFXML.setUsuario(usuario);
+            cargarFXML.setConector(connection);
         });
     }
 
     // Método para registrar empleado
     @FXML
-    public void actionRegistrar() {
+    public void actionRegistrar() throws IllegalStateException{
         try {
+            if (tfNombre.getText().isEmpty() || tfCurp.getText().isEmpty() || tfApellidoPaterno.getText().isEmpty()
+                    || tfApellidoMaterno.getText().isEmpty() || tfDireccion.getText().isEmpty() || tfTelefono.getText().isEmpty()
+                    || tfEmail.getText().isEmpty() || comboTipoSexo.getValue() == null || comboTipoSexo.getValue().isEmpty()
+                    || comboTipoOcupacion.getValue() == null || comboTipoOcupacion.getValue().isEmpty()
+            ) { ventanaErrores.ventanaErrorClasico("Datos no capturados");
+                throw new IllegalStateException("Datos no capturados"); }
+
+
+            if(alertaAprobacion.mostrarConfirmacion("Deseas realizar registrar este empleado")){
             Empleado empleado = new Empleado();
             empleadoDB.setEmpleado(cargarEmpleado(empleado));
             registroEmpleadoDB.setRegistroEmpleado(cargarRegistroPaciente(new RegistroEmpleado(), empleado));
 
-            alertaAprobacion.ventanaAprobacion("Registro del Empleado Exitoso");
+                cargarFXML.updateContenidoAnchorPane(ruta, AgregarPersonal.class,rootPanel);
 
-            limpiarCampos();
+                //limpiarCampos();
+
+            }
         } catch (NumberFormatException e) {
             ventanaErrores.ventanaErrorClasico("Error de Formato, favor de corregirlo");
         } catch (DateTimeException e) {
@@ -181,12 +203,13 @@ public class AgregarPersonal {
         dpFechaNacimiento.setValue(null);
         tfDireccion.clear();
         tfTelefono.clear();
-        comboTipoSexo.getSelectionModel().clearSelection();
-        comboTipoSexo.setPromptText("Seleccione Sexo");
+        comboTipoSexo.setValue(null);
+        comboTipoSexo.setPromptText("ingrese sexo");
+
         tfEmail.clear();
-        comboTipoOcupacion.getSelectionModel().clearSelection();
+        comboTipoOcupacion.setValue(null);
         comboTipoOcupacion.setPromptText("Seleccione Ocupacion");
-        comboTipoEspecialidad.getSelectionModel().clearSelection();
+        comboTipoEspecialidad.setValue(null);
         comboTipoEspecialidad.setPromptText("Seleccione Especialidad");
         dpFechaIngreso.setValue(null);
 

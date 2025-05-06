@@ -1,15 +1,19 @@
 package com.consultorio.util.conection.modeloDataBase.personal;
 
 import com.consultorio.modelo.personal.Empleado;
+import com.consultorio.modelo.personal.Usuario;
 import com.consultorio.util.conection.modeloDataBase.modelo.Persona;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EmpleadoDB extends Persona {
     //variables globales
+
+    UsuarioDB usuarioDB = new UsuarioDB();
     Connection connection;
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -127,6 +131,100 @@ public class EmpleadoDB extends Persona {
         }
         return listaEmpleados;
     }
+    public List<Empleado> getEmpleadosSinUsuario() {
+        List<Empleado> listaEmpleados = new ArrayList<>();
+        String sql = "SELECT * FROM empleado";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                usuarioDB.setConector(connection);
+            if (!(usuarioDB.existeUsuarioConIdEmpleado(rs.getString("id")))) {
+                Empleado empleado = getEmpleado(rs.getString("id"));
+                if (       Objects.equals(empleado.getOcupacion(), "Medico")
+                        || Objects.equals(empleado.getEspecialidad(), "Administrador")
+                        || Objects.equals(empleado.getEspecialidad(), "Asistente")
+                        || Objects.equals(empleado.getEspecialidad(), "Repartidor Medicamentos")
+                        || Objects.equals(empleado.getEspecialidad(), "Encargado de Almacen Medico")
+
+                ) {
+                     empleado = new Empleado(
+                            rs.getString("id"),
+                            rs.getString("curp"),
+                            rs.getString("nombre"),
+                            rs.getString("apellido_paterno"),
+                            rs.getString("apellido_materno"),
+                            rs.getDate("fecha_nacimiento"),
+                            rs.getString("direccion"),
+                            rs.getString("telefono"),
+                            rs.getString("email"),
+                            rs.getString("foto"),
+                            rs.getString("ocupacion"),
+                            rs.getString("especialidad"),
+                            rs.getDate("fecha_ingreso"),
+                            rs.getString("edad"),
+                            rs.getString("sexo")
+                    );
+                    listaEmpleados.add(empleado);
+
+
+                }
+
+            }}
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaEmpleados;
+    }
+
+
+    public List<String> getIdEmpleados() {
+        List<String> listaEmpleados = new ArrayList<>();
+        String sql = "SELECT * FROM empleado";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                String empleado = rs.getString("id");
+
+                listaEmpleados.add(empleado);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaEmpleados;
+    }
+    public List<String> getIdEmpleadosSinUsuario() {
+        List<String> listaEmpleados = new ArrayList<>();
+        String sql = "SELECT * FROM empleado";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                usuarioDB.setConector(connection);
+                if (!(usuarioDB.existeUsuarioConIdEmpleado(rs.getString("id")))) {
+                    Empleado empleado = getEmpleado(rs.getString("id"));
+                    if (       Objects.equals(empleado.getOcupacion(), "Medico")
+                            || Objects.equals(empleado.getEspecialidad(), "Administrador")
+                            || Objects.equals(empleado.getEspecialidad(), "Asistente")
+                            || Objects.equals(empleado.getEspecialidad(), "Repartidor Medicamentos")
+                            || Objects.equals(empleado.getEspecialidad(), "Encargado de Almacen Medico")
+
+                    ) listaEmpleados.add(rs.getString("id"));
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaEmpleados;
+    }
 
 
 
@@ -206,7 +304,8 @@ public String obtenerUltimoIdPaciente() {
                 "especialidad LIKE ? OR " +
                 "fecha_ingreso LIKE ? OR " +
                 "edad LIKE ? OR " +
-                "sexo LIKE ?";
+                "sexo LIKE ? " +
+                "LIMIT 50";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
            /* for (int i = 1; i <= 16; i++) {

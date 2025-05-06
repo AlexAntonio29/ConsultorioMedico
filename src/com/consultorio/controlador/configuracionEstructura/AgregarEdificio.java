@@ -5,9 +5,11 @@ package com.consultorio.controlador.configuracionEstructura;
 
 
 
+import com.consultorio.controlador.usuarioPersonal.AgregarPersonal;
 import com.consultorio.modelo.estructura.Edificio;
 import com.consultorio.modelo.estructura.RegistroEdificio;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.alertas.errores.VentanaErrores;
@@ -17,6 +19,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.sql.Connection;
@@ -24,6 +27,29 @@ import java.time.DateTimeException;
 
 
 public class AgregarEdificio {
+
+    public Connection connection;
+
+    //obtener conector
+    public void setConector(Connection connection){
+        this.connection=connection;
+        System.out.println("Conector en "+ this);
+    }
+
+
+    public Usuario usuario;
+
+    public void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
+
+    public AgregarEdificio(){}
+
+    @FXML
+    AnchorPane rootPanel;
+    String ruta="/com/consultorio/vista/configuracionEstructura/agregar_edificio.fxml";
+    CargarFXML cargarFXML= new CargarFXML();
+
 
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
@@ -65,20 +91,7 @@ public class AgregarEdificio {
     @FXML
     GridPane gridPane;
 
-    public Connection connection;
 
-    //obtener conector
-    public void setConector(Connection connection){
-        this.connection=connection;
-        System.out.println("Conector en "+ this);
-    }
-
-
-    public Usuario usuario;
-
-    public void setUsuario(Usuario usuario){
-        this.usuario=usuario;
-    }
 
     public void cargarBDEdificio(){
         edificioDB.setConnection(connection);
@@ -97,6 +110,9 @@ public class AgregarEdificio {
             edificioDB.setConnection(connection);
             registroEdificioDB.setConnection(connection);
 
+            cargarFXML.setConector(connection);
+            cargarFXML.setUsuario(usuario);
+
         });
 
     }
@@ -114,17 +130,20 @@ public class AgregarEdificio {
         try {
 
             int verificarEnteros=Integer.parseInt(tfNumEdificio.getText());
-                verificarEnteros=Integer.parseInt(tfNumPisos.getText());
+            verificarEnteros=Integer.parseInt(tfNumPisos.getText());
 
             Edificio edificio=new Edificio();
             edificioDB.setEdificio(cargarEdificio(edificio));
             registroEdificioDB.setRegistroEdificio( cargarRegistroEdificio(new RegistroEdificio(),edificio));
 
-
+/*
             tfNumEdificio.clear();
             tfNombreEdificio.clear();
             tfDireccion.clear();
             tfNumPisos.clear();
+*/
+
+            cargarFXML.updateContenidoAnchorPane(ruta, AgregarEdificio.class,rootPanel);
 
 
 
@@ -163,10 +182,10 @@ public class AgregarEdificio {
         System.out.println(numPisos);
 
 
-       edificio.setNumeroEdificio(numEdificio);
-       edificio.setNombreEdificio(nombreEdificio);
-       edificio.setDireccionEdificio(direccion);
-       edificio.setNumeroPisos(numPisos);
+        edificio.setNumeroEdificio(numEdificio);
+        edificio.setNombreEdificio(nombreEdificio);
+        edificio.setDireccionEdificio(direccion);
+        edificio.setNumeroPisos(numPisos);
 
 
 
@@ -216,6 +235,7 @@ public class AgregarEdificio {
     }
 
     public void setDataBase(String dirImage){}
+
 
 }
 

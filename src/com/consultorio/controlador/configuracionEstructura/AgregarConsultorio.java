@@ -3,8 +3,8 @@ package com.consultorio.controlador.configuracionEstructura;
 import com.consultorio.modelo.estructura.Consultorio;
 import com.consultorio.modelo.estructura.Edificio;
 import com.consultorio.modelo.estructura.RegistroConsultorio;
-import com.consultorio.modelo.estructura.RegistroEdificio;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.alertas.errores.VentanaErrores;
@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.sql.Connection;
@@ -25,17 +26,25 @@ import java.util.List;
 
 public class AgregarConsultorio {
 
+    public AgregarConsultorio(){}
+
+    @FXML
+    AnchorPane rootPanel;
+    String ruta="/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml";
+    CargarFXML cargarFXML= new CargarFXML();
+
 
     //agregar un objeto de error
     VentanaErrores ventanaErrores = new VentanaErrores();
     String mensajeError="";
+
 
     AlertaAprobacion alertaAprobacion= new AlertaAprobacion();
 
 
 
     public  EdificioDB edificioDB= new EdificioDB();
-   ConsultorioDB consultorioDB = new ConsultorioDB();
+    ConsultorioDB consultorioDB = new ConsultorioDB();
     RegistroConsultorioDB registroConsultorioDB = new RegistroConsultorioDB();
 
 
@@ -91,13 +100,17 @@ public class AgregarConsultorio {
     @FXML
     public void initialize() {
 
-        cargar();
+
 
         Platform.runLater(()->{
             //cargar todo lo demas
             edificioDB.setConnection(connection);
             consultorioDB.setConnection(connection);
             registroConsultorioDB.setConnection(connection);
+
+            cargarFXML.setConector(connection);
+            cargarFXML.setUsuario(usuario);
+            cargar();
 
         });
 
@@ -123,11 +136,19 @@ public class AgregarConsultorio {
             registroConsultorioDB.setRegistroConsultorio( cargarRegistroConsultorio(new RegistroConsultorio()));
 
 
-            tfNumConsultorio.clear();
-            cbEspecialidad.getItems().clear();
-            cbIdEdificio.getItems().clear();
+           /*tfNumConsultorio.clear();
+            cbEspecialidad.setValue(null);
+            cbEspecialidad.setPromptText("Ingrese Especialidad");
+            cbIdEdificio.setValue(null);
+            cbIdEdificio.setPromptText("Ingrese ID de Edificio");
             tfNumPiso.clear();
 
+            List<String> listaId = edificioDB.getIdEdificios();
+            cbIdEdificio.setItems(FXCollections.observableArrayList(listaId));
+
+            */
+
+            cargarFXML.updateContenidoAnchorPane(ruta, AgregarConsultorio.class,rootPanel);
 
 
 
@@ -165,7 +186,7 @@ public class AgregarConsultorio {
         System.out.println(numPiso);
 
 
-        consultorio.setnConsultorio(numConsultorio);
+        consultorio.setNConsultorio(numConsultorio);
         consultorio.setEspecialidad(especialidad);
         consultorio.setEdificio(edificio);
         consultorio.setNumeroPiso(numPiso);
@@ -177,8 +198,15 @@ public class AgregarConsultorio {
 
     public RegistroConsultorio cargarRegistroConsultorio(RegistroConsultorio registroConsultorio){
 
-        registroConsultorio.setIdUsuario(usuario.getId());
-        registroConsultorio.setNConsultorio(consultorioDB.obtenerUltimoIdConsultorio());
+        String user=usuario.getId();
+        String numConsultorio = consultorioDB.obtenerUltimoIdConsultorio();
+        String fecha=new GetFecha().getFechaStringActual();
+        System.out.println(user);
+        System.out.println(numConsultorio);
+        System.out.println(fecha);
+
+        registroConsultorio.setIdUsuario(user);
+        registroConsultorio.setNConsultorio(numConsultorio);
         registroConsultorio.setFechaRegistro(new GetFecha().getFechaDateActual());
         return registroConsultorio;
     }

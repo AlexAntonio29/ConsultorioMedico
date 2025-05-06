@@ -42,7 +42,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+import javafx.scene.image.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -52,9 +52,10 @@ import java.sql.Connection;
 import java.util.Objects;
 
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 
 import javafx.geometry.Rectangle2D;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Screen;
 
 
@@ -166,8 +167,8 @@ public class PanelControl {
 
 
         Platform.runLater(()->{
-
             cargarControladores();
+            loadImage();//CARGAR IMAGEN DE FONDO
         });
 
 
@@ -190,7 +191,7 @@ public class PanelControl {
     //CARGAR RECURSOS
     public void cargarRecursos(){
 
-        loadImage();
+
 
         vbSubMenu.setVisible(false);
         //direccion de inicio por defecto
@@ -229,13 +230,23 @@ public class PanelControl {
         //llamar metodo DataBase
         dirImage=getDataBase(dirImage);
 
+        if (Objects.equals(dirImage, "")) {dirImage="/resource/img/user_unknown.jpg";
+            ivImageMenu.setImage(new Image(getClass().getResource(dirImage).toExternalForm()));
+        }
+        else {
 
-        if (Objects.equals(dirImage, "")) dirImage="/resource/img/user_unknown.jpg";
+            ivImageMenu.setImage(agregarFondoBlanco(new Image("file:"+dirImage)));
+
+        }
+        hacerImagenCircular();
 
 
-        ivImageMenu.setImage(new Image(getClass().getResource(dirImage).toExternalForm()));
 
-
+    }
+    public void hacerImagenCircular() {
+        double radio = ivImageMenu.getFitWidth() / 2; // 📌 Toma la mitad del ancho como radio
+        Circle clip = new Circle(radio, radio, radio); // 📌 Crea un círculo centrado
+        ivImageMenu.setClip(clip); // 📌 Aplica el clip para recortar la imagen en círculo
     }
 
 
@@ -361,7 +372,7 @@ public class PanelControl {
             case "Agregar consultorio":
                 System.out.println("Accion: Agregar consultorio");
                 updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/agregar_consultorio.fxml", AgregarConsultorio.class);
-                break;
+               break;
             case "Editar consultorio":
                 System.out.println("Accion: Editar consultorio");
                 updateContenidoAnchorPane("/com/consultorio/vista/configuracionEstructura/editar_consultorio.fxml", EditarConsultorio.class);
@@ -588,6 +599,7 @@ public class PanelControl {
             }
             if(controlador instanceof RolesPermisos){
                 ((RolesPermisos) controlador).setConector(connection);
+                ((RolesPermisos) controlador).setUsuario(usuario);
             }
             if(controlador instanceof Perfil){
                 ((Perfil) controlador).setConector(connection);
@@ -634,6 +646,7 @@ public class PanelControl {
             //cargar los datos de la base de datos
 
         }catch (Exception e){
+            System.out.println(e.getMessage());
             System.out.println("ERROR AL CARGAR FXML "+e.getMessage()+"  ERROR: "+ e);
         }
 
@@ -870,9 +883,26 @@ public class PanelControl {
     public String getDataBase(String typeData){
 
         //llamar a la Base de datos para proporcionar direccion
-        String getData="";
 
-        return  getData;
+        String foto= usuario.getEmpleado().getFoto();
+        dirImage=foto;
+        if (dirImage==null)return "";
+
+        return  foto;
+    }
+
+    private Image agregarFondoBlanco(Image original) {
+        WritableImage nuevaImagen = new WritableImage((int) original.getWidth(), (int) original.getHeight());
+        PixelWriter pixelWriter = nuevaImagen.getPixelWriter();
+        PixelReader pixelReader = original.getPixelReader();
+
+        for (int x = 0; x < original.getWidth(); x++) {
+            for (int y = 0; y < original.getHeight(); y++) {
+                Color colorPixel = pixelReader.getColor(x, y);
+                pixelWriter.setColor(x, y, colorPixel.getOpacity() == 0 ? Color.WHITE : colorPixel);
+            }
+        }
+        return nuevaImagen;
     }
 
     public void setDataBase(String dirImage){}

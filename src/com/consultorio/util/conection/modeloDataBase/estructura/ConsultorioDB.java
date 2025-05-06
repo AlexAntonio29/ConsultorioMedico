@@ -1,6 +1,6 @@
 package com.consultorio.util.conection.modeloDataBase.estructura;
 
-import com.consultorio.modelo.clientes.Paciente;
+
 import com.consultorio.modelo.estructura.Consultorio;
 import com.consultorio.modelo.estructura.Edificio;
 
@@ -19,10 +19,10 @@ public class ConsultorioDB {
 
 
     public void setConsultorio(Consultorio consultorio) {
-        String sql = "INSERT INTO consultorio(nConsultorio, especialidad, disponibilidad, edificio, piso) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO consultorio(nConsultorio, especialidad, disponibilidad, id_edificio, numero_piso) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setString(1, consultorio.getnConsultorio());
+            stmt.setString(1, consultorio.getNConsultorio());
             stmt.setString(2, consultorio.getEspecialidad());
             stmt.setInt(3, consultorio.getDisponibilidad());
             stmt.setString(4, consultorio.getEdificio().getId());
@@ -77,17 +77,17 @@ public class ConsultorioDB {
     }
 
     public String obtenerUltimoIdConsultorio() {
-        String sql = "SELECT id FROM pacientes ORDER BY id DESC LIMIT 1"; // 📌 Obtener el último ID
+        String sql = "SELECT nConsultorio FROM consultorio ORDER BY nConsultorio DESC LIMIT 1"; // 📌 Obtener el último ID
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             if (rs.next()) {
-                return rs.getString("id"); // 📌 Devuelve el ID como String
+                return rs.getString("nConsultorio"); // 📌 Devuelve el ID como String
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null; // 📌 Si no hay pacientes, retorna `null`
+        return null; // 📌 Si no hay consultorio, retorna `null`
     }
 
     public boolean eliminarConsultorio(int id) {
@@ -113,11 +113,11 @@ public class ConsultorioDB {
             stmt.setInt(2, consultorio.getDisponibilidad());
             stmt.setInt(3, Integer.parseInt(consultorio.getEdificio().getId()));
             stmt.setString(4, consultorio.getNumeroPiso());
-            // Aquí el ID solo sirve para identificar el paciente, no se modifica
-            stmt.setInt(5, Integer.parseInt(consultorio.getnConsultorio()));
+            // Aquí el ID solo sirve para identificar el consultorio, no se modifica
+            stmt.setInt(5, Integer.parseInt(consultorio.getNConsultorio()));
 
             int filasAfectadas = stmt.executeUpdate();
-            return filasAfectadas > 0; // Retorna true si se actualizó el paciente correctamente
+            return filasAfectadas > 0; // Retorna true si se actualizó el Consultorio correctamente
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -158,7 +158,7 @@ public class ConsultorioDB {
 
                 );
 
-                // Filtrar si es propietario o si es su paciente
+                // Filtrar si es propietario o si es su consultorio
                 listaConsultorio.add(consultorio);
 
             }
@@ -167,7 +167,7 @@ public class ConsultorioDB {
             e.printStackTrace();
         }
 
-        // Llamar a imprimirPacientes() después de cargar la lista
+        // Llamar a imprimirConsultorio() después de cargar la lista
 
         return listaConsultorio;
     }

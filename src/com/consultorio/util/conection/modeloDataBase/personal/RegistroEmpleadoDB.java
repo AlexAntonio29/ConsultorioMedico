@@ -2,6 +2,8 @@ package com.consultorio.util.conection.modeloDataBase.personal;
 
 
 import com.consultorio.modelo.personal.RegistroEmpleado;
+import com.consultorio.util.alertas.Alerta;
+import com.consultorio.util.alertas.errores.VentanaErrores;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -35,8 +37,10 @@ public class RegistroEmpleadoDB {
             stmt.setDate(3, Date.valueOf(formatoFechaIngreso));
 
             stmt.executeUpdate();
+            new Alerta().AccionExitosa("Accion realizada con Exito");
             System.out.println("✅ Registro de empleado guardado correctamente.");
         } catch (SQLException e) {
+            new VentanaErrores().ventanaErrorClasico("Fallo al guardar el registro de empleado");
             e.printStackTrace();
         }
     }

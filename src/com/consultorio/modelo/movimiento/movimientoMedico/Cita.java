@@ -13,14 +13,16 @@ public class Cita {
     Paciente paciente;
     Date fecha;
     LocalTime hora;
+    String motivo;
     Consultorio consultorio;
 
-    public Cita(String id, Usuario usuario, Paciente paciente, java.sql.Date fecha, LocalTime hora, Consultorio consultorio) {
+    public Cita(String id, Usuario usuario, Paciente paciente, java.sql.Date fecha, LocalTime hora, String motivo, Consultorio consultorio) {
         this.id = id;
         this.usuario = usuario;
         this.paciente = paciente;
         this.fecha = fecha;
         this.hora = hora;
+        this.motivo = motivo;
         this.consultorio = consultorio;
     }
 
@@ -45,7 +47,12 @@ public class Cita {
     }
 
     public LocalTime getHora() {
+
         return hora;
+    }
+
+    public String getMotivo() {
+        return motivo;
     }
 
     public Consultorio getConsultorio() {
@@ -66,6 +73,10 @@ public class Cita {
 
     public void setHora(LocalTime hora) {
         this.hora = hora;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
     }
 
     public void setConsultorio(Consultorio consultorio) {

@@ -3,6 +3,7 @@ package com.consultorio.controlador.pacientes;
 import com.consultorio.modelo.clientes.Paciente;
 import com.consultorio.modelo.clientes.RegistroPaciente;
 import com.consultorio.modelo.personal.Usuario;
+import com.consultorio.util.CargarFXML;
 import com.consultorio.util.GetFecha;
 import com.consultorio.util.alertas.AlertaAprobacion;
 import com.consultorio.util.conection.modeloDataBase.clientes.PacienteDB;
@@ -16,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
@@ -50,7 +52,11 @@ public class RegistrarNuevoPaciente {
 
 
 
+@FXML
+    AnchorPane rootPanel;
+String ruta ="/com/consultorio/vista/pacientes/registrar_nuevo_paciente.fxml";
 
+CargarFXML cargarFXML= new CargarFXML();
     ///ID DE DATOS DE PACIENTE
     @FXML
     TextField tfNombre;
@@ -121,6 +127,8 @@ public class RegistrarNuevoPaciente {
             //cargar todo lo demas
             pacienteDB.setConnection(connection);
             registroPacienteDB.setConnection(connection);
+            cargarFXML.setConector(connection);
+            cargarFXML.setUsuario(usuario);
 
         });
 
@@ -143,19 +151,22 @@ public class RegistrarNuevoPaciente {
 
             alertaAprobacion.ventanaAprobacion("Registro del Paciente Exitoso");
 
-            tfNombre.clear();
+          /*  tfNombre.clear();
             tfCurp.clear();
             tfApellidoPaterno.clear();
             tfApellidoMaterno.clear();
             dpFechaNacimiento.setValue(null);
             tfDireccion.clear();
             tfTelefono.clear();
-            comboTipoSexo.getSelectionModel().clearSelection();
+            comboTipoSexo.setValue(null);
             comboTipoSexo.setPromptText("Ingrese Sexo");
             tfEmail.clear();
 
             dirImage="/resource/img/user_unknown.jpg";
             ivFoto.setImage(new Image(getClass().getResource(dirImage).toExternalForm()));
+            */
+            cargarFXML.updateContenidoAnchorPane(ruta, RegistrarNuevoPaciente.class,rootPanel);
+
 
 
 
@@ -304,7 +315,7 @@ public class RegistrarNuevoPaciente {
 
     }
 
-    
+
     //metodos de ejecucion
 
     public void cargar(){

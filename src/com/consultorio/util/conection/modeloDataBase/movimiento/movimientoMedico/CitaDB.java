@@ -26,7 +26,7 @@ public class CitaDB {
             stmt.setInt(2, Integer.parseInt(cita.getPaciente().getId()));
             stmt.setDate(3, java.sql.Date.valueOf(cita.getFecha().toString()));
             stmt.setTime(4, java.sql.Time.valueOf(cita.getHora()));
-            stmt.setString(5, cita.getConsultorio().getnConsultorio());
+            stmt.setString(5, cita.getConsultorio().getNConsultorio());
 
             stmt.executeUpdate();
             return true;
@@ -110,7 +110,7 @@ public class CitaDB {
                 );
 
                 Consultorio consultorio = new Consultorio();
-                consultorio.setnConsultorio(rs.getString("nConsultorio"));
+                consultorio.setNConsultorio(rs.getString("nConsultorio"));
                 consultorio.setEspecialidad(rs.getString("especialidad"));
                 consultorio.setDisponibilidad(rs.getInt("disponibilidad"));
                 consultorio.setEdificio(edificio);
@@ -129,6 +129,7 @@ public class CitaDB {
                         paciente,
                         rs.getDate("fecha"),
                         rs.getTime("hora").toLocalTime(),
+                        rs.getString("motivo"),
                         consultorio
                 );
             }
@@ -211,7 +212,7 @@ public class CitaDB {
                 );
 
                 Consultorio consultorio = new Consultorio();
-                consultorio.setnConsultorio(rs.getString("nConsultorio"));
+                consultorio.setNConsultorio(rs.getString("nConsultorio"));
                 consultorio.setEspecialidad(rs.getString("especialidad"));
                 consultorio.setDisponibilidad(rs.getInt("disponibilidad"));
                 consultorio.setEdificio(edificio);
@@ -230,6 +231,7 @@ public class CitaDB {
                         paciente,
                         rs.getDate("fecha"),
                         rs.getTime("hora").toLocalTime(),
+                        rs.getString("motivo"),
                         consultorio
                 );
 
@@ -250,7 +252,7 @@ public class CitaDB {
             stmt.setInt(2, Integer.parseInt(cita.getPaciente().getId()));
             stmt.setDate(3, java.sql.Date.valueOf(cita.getFecha().toString()));
             stmt.setTime(4, java.sql.Time.valueOf(cita.getHora()));
-            stmt.setString(5, cita.getConsultorio().getnConsultorio());
+            stmt.setString(5, cita.getConsultorio().getNConsultorio());
             stmt.setInt(6, Integer.parseInt(cita.getId()));
 
             int filasAfectadas = stmt.executeUpdate();
@@ -358,7 +360,7 @@ public class CitaDB {
                 );
 
                 Consultorio consultorio = new Consultorio();
-                consultorio.setnConsultorio(rs.getString("nConsultorio"));
+                consultorio.setNConsultorio(rs.getString("nConsultorio"));
                 consultorio.setEspecialidad(rs.getString("especialidad"));
                 consultorio.setDisponibilidad(rs.getInt("disponibilidad"));
                 consultorio.setEdificio(edificio);
@@ -377,6 +379,7 @@ public class CitaDB {
                         paciente,
                         rs.getDate("fecha"),
                         rs.getTime("hora").toLocalTime(),
+                        rs.getString("motivo"),
                         consultorio
                 );
 

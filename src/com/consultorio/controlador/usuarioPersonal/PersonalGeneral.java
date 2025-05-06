@@ -11,6 +11,7 @@ import com.consultorio.util.conection.modeloDataBase.personal.EmpleadoDB;
 import com.consultorio.util.conection.modeloDataBase.personal.RegistroEmpleadoDB;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -565,15 +566,28 @@ if (!Objects.equals(seleccionado.getId(), "1")){
 
 //SECCION DE BUSQUEDA
 
-    @FXML public void onBusqueda(){
-
+    @FXML
+    public void onBusqueda() {
         String textoBusqueda = tfBusqueda.getText().trim();
 
         if (!textoBusqueda.isEmpty()) {
-            List<Empleado> resultados = empleadoDB.buscarEmpleado(textoBusqueda);
-            tvEmpleados.getItems().setAll(resultados); // Actualizar la tabla con los resultados
-        }else getEmpleados();
+            Task<List<Empleado>> tareaBusqueda = new Task<>() {
+                @Override
+                protected List<Empleado> call() {
+                    return empleadoDB.buscarEmpleado(textoBusqueda); // 📌 Llamar método en un hilo aparte
+                }
+            };
+
+            tareaBusqueda.setOnSucceeded(event -> {
+                tvEmpleados.getItems().setAll(tareaBusqueda.getValue()); // 📌 Cargar resultados en la tabla
+            });
+
+            new Thread(tareaBusqueda).start(); // 📌 Ejecutar búsqueda en otro hilo
+        } else {
+            getEmpleados();
+        }
     }
+
 
 
     @FXML public void cargarComboEspecialidad(){

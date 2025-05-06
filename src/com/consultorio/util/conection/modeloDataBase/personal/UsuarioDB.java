@@ -37,6 +37,22 @@ public class UsuarioDB {
         }
 
     }
+    public boolean existeUsuarioConIdEmpleado(String idEmpleado) {
+        String sql = "SELECT COUNT(*) FROM usuario WHERE id_empleado = ?"; // 📌 Corregido: usa id_empleado en la condición
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, Integer.parseInt(idEmpleado)); // 📌 Convierte String a Integer
+
+            ResultSet rs = stmt.executeQuery(); // 📌 Ejecutar consulta
+            if (rs.next()) {
+                return rs.getInt(1) > 0; // 📌 Si COUNT(*) > 0, el usuario existe
+            }
+        } catch (SQLException e) {
+            System.out.println("❌ Error al buscar usuario con idEmpleado: " + idEmpleado);
+            e.printStackTrace();
+        }
+        return false; // 📌 Retorna false si no hay coincidencias o si hay error
+    }
+
 
 
 
@@ -55,7 +71,7 @@ public class UsuarioDB {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // Crear el objeto Empleado
+                // Crear el objeto Usuario
                 String idUsuario = rs.getString("usuario_id");
                 String idEmpleado = rs.getString("empleado_id");
 
@@ -92,6 +108,7 @@ public class UsuarioDB {
 
         return null; // Si no encuentra el usuario
     }
+
 
 
     public boolean setUsuario(Usuario usuario) {
@@ -167,7 +184,7 @@ public class UsuarioDB {
 
 
     public boolean updateUsuario(Usuario usuario) {
-        String sql = "UPDATE empleado SET usuario = ?, password = ?, id_empleado = ? WHERE id = ?";
+        String sql = "UPDATE usuario SET usuario = ?, password = ?, id_empleado = ? WHERE id = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, usuario.getUsuario());
@@ -185,9 +202,9 @@ public class UsuarioDB {
         }
     }
 
-    //Obtener el ultmo empleado por ID
-    public String obtenerUltimoIdPaciente() {
-        String sql = "SELECT id FROM empleado ORDER BY id DESC LIMIT 1"; // 📌 Obtener el último ID
+    //Obtener el ultmo usuario por ID
+    public String obtenerUltimoIdUsuario() {
+        String sql = "SELECT id FROM usuario ORDER BY id DESC LIMIT 1"; // 📌 Obtener el último ID
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -202,7 +219,7 @@ public class UsuarioDB {
 
 
 
-    // 📌 Eliminar un empleado por ID
+    // 📌 Eliminar un Usuario por ID
     public boolean eliminarUsuario(int id) {
         String sql = "DELETE FROM usuario WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -216,8 +233,8 @@ public class UsuarioDB {
     }
 
 
-    public List<Empleado> buscarEmpleado(String textoBusqueda) {
-        List<Empleado> listaResultados = new ArrayList<>();
+    public List<Usuario> buscarUsuario(String textoBusqueda) {
+        List<Usuario> listaResultados = new ArrayList<>();
         String sql = "SELECT u.id AS usuario_id, u.usuario, u.password, "+
                  "e.id AS empleado_id, e.curp, e.nombre, e.apellido_paterno, e.apellido_materno, "+
                  "e.fecha_nacimiento, e.ocupacion, e.especialidad, e.direccion, e.telefono, "+
@@ -252,7 +269,15 @@ public class UsuarioDB {
                             String.valueOf(rs.getInt("edad")),
                             rs.getString("sexo")
                     );
-                    listaResultados.add(empleado);
+
+                    Usuario usuario = new Usuario(
+                            rs.getString("id"),
+                            rs.getString("usuario"),
+                            rs.getString("password"),
+                            empleado
+
+                    );
+                    listaResultados.add(usuario);
                 }
             }
 
