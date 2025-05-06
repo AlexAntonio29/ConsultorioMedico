@@ -596,6 +596,7 @@ public class PanelControl {
             }
             if(controlador instanceof MedicosAsistentes){
                 ((MedicosAsistentes) controlador).setConector(connection);
+                ((MedicosAsistentes) controlador).setUsuario(usuario);
             }
             if(controlador instanceof RolesPermisos){
                 ((RolesPermisos) controlador).setConector(connection);

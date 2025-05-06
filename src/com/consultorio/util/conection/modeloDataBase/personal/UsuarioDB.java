@@ -246,36 +246,39 @@ public class UsuarioDB {
                 "u.usuario LIKE ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            for (int i = 1; i <= 16; i++) {
+            for (int i = 1; i <= 2; i++) {
                 stmt.setString(i, "%" + textoBusqueda + "%"); // Buscar coincidencias parciales
             }
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    Empleado empleado = new Empleado(
-                            String.valueOf(rs.getInt("id")),
-                            rs.getString("curp"),
-                            rs.getString("nombre"),
-                            rs.getString("apellido_paterno"),
-                            rs.getString("apellido_materno"),
-                            rs.getDate("fecha_nacimiento"),
-                            rs.getString("direccion"),
-                            rs.getString("telefono"),
-                            rs.getString("email"),
-                            rs.getString("foto"),
-                            rs.getString("ocupacion"),
-                            rs.getString("especialidad"),
-                            rs.getDate("fecha_ingreso"),
-                            String.valueOf(rs.getInt("edad")),
-                            rs.getString("sexo")
-                    );
+                    String idUsuario = rs.getString("usuario_id");
+                    String idEmpleado = rs.getString("empleado_id");
+
+                    // **Verifica si "curp" existe antes de acceder**
+                    String curp = rs.getString("curp") != null ? rs.getString("curp") : "";
 
                     Usuario usuario = new Usuario(
-                            rs.getString("id"),
+                            idUsuario,
                             rs.getString("usuario"),
                             rs.getString("password"),
-                            empleado
-
+                            new Empleado(
+                                    idEmpleado,
+                                    curp, // ✅ Ahora verificamos antes de usarlo
+                                    rs.getString("nombre"),
+                                    rs.getString("apellido_paterno"),
+                                    rs.getString("apellido_materno"),
+                                    rs.getDate("fecha_nacimiento"),
+                                    rs.getString("direccion"),
+                                    rs.getString("telefono"),
+                                    rs.getString("email"),
+                                    rs.getString("foto"),
+                                    rs.getString("ocupacion"),
+                                    rs.getString("especialidad"),
+                                    rs.getDate("fecha_ingreso"),
+                                    rs.getString("edad"),
+                                    rs.getString("sexo")
+                            )
                     );
                     listaResultados.add(usuario);
                 }
